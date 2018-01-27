@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
@@ -8,19 +9,29 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    // fetch('http://localhost:5000/api/users')
-    //   .then(res => res.json())
-    //   .then(users => this.setState({users}, ( () => console.log('Users fetched..', users))));
+  getUsers() {
+    let users = [];
+    axios.get('http://localhost:5000/api/users')
+      .then((response) => {
+        users = response.data;
+        this.setState({users: users});
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-  
+
+  componentDidMount() {
+    this.getUsers();
+  }
+
   render() {
     return (
       <div>
-        <h1>Users:</h1>
+        <h2>get users:</h2>
         <ul>
           {this.state.users.map(user =>
-          <li key={user.id}>{user.id} - {user.name}</li>)}
+            <li key={user.id}>{user.id} - {user.name}</li>)}
         </ul>
       </div>
     );

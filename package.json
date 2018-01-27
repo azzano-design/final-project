@@ -2,17 +2,19 @@
   "name": "react-webpack-boilerplate",
   "version": "1.0.1",
   "scripts": {
-    "start------------": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --watch --watch-aggregate-timeout 300 --watch-poll 1000",
     "webpack": "./node_modules/.bin/webpack"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "bulma": "^0.6.2",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.5",
     "node-sass": "^4.5.3",

@@ -13,7 +13,7 @@ class App extends Component {
     //   .then(res => res.json())
     //   .then(users => this.setState({users}, ( () => console.log('Users fetched..', users))));
   }
-  
+
   render() {
     return (
       <div>

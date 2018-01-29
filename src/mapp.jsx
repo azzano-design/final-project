@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-export class Map extends React.Component {
+export class Mapp extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.google !== this.props.google) {
       this.loadMap();

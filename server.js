@@ -19,18 +19,11 @@ const client = new pg.Client({
   ssl: settings.ssl
 });
 
-// client.connect((err) => {
-//   if (err) {
-//     return console.error("Connection Error", err);
-//   }
-//   client.query("SELECT * from users", (err, result) => {
-//     if (err) {
-//       return console.error("error running query", err);
-//     }
-//     console.log(result.rows);
-//     client.end();
-//   });
-// });
+client.connect((err) => {
+  if (err) {
+    return console.error("Connection Error", err);
+  }
+});
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -101,25 +94,15 @@ app.post('/api/users/:id/applications', (request, response) => {
 
 
 app.get('/api/users', (request, response) => {
-  // const users = [
-  //   {id: 1, name: 'Arthur'},
-  //   {id: 2, name: 'Brendan'},
-  //   {id: 3, name: 'Konrad'}
-  // ];
-
-  let users = [];
-
-  client.query("SELECT * from users", (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    }
-    console.log(results);
-    users = result.rows;
-    console.log(users);
-    client.end();
-  });
-
-  response.json(users);
+ 
+    client.query("select * from users", (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+      console.log(result.rows);
+      response.json(result.rows);
+    });
+  
 });
 
 

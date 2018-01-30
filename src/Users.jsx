@@ -15,6 +15,7 @@ class App extends Component {
       .then((response) => {
         users = response.data;
         this.setState({users: users});
+        console.log(this.state.users);
       })
       .catch((error) => {
         console.log(error);
@@ -31,7 +32,7 @@ class App extends Component {
         <h2>get users:</h2>
         <ul>
           {this.state.users.map(user =>
-            <li key={user.id}>{user.id} - {user.name}</li>)}
+            <li key={user.id}>{user.id} - {user.firstName} {user.lastName}</li>)}
         </ul>
       </div>
     );

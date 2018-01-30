@@ -110,6 +110,13 @@ render() {
     height: window.innerHeight
   }
 
+  // change map size
+  const mapStyle = {
+    height: '1000px',
+    width: '1000px',
+    }
+
+    //change map default focus
   const mapConfig={
   zoom:14,
   lat:49.275147,
@@ -150,6 +157,7 @@ render() {
 
     ];
 
+
     return (<div>
       <button onClick={this.toggleDraw.bind(this)}>Polygon Search</button>
       <div className="App">
@@ -159,6 +167,7 @@ render() {
           drawMode={this.state.drawMode}
           markers={markers}
           mapConfig={mapConfig}
+          mapStyle={mapStyle}
           handleReturnedMarkers={this.handleReturnedMarkers.bind(this)}
           onMarkerClick={this.onMarkerClick.bind(this)}
           apiKey='AIzaSyADYWSlC4yEedJ-5lvQb9UFOVaMMux54Zc'

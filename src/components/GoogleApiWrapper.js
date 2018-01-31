@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-
+import DetailsForm  from './detailsform'
 import {InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap} from 'google-maps-react';
 import GoogleMapDrawFilter from "react-google-map-draw-filter";
 
-class DetailsForm extends Component {
-  onFormSubmit(event) {
-    event.preventDefault();
-    console.log(event.target.elements.details.value);
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={ this.onFormSubmit.bind(this) }>
-          <input name='details' placeholder='Description' />
-          <input type='submit' value='Submit' />
-        </form>
-      </div>
-    )
-  }
-}
 
 
 export class MapContainer extends Component {
@@ -159,7 +142,7 @@ onMarkerClick(marker,e){
   });
 
   google.maps.event.addListener(infowindow, 'domready', function() {
-    render(<DetailsForm />, document.getElementById('details'));
+    return (<DetailsForm />, document.getElementById('details'));
   });
 
   infowindow.open(marker.map, marker);

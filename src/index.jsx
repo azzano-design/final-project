@@ -1,7 +1,8 @@
 require('../styles/main.scss');
 
 import React from 'react';
-import {render} from 'react-dom';
-import App from './App.jsx';
+import ReactDom from 'react-dom';
+import {HashRouter as Router} from 'react-router-dom';
+import {Routes} from './routes.jsx';
 
-render(<App />, document.getElementById('react-root'));
+ReactDom.render(<Router><Routes/></Router>, document.getElementById('react-root'));

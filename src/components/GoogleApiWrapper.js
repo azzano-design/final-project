@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap} from 'google-maps-react';
+import {InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap} from 'google-maps-react';
 import GoogleMapDrawFilter from "react-google-map-draw-filter";
-
 
 export class MapContainer extends Component {
 //   constructor () {
@@ -69,19 +68,76 @@ export class MapContainer extends Component {
 //   }
 // }
 
-constructor () {
-  super();
+constructor (props) {
+  super(props);
   this.state = {
     drawMode:false,
     loaded:false,
     activeMarkers: [],
+    address: '',
+    markers: [
+        // {
+        //   info:'- Marker1',
+        //   label:'A',
+        //   title:'hello',
+        //   latLng:{lng:-123.097665,lat:49.264254}
+        // },
+        //
+        // {
+        //   label:'B',
+        //   info:'- Marker2',
+        //   latLng:{lng:-123.104124,lat: 49.266416}
+        // },
+        //
+        // {
+        //   label:'C',
+        //   info:'- Marker 3',
+        //   latLng:{lng:-123.117943 ,lat:49.278747}
+        // },
+        //
+        // // {
+        // //   label:'D',
+        // //   info:'- Marker 4',
+        // //   latLng:{lng:-123.126311 ,lat:49.278988}
+        // // },
+        //
+        // {
+        //   label:'E',
+        //   info:'- Marker 5',
+        //   latLng:{lng:-123.132362 ,lat:49.275147}
+        // }
+      ]
   };
 }
-onMarkerClick(marker,e){
+componentDidMount(){
+  // setTimeout(() => {
+  //   const {markers} = this.state;
+  //   this.setState({markers: [...markers, {
+  //             label:'D',
+  //             info:'- Marker 4',
+  //             latLng:{lng:-123.126311 ,lat:49.278988},
+  //           }]});
+  //
+  // }, 3000);
+}
+
+addMarker(label, info, lat, long) {
+  const { markers } = this.state;
+  const newMarker = { label, info, latLng: { lng: long, lat } };
+
   this.setState({
-    activeMarkers : [marker]
+    markers: [
+      ...markers, newMarker
+    ]
   });
 }
+
+onMarkerClick(marker,e){
+  this.setState({
+    activeMarkers : [markers]
+  });
+}
+
 renderMarkerInfo() {
   if (this.state.activeMarkers) {
     return this.state.activeMarkers.map((marker,i)=>(
@@ -97,11 +153,47 @@ handleReturnedMarkers(markers) {
   this.setState({
     activeMarkers: markers
   });
+  console.log("states", this.state.activeMarkers);
+
 }
+
 toggleDraw(){
   this.setState({
     drawMode:!this.state.drawMode ,
   });
+}
+
+handleChange(event) {
+  this.setState({address: event.target.value});
+  console.log(this.state.address);
+}
+
+handleSubmit(ev) {
+  ev.preventDefault();
+  /// this.state.address;
+  // pass the address to geocoder => lat lng
+  // let coor = geocoder(this.state.address);
+  // Geocoding
+  // geocoder.geocode("13864 116 ave surrey, BC", function ( err, data ) {
+  //   console.log(data.results[0].geometry.location);
+  //   // do something with data
+  // });
+
+  console.log(this.state.address);
+  const geocoder = new window.google.maps.Geocoder();
+  geocoder.geocode({ address: this.state.address }, (results, status) => {
+    const location = {
+      lat: results[0].geometry.location.lat(),
+      lng: results[0].geometry.location.lng()
+    };
+
+    this.addMarker('LABEL', 'more info', location.lat, location.lng);
+  });
+
+
+  // update this.state.activeMarkers
+  // this.setState({activeMarkers: this.state.activeMarkers.push(newMarker)})
+  // this.setState({address: ''});
 }
 
 render() {
@@ -112,7 +204,7 @@ render() {
 
   // change map size
   const mapStyle = {
-    height: '1000px',
+    height: '700px',
     width: '1000px',
     }
 
@@ -143,11 +235,11 @@ render() {
         latLng:{lng:-123.117943 ,lat:49.278747}
       },
 
-      {
-        label:'D',
-        info:'- Marker 4',
-        latLng:{lng:-123.126311 ,lat:49.278988}
-      },
+      // {
+      //   label:'D',
+      //   info:'- Marker 4',
+      //   latLng:{lng:-123.126311 ,lat:49.278988}
+      // },
 
       {
         label:'E',
@@ -165,7 +257,7 @@ render() {
         <GoogleMapDrawFilter
           style={styles}
           drawMode={this.state.drawMode}
-          markers={markers}
+          markers={this.state.markers}
           mapConfig={mapConfig}
           mapStyle={mapStyle}
           handleReturnedMarkers={this.handleReturnedMarkers.bind(this)}
@@ -175,6 +267,14 @@ render() {
 
       </div>
       <h1>{this.renderMarkerInfo.bind(this)()}</h1>
+
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        <label>
+            Address:
+          <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
+        </label>
+        <input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
+      </form>
     </div>
   );
 }

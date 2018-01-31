@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('city').notNullable();
     table.string('postalCode');
     table.boolean('familyInRoom').notNullable();
+    table.boolean('petFriendly');
     table.integer('rentAmount').notNullable();
     table.integer('depositAmount');
     table.integer('petAmount');

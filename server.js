@@ -4,6 +4,8 @@ const app = express();
 const settings = require("./settings"); // settings.json
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+// const configuration = require('./knexfile.js')[development];
+// const database = require('knex')(configuration);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,14 +33,25 @@ app.use(function (req, res, next) {
   next();
 });
 
-//login authentication
+
+//login registration
 app.post('/api/login', (request, response) => {
-
-});
-
-//user registration
-app.post('/api/register', (request, response) => {
-
+  client.query("select * from users where email = 'alice@gmail.com'", (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    } else if (result.rows >= 1) {
+      console.log(result.rows);
+      response.send('user has an account');
+    } else {
+      console.log(result.rows);
+      client.query("INSERT INTO users(name, email) values('Alice', 'alice@gmail.com')", (err, result) => {
+        if (err) {
+          return console.error("error running query", err);
+        }
+      });
+      response.send('new user registered');
+    }
+  });
 });
 
 //search for rooms
@@ -94,6 +107,12 @@ app.post('/api/users/:id/applications', (request, response) => {
 
 
 app.get('/api/users', (request, response) => {
+
+  // database('users').select().then((users) => {
+    // response.status(200).json(users);
+  // }).catch((error) => {
+    // response.status(500).json({ error });
+  // });
 
   client.query("select * from users", (err, result) => {
     if (err) {

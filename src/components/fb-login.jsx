@@ -33,7 +33,7 @@ class FacebookLogin extends Component {
       });
 
       window.FB.Event.subscribe('auth.statusChange', (response) => {
-          this.statusChangeCallback(response);
+        this.statusChangeCallback(response);
       });
     }
 
@@ -45,6 +45,16 @@ class FacebookLogin extends Component {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+  }
+
+  checkUserExists() {
+    axios.get('http://localhost:5000/api/login')
+  }
+
+  checkLoginState() {
+    FB.getLoginStatus(function (response) {
+      this.statusChangeCallback(response);
+    });
   }
 
   logout() {
@@ -65,13 +75,6 @@ class FacebookLogin extends Component {
       }
     })
   }
-
-  checkLoginState() {
-    FB.getLoginStatus(function (response) {
-      this.statusChangeCallback(response);
-    });
-  }
-
 
   render() {
     return (

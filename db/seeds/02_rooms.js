@@ -7,7 +7,7 @@ exports.seed = function (knex, Promise) {
       return knex('rooms').insert([
         {
           id: 1,
-          landlordId: 1,
+          landlordId: 1000000,
           street: '123 main st',
           unit: '32',
           city: 'Vancouver',
@@ -18,7 +18,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 2,
-          landlordId: 1,
+          landlordId: 1000000,
           street: '321 second st',
           unit: '54',
           city: 'Vancouver',
@@ -29,7 +29,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 3,
-          landlordId: 2,
+          landlordId: 1000001,
           street: '532 third st',
           unit: '12b',
           city: 'Vancouver',
@@ -40,7 +40,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 4,
-          landlordId: 3,
+          landlordId: 1000002,
           street: '654 fourth st',
           unit: 'b',
           city: 'Vancouver',
@@ -51,7 +51,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 5,
-          landlordId: 3,
+          landlordId: 1000002,
           street: '986 fifth st',
           unit: '',
           city: 'Vancouver',

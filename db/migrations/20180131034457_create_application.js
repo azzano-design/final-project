@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.scheema.createTable('applications', function(table) {
+  return knex.schema.createTable('applications', function(table) {
     table.increments('id');
     table.integer('landlordId').unsigned();
     table.foreign('landlordId').references('id').inTable('users');
@@ -25,5 +25,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.scheema.dropTable('applications');
+  return knex.schema.dropTable('applications');
 };

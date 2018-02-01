@@ -7,7 +7,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'ten_out_of_tenant',
-      user:     'development',
+      user: 'development',
       password: 'development'
     },
     migrations: {
@@ -23,7 +23,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {

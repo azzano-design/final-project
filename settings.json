@@ -1,0 +1,8 @@
+{
+  "user": "development",
+  "password": "development",
+  "database": "ten_out_of_tenant",
+  "hostname": "localhost",
+  "port": 5432,
+  "ssl": true
+}

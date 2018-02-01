@@ -125,7 +125,7 @@ handleSubmit(ev) {
     Landlord: ev.target.landlord.value,
   }
   console.log('new marker', newMarker);
-  this.setState({markers: this.state.markers.push(newMarker)});
+  this.setState({markers: this.state.markers.concat(newMarker)});
   console.log(this.state.markers);
 
   const geocoder = new window.google.maps.Geocoder();

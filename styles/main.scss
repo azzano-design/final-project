@@ -31,7 +31,7 @@ $primary: #C3E3D3;
 }
 
 main {
-  margin-top: 155px !important;
+  margin-top: 75px !important;
   padding-bottom: 55px;
 }
 
@@ -49,6 +49,11 @@ main.search aside {
 }
 .tabs li.is-active a {
   color:#000;
+}
+
+.App {
+  height:100vh;
+  width:100%;
 }
 
 .circle {

@@ -61,15 +61,6 @@ addMarker(label, info, lat, long) {
 }
 
 onMarkerClick(marker,e){
-  const infowindow = new google.maps.InfoWindow({
-    content: `<div id='details'></div>`
-  });
-
-  google.maps.event.addListener(infowindow, 'domready', function() {
-    return (<DetailsForm />, document.getElementById('details'));
-  });
-
-  infowindow.open(marker.map, marker);
 
   this.setState({
     activeMarkers : [marker]
@@ -119,7 +110,9 @@ handleSubmit(ev) {
     Landlord: ev.target.landlord.value,
   }
   console.log('new marker', newMarker);
-  this.setState({markers: this.state.markers.concat(newMarker)});
+  this.setState({
+    markers: this.state.markers.concat(newMarker)
+  });
   console.log(this.state.markers);
 
   const geocoder = new window.google.maps.Geocoder();

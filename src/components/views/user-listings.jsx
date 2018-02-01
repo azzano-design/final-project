@@ -93,7 +93,9 @@ class UserListings extends Component {
                       </div>
                       <footer className="card-footer">
                         <p className="card-footer-item">
-                          <span>Add new listing</span>
+                        <span>
+                          <a href="/#/search">Add new listing</a>
+                        </span>
                         </p>
                       </footer>
                     </div>

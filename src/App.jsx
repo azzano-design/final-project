@@ -7,7 +7,7 @@ class App extends Component {
 
     return (
       <div>
-        <h1>Hello React World!</h1>
+        <h1>Tenants and shit</h1>
         <Users />
         <GoogleApiWrapper center={location} />
       </div>

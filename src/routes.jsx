@@ -3,8 +3,8 @@ import {Route, Switch, Link} from 'react-router-dom';
 import ReactDom from 'react-dom';
 import Navbar from './components/navbar.jsx';
 import Home from './components/views/home.jsx';
-// import MapContainer from './components/GoogleApiWrapper.jsx';
-import Search from '.components/views/search.jsx';
+import MapContainer from './components/GoogleApiWrapper.jsx';
+
 import Listing from './components/views/listing.jsx';
 import Inbox from './components/views/inbox.jsx';
 import UserSettings from './components/views/user-settings.jsx';

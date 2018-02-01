@@ -3,7 +3,7 @@ import {Route, Switch, Link} from 'react-router-dom';
 import ReactDom from 'react-dom';
 import Navbar from './components/navbar.jsx';
 import Home from './components/views/home.jsx';
-import Search from './components/views/search.jsx';
+import MapContainer from './components/GoogleApiWrapper.jsx';
 import Listing from './components/views/listing.jsx';
 import Inbox from './components/views/inbox.jsx';
 import UserSettings from './components/views/user-settings.jsx';
@@ -46,7 +46,7 @@ class Routes extends React.Component {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/search" exact component={Search}/>
+            <Route path="/search" exact component={MapContainer}/>
             <Route path="/listing" component={Listing}/>
             <Route path="/inbox" exact component={Inbox}/>
             <Route path="/user" exact component={UserProfile}/>

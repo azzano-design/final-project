@@ -34,23 +34,26 @@ app.use(function (req, res, next) {
 });
 
 
-//login registration
-app.post('/api/login', (request, response) => {
-  client.query("select * from users where email = 'alice@gmail.com'", (err, result) => {
+app.get('/api/login', (request, response) => {
+  client.query("select * from users where email = 'bob@gmail.com'", (err, result) => {
     if (err) {
       return console.error("error running query", err);
-    } else if (result.rows >= 1) {
-      console.log(result.rows);
+    } else if (result.rows.length === 1) {
       response.send('user has an account');
     } else {
-      console.log(result.rows);
-      client.query("INSERT INTO users(name, email) values('Alice', 'alice@gmail.com')", (err, result) => {
-        if (err) {
-          return console.error("error running query", err);
-        }
-      });
-      response.send('new user registered');
+      response.send('could not find user');
     }
+  });
+
+});
+
+//login registration
+app.post('/api/login', (request, response) => {
+  client.query("INSERT INTO users(name, email) values('Bob', 'bob@gmail.com')", (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    response.status(201).send('new user registered');
   });
 });
 
@@ -84,6 +87,11 @@ app.post('/api/users/:id/messages', (request, response) => {
 
 });
 
+//post a room
+app.post('/api/rooms/:id', (request, response) => {
+
+});
+
 //load rooms profile
 app.get('/api/rooms/:id', (request, response) => {
 
@@ -109,9 +117,9 @@ app.post('/api/users/:id/applications', (request, response) => {
 app.get('/api/users', (request, response) => {
 
   // database('users').select().then((users) => {
-    // response.status(200).json(users);
+  // response.status(200).json(users);
   // }).catch((error) => {
-    // response.status(500).json({ error });
+  // response.status(500).json({ error });
   // });
 
   client.query("select * from users", (err, result) => {

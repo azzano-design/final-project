@@ -4,7 +4,14 @@ class FacebookLogin extends Component {
   constructor() {
     super();
     this.state = {
-      isLogged: false
+      isLogged: false,
+      currentUser: {
+        id: null,
+        name: '',
+        email: '',
+        phoneNumber: '',
+        profilePicURL: ''
+      }
     }
   }
 
@@ -13,7 +20,8 @@ class FacebookLogin extends Component {
     if (response.status === 'connected') {
       this.setState({ isLogged: true })
       console.log("islogged", this.state.isLogged);
-      this.testAPI();
+      this.connectAPI();
+
     }
     else {
       this.setState({ isLogged: false });
@@ -47,12 +55,22 @@ class FacebookLogin extends Component {
 
   }
 
-  checkUserExists() {
-    axios.get('http://localhost:5000/api/login')
+  getUserbyEmail(userEmail) {
+    axios.get('http://localhost:5000/api/login', {
+      params: {
+        email: userEmail
+      }
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   checkLoginState() {
-    FB.getLoginStatus(function (response) {
+    FB.getLoginStatus((response) => {
       this.statusChangeCallback(response);
     });
   }
@@ -68,10 +86,10 @@ class FacebookLogin extends Component {
     });
   }
 
-  testAPI() {
-    FB.api('/me?fields=name,email,picture.width(160).height(160)', function (response) {
+  connectAPI() {
+    FB.api('/me?fields=name,email,picture.width(160).height(160)', (response) => {
       if (response && !response.error) {
-        console.log(response);
+        this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
       }
     })
   }

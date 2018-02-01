@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import FacebookLogin from './fb-login.jsx';
 
 
 class Navbar extends Component {
@@ -19,6 +20,7 @@ class Navbar extends Component {
                     <span></span>
                   </span>
                 </div>
+                <FacebookLogin />
                 <div id="navbarMenuHeroA" className="navbar-menu">
                   <div className="navbar-end">
                     <a href="/#/search" className="navbar-item">

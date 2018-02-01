@@ -94,15 +94,15 @@ app.post('/api/users/:id/applications', (request, response) => {
 
 
 app.get('/api/users', (request, response) => {
- 
-    client.query("select * from users", (err, result) => {
-      if (err) {
-        return console.error("error running query", err);
-      }
-      console.log(result.rows);
-      response.json(result.rows);
-    });
-  
+
+  client.query("select * from users", (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
+
 });
 
 

@@ -7,71 +7,6 @@ import GoogleMapDrawFilter from "react-google-map-draw-filter";
 
 
 export class MapContainer extends Component {
-//   constructor () {
-//     super();
-//     this.state = {
-//       drawMode:false,
-//       loaded:false,
-//     };
-//   }
-//   handleReturnedMarkers(markers) {
-//     this.setState({
-//       activeMarkers: markers
-//     });
-//   }
-//   render() {
-//       const style = {
-//         width: '100%',
-//         height: '100%'
-//       }
-//       // added this for polygon
-//       const markers = [{info:' Marker1', label:'A',
-//         latLng:{lat:49.282729, lng:-123.120738}},
-//         {info:' Marker2', label:'B',latLng:{lat:49.282729, lng:-123.120738}}];
-//
-//
-//       return (
-//         // <div>
-//       //
-//       //
-//       //   // <Map google={window.google}
-//       //   //   style={style}
-//       //   //   initialCenter={{
-//       //   //     lat: 49.282729,
-//       //   //     lng: -123.120738
-//       //   //   }}
-//       //   //   zoom={14}
-//       //   //   >
-//       //     //
-//       //     // <GoogleMapDrawFilter
-//       //     //   apiKey='AIzaSyB8uJxSx8YzDb-Nm8CP9KB-egJe3mZF7OI'
-//       //     //   drawMode={true}
-//       //     //   markers={markers}
-//       //     //   handleReturnedMarkers={this.handleReturnedMarkers.bind(this)}
-//       //     //   />
-//       //
-//       //   // </Map>
-//       //   </div>\
-//       <div>
-//         <button onClick={this.toggleDraw.bind(this)}>toggleDraw</button>
-//         <div className="App">
-//
-//           <GoogleMapDrawFilter
-//             drawMode={this.state.drawMode}
-//             markers={markers}
-//             handleReturnedMarkers={this.handleReturnedMarkers.bind(this)}
-//             onMarkerClick={this.onMarkerClick.bind(this)}
-//             apiKey='AIzaSyB8uJxSx8YzDb-Nm8CP9KB-egJe3mZF7OI'
-//           />
-//
-//         </div>
-//         <h1>{this.renderMarkerInfo.bind(this)()}</h1>
-//       </div>
-//
-//       );
-//   }
-// }
-
 constructor (props) {
   super(props);
   this.state = {
@@ -80,58 +15,53 @@ constructor (props) {
     activeMarkers: [],
     address: '',
     markers: [
-        // {
-        //   info:'- Marker1',
-        //   label:'A',
-        //   title:'hello',
-        //   latLng:{lng:-123.097665,lat:49.264254}
-        // },
-        //
-        // {
-        //   label:'B',
-        //   info:'- Marker2',
-        //   latLng:{lng:-123.104124,lat: 49.266416}
-        // },
-        //
-        // {
-        //   label:'C',
-        //   info:'- Marker 3',
-        //   latLng:{lng:-123.117943 ,lat:49.278747}
-        // },
-        //
-        // // {
-        // //   label:'D',
-        // //   info:'- Marker 4',
-        // //   latLng:{lng:-123.126311 ,lat:49.278988}
-        // // },
-        //
-        // {
-        //   label:'E',
-        //   info:'- Marker 5',
-        //   latLng:{lng:-123.132362 ,lat:49.275147}
-        // }
-      ]
+
+    ],
+    othermarkers: [
+      {
+  info:'- Marker1',
+  label:'A',
+  title:'hello',
+  latLng:{lng:-123.097665,lat:49.264254}
+},
+
+{
+  label:'B',
+  info:'- Marker2',
+  latLng:{lng:-123.104124,lat: 49.266416}
+},
+
+{
+  label:'C',
+  info:'- Marker 3',
+  latLng:{lng:-123.117943 ,lat:49.278747}
+},
+
+// {
+//   label:'D',
+//   info:'- Marker 4',
+//   latLng:{lng:-123.126311 ,lat:49.278988}
+// },
+
+{
+  label:'E',
+  info:'- Marker 5',
+  latLng:{lng:-123.132362 ,lat:49.275147}
+}
+    ]
   };
 }
 componentDidMount(){
-  // setTimeout(() => {
-  //   const {markers} = this.state;
-  //   this.setState({markers: [...markers, {
-  //             label:'D',
-  //             info:'- Marker 4',
-  //             latLng:{lng:-123.126311 ,lat:49.278988},
-  //           }]});
-  //
-  // }, 3000);
+
 }
 
 addMarker(label, info, lat, long) {
-  const { markers } = this.state;
+  const { othermarkers } = this.state;
   const newMarker = { label, info, latLng: { lng: long, lat } };
 
   this.setState({
-    markers: [
-      ...markers, newMarker
+    othermarkers: [
+      ...othermarkers, newMarker
     ]
   });
 }
@@ -184,30 +114,35 @@ handleChange(event) {
 
 handleSubmit(ev) {
   ev.preventDefault();
-  /// this.state.address;
-  // pass the address to geocoder => lat lng
-  // let coor = geocoder(this.state.address);
-  // Geocoding
-  // geocoder.geocode("13864 116 ave surrey, BC", function ( err, data ) {
-  //   console.log(data.results[0].geometry.location);
-  //   // do something with data
-  // });
-
+  console.log(ev.target.details.value);
+  console.log(ev.target.address.value);
   console.log(this.state.address);
+
+  let newMarker = {
+    Address:  ev.target.address.value,
+    Description: ev.target.details.value,
+    Cost: ev.target.cost.value,
+    Landlord: ev.target.landlord.value,
+  }
+  console.log('new marker', newMarker);
+  this.setState({markers: this.state.markers.push(newMarker)});
+  console.log(this.state.markers);
+
   const geocoder = new window.google.maps.Geocoder();
   geocoder.geocode({ address: this.state.address }, (results, status) => {
     const location = {
       lat: results[0].geometry.location.lat(),
       lng: results[0].geometry.location.lng()
     };
-
     this.addMarker('Listing', '', location.lat, location.lng);
   });
 
+}
+onFormSubmit(event) {
+  event.preventDefault();
+  console.log(event.target.details.value);
+  console.log(event.target.address.value);
 
-  // update this.state.activeMarkers
-  // this.setState({activeMarkers: this.state.activeMarkers.push(newMarker)})
-  // this.setState({address: ''});
 }
 
 render() {
@@ -230,36 +165,6 @@ render() {
   }
 
   const markers = [
-      // {
-      //   info:'- Marker1',
-      //   label:'A',
-      //   title:'hello',
-      //   latLng:{lng:-123.097665,lat:49.264254}
-      // },
-      //
-      // {
-      //   label:'B',
-      //   info:'- Marker2',
-      //   latLng:{lng:-123.104124,lat: 49.266416}
-      // },
-      //
-      // {
-      //   label:'C',
-      //   info:'- Marker 3',
-      //   latLng:{lng:-123.117943 ,lat:49.278747}
-      // },
-      //
-      // // {
-      // //   label:'D',
-      // //   info:'- Marker 4',
-      // //   latLng:{lng:-123.126311 ,lat:49.278988}
-      // // },
-      //
-      // {
-      //   label:'E',
-      //   info:'- Marker 5',
-      //   latLng:{lng:-123.132362 ,lat:49.275147}
-      // },
 
     ];
 
@@ -270,7 +175,7 @@ render() {
         <GoogleMapDrawFilter
           style={styles}
           drawMode={this.state.drawMode}
-          markers={this.state.markers}
+          markers={this.state.othermarkers}
           mapConfig={mapConfig}
           mapStyle={mapStyle}
           handleReturnedMarkers={this.handleReturnedMarkers.bind(this)}
@@ -286,13 +191,21 @@ render() {
         <label>
             Address:
           <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
-            Description
-          <input type="text" />
 
         </label>
-        <input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
+        <input name='details' placeholder='Description' />
+        <input name='address' placeholder='Address' />
+        <input name='cost' placeholder='Cost' />
+        <input name='landlord' placeholder='Landlord' />
+        <button>Summit </button>
+
 
       </form>
+
+
+      <div>
+
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ class App extends Component {
 
   getUsers() {
     let users = [];
-    axios.get('http://localhost:5000/api/users')
+    axios.get('/api/users')
       .then((response) => {
         users = response.data;
         this.setState({users: users});

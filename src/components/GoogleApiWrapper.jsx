@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import DetailsForm  from './detailsform.jsx'
 import {InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap} from 'google-maps-react';
 import GoogleMapDrawFilter from "react-google-map-draw-filter";
-
+import axios from 'axios';
 
 
 export class MapContainer extends Component {
@@ -14,6 +14,7 @@ constructor (props) {
     loaded:false,
     activeMarkers: [],
     address: '',
+    rooms: [],
     markers: [
 
     ],
@@ -22,32 +23,69 @@ constructor (props) {
         info:'- Marker1',
         label:'A',
         title:'hello',
-        latLng:{lng:-123.097665,lat:49.264254}
+        latLng:{lng:-123.097665,lat:49.264254},
+        icon: {
+          url: '/images/icon.png'
+        }
       },
 
       {
         label:'B',
         info:'- Marker2',
-        latLng:{lng:-123.104124,lat: 49.266416}
+        latLng:{lng:-123.104124,lat: 49.266416},
+        icon: {
+          url: '/images/icon.png'
+        }
       },
 
       {
         label:'C',
         info:'- Marker 3',
-        latLng:{lng:-123.117943 ,lat:49.278747}
+        latLng:{lng:-123.117943 ,lat:49.278747},
+        icon: {
+          url: '/images/icon.png'
+        }
       },
 
       {
         label:'E',
         info:'- Marker 5',
-        latLng:{lng:-123.132362 ,lat:49.275147}
+        latLng:{lng:-123.132362 ,lat:49.275147},
+        icon: {
+          url: '/images/icon.png'
+        }
       }
     ]
   };
 }
-componentDidMount(){
 
+getRooms() {
+  let rooms = [];
+  axios.get('/api/rooms/')
+    .then((response) => {
+      rooms = response.data;
+      this.setState({
+        rooms: rooms
+      });
+      console.log(this.state.rooms);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
+
+addMarkerFromDatabase() {
+  //TODO for each item in array this.state.rooms
+  //TODO convert this.state.rooms.street into geocoded address
+  //TODO add marker for each room
+}
+
+
+componentDidMount(){
+  this.getRooms();
+}
+
+
 
 addMarker(label, info, lat, long) {
   const { otherMarkers } = this.state;
@@ -204,6 +242,4 @@ render() {
   }
 }
 
-export default GoogleApiWrapper({
-   apiKey: ('AIzaSyB8uJxSx8YzDb-Nm8CP9KB-egJe3mZF7OI')
-})(MapContainer)
+export default GoogleApiWrapper({apiKey: ('AIzaSyB8uJxSx8YzDb-Nm8CP9KB-egJe3mZF7OI')})(MapContainer)

@@ -7,6 +7,12 @@ const port = process.env.PORT || 5000;
 // const configuration = require('./knexfile.js')[development];
 // const database = require('knex')(configuration);
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -71,6 +77,35 @@ app.post('/api/login', (request, response) => {
       response.status(201).send('new user registered');
     });
 });
+
+app.get('/api/rooms' , (request, response) => {
+  client.query("select * from rooms", (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
+});
+
+app.post('/api/rooms', (request, response) => {
+  // hmn, maybe want to JSON.parse ?
+  const { street, city, familyInRoom, rentAmount, availableDate } = request.body;
+  const landlordId = 1000000;
+  query = [landlordId, street, city, familyInRoom, rentAmount, availableDate];
+  console.log(query);
+  client.query("INSERT INTO rooms(landlordId, street, city, familyInRoom, rentAmount, availableDate) values ($1, $2, $3, $4, $5, $6)", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+  });
+});
+
+//search for rooms
+app.get('/api/rooms/search', (request, response) => {
+
+});
+
 
 //search for rooms
 app.post('/api/rooms/search', (request, response) => {

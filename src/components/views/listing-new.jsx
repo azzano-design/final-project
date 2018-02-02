@@ -11,6 +11,11 @@ class NewListing extends Component {
   componentDidMount() {
     console.log('component sure as hell mounted');
   }
+
+  setTrueFalse() {
+
+  }
+
   addListing(event) {
     event.preventDefault();
     console.log('in method');
@@ -24,7 +29,7 @@ class NewListing extends Component {
       unit: this.refs.unit.value,
       city: this.refs.city.value,
       postalCode: this.refs.postalCode.value,
-      familyInRoom: this.refs.familyInRoom.value,
+      familyInRoom: true,
       petFriendly: this.refs.petFriendly.value,
       rentAmount: this.refs.rentAmount.value,
       depositAmount: this.refs.depositAmount.value,
@@ -67,7 +72,9 @@ class NewListing extends Component {
             console.log('my data', data);
           })
       })
+
   }
+
 
   render() {
     return (
@@ -98,7 +105,7 @@ class NewListing extends Component {
             <input name='postalCode' ref='postalCode' placeholder="postalCode"></input>
           </div>
           <div className="field">
-            <input name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input>
+            <input type="checkbox" name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input>
           </div>
           <div className="field">
             <input name='petFriendly' ref='petFriendly' placeholder="petFriendly"></input>
@@ -116,67 +123,67 @@ class NewListing extends Component {
             <input name='availableDate' ref='availableDate' placeholder="availableDate"></input>
           </div>
           <div className="field">
-            <input name='water' ref='water' placeholder="water"></input>
+            <input type="checkbox" name='water' ref='water' placeholder="water"></input>
           </div>
           <div className="field">
-            <input name='cablevision' ref='cablevision' placeholder="cablevision"></input>
+            <input type="checkbox" name='cablevision' ref='cablevision' placeholder="cablevision"></input>
           </div>
           <div className="field">
-            <input name='eletricity' ref='eletricity' placeholder="eletricity"></input>
+            <input type="checkbox" name='eletricity' ref='eletricity' placeholder="eletricity"></input>
           </div>
           <div className="field">
-            <input name='internet' ref='internet' placeholder="internet"></input>
+            <input type="checkbox" name='internet' ref='internet' placeholder="internet"></input>
           </div>
           <div className="field">
-            <input name='heat' ref='heat' placeholder="heat"></input>
+            <input type="checkbox" name='heat' ref='heat' placeholder="heat"></input>
           </div>
           <div className="field">
-            <input name='naturalGas' ref='naturalGas' placeholder="naturalGas"></input>
+            <input type="checkbox" name='naturalGas' ref='naturalGas' placeholder="naturalGas"></input>
           </div>
           <div className="field">
-            <input name='sewageDisposal' ref='sewageDisposal' placeholder="sewageDisposal"></input>
+            <input type="checkbox" name='sewageDisposal' ref='sewageDisposal' placeholder="sewageDisposal"></input>
           </div>
           <div className="field">
-            <input name='snowRemoval' ref='snowRemoval' placeholder="snowRemoval"></input>
+            <input type="checkbox" name='snowRemoval' ref='snowRemoval' placeholder="snowRemoval"></input>
           </div>
           <div className="field">
-            <input name='storage' ref='storage' placeholder="storage"></input>
+            <input type="checkbox" name='storage' ref='storage' placeholder="storage"></input>
           </div>
           <div className="field">
-            <input name='recreation' ref='recreation' placeholder="recreation"></input>
+            <input type="checkbox" name='recreation' ref='recreation' placeholder="recreation"></input>
           </div>
           <div className="field">
-            <input name='garbageCollection' ref='garbageCollection' placeholder="garbageCollection"></input>
+            <input type="checkbox" name='garbageCollection' ref='garbageCollection' placeholder="garbageCollection"></input>
           </div>
           <div className="field">
-            <input name='recyclingServices' ref='recyclingServices' placeholder="recyclingServices"></input>
+            <input type="checkbox" name='recyclingServices' ref='recyclingServices' placeholder="recyclingServices"></input>
           </div>
           <div className="field">
-            <input name='kitchenScrapCollection' ref='kitchenScrapCollection' placeholder="kitchenScrapCollection"></input>
+            <input type="checkbox" name='kitchenScrapCollection' ref='kitchenScrapCollection' placeholder="kitchenScrapCollection"></input>
           </div>
           <div className="field">
-            <input name='laundryCoin' ref='laundryCoin' placeholder="laundryCoin"></input>
+            <input type="checkbox" name='laundryCoin' ref='laundryCoin' placeholder="laundryCoin"></input>
           </div>
           <div className="field">
-            <input name='freeLaundry' ref='freeLaundry' placeholder="freeLaundry"></input>
+            <input type="checkbox" name='freeLaundry' ref='freeLaundry' placeholder="freeLaundry"></input>
           </div>
           <div className="field">
-            <input name='refrigerator' ref='refrigerator' placeholder="refrigerator"></input>
+            <input type="checkbox" name='refrigerator' ref='refrigerator' placeholder="refrigerator"></input>
           </div>
           <div className="field">
-            <input name='dishwasher' ref='dishwasher' placeholder="dishwasher"></input>
+            <input type="checkbox" name='dishwasher' ref='dishwasher' placeholder="dishwasher"></input>
           </div>
           <div className="field">
-            <input name='stoveOven' ref='stoveOven' placeholder="stoveOven"></input>
+            <input type="checkbox" name='stoveOven' ref='stoveOven' placeholder="stoveOven"></input>
           </div>
           <div className="field">
-            <input name='windowCoverings' ref='windowCoverings' placeholder="windowCoverings"></input>
+            <input type="checkbox" name='windowCoverings' ref='windowCoverings' placeholder="windowCoverings"></input>
           </div>
           <div className="field">
-            <input name='furniture' ref='furniture' placeholder="furniture"></input>
+            <input type="checkbox" name='furniture' ref='furniture' placeholder="furniture"></input>
           </div>
           <div className="field">
-            <input name='parking' ref='parking' placeholder="parking"></input>
+            <input type="checkbox" name='parking' ref='parking' placeholder="parking"></input>
           </div>
 
         <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>

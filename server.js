@@ -50,7 +50,7 @@ app.post('/api/login', (request, response) => {
       response.send('user has an account');
     } else {
       console.log(result.rows);
-      client.query("INSERT INTO users(name, email) values('Alice', 'alice@gmail.com')", (err, result) => {
+      client.query("INSERT INTO users(name, email) values ('Alice', 'alice@gmail.com')", (err, result) => {
         if (err) {
           return console.error("error running query", err);
         }
@@ -71,8 +71,16 @@ app.get('/api/rooms' , (request, response) => {
 });
 
 app.post('/api/rooms', (request, response) => {
-  console.log('howdy', request);
-  response.json("hello");
+  // hmn, maybe want to JSON.parse ?
+  const { street, city, familyInRoom, rentAmount, availableDate } = request.body;
+  const landlordId = 1000000;
+  query = [landlordId, street, city, familyInRoom, rentAmount, availableDate];
+  console.log(query);
+  client.query("INSERT INTO rooms(landlordId, street, city, familyInRoom, rentAmount, availableDate) values ($1, $2, $3, $4, $5, $6)", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+  });
 });
 
 //search for rooms

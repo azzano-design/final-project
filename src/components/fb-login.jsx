@@ -104,7 +104,7 @@ class FacebookLogin extends Component {
     axios.post('/api/login', {
       name: userName,
       email: userEmail,
-      pictureURL: profilePicURL
+      profile_pic_url: profilePicURL
     })
     .then(function (response) {
       console.log(response);

@@ -64,12 +64,12 @@ app.get('/api/login', (request, response) => {
 app.post('/api/login', (request, response) => {
   console.log("request body to create user", request.body);
 
-  const { name, email } = request.body;
-  const query = [name, email];
+  const { name, email, profile_pic_url } = request.body;
+  const query = [name, email, profile_pic_url];
 
   console.log('HERE HERE', query);
 
-  client.query(`INSERT INTO users(name, email) VALUES($1, $2) RETURNING *`,
+  client.query(`INSERT INTO users(name, email, profile_pic_url) VALUES($1, $2, $3) RETURNING *`,
     query, (err, result) => {
       if (err) {
         return console.error("error running query", err);

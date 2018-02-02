@@ -2,43 +2,29 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('rooms', function(table) {
     table.increments('id');
-    table.integer('landlordId').unsigned();
-    table.foreign('landlordId').references('id').inTable('users');
+    table.integer('landlord_id').unsigned();
+    table.foreign('landlord_id').references('id').inTable('users');
     table.string('street').notNullable();
     table.string('unit');
     table.string('city').notNullable();
-    table.string('postalCode');
-    table.boolean('familyInRoom').notNullable();
-    table.boolean('petFriendly');
-    table.integer('rentAmount').notNullable();
-    table.integer('depositAmount');
-    table.integer('petAmount');
-    table.date('availableDate').notNullable();
+    table.string('postal_code');
+    table.boolean('pet_friendly');
+    table.integer('rent_amount').notNullable();
+    table.integer('deposit_amount');
+    table.date('available_date').notNullable();
     table.boolean('water');
-    table.boolean('cablevision');
     table.boolean('eletricity');
     table.boolean('internet');
     table.boolean('heat');
-    table.boolean('naturalGas');
-    table.boolean('sewageDisposal');
-    table.boolean('snowRemoval');
+    table.boolean('natural_gas');
     table.boolean('storage');
-    table.boolean('recreation');
-    table.boolean('garbageCollection');
-    table.boolean('recyclingServices');
-    table.boolean('kitchenScrapCollection');
-    table.boolean('laundryCoin');
-    table.boolean('freeLaundry');
-    table.boolean('refrigerator');
-    table.boolean('dishwasher');
-    table.boolean('stoveOven');
-    table.boolean('windowCoverings');
+    table.boolean('laundry_on_site');
     table.boolean('furniture');
     table.boolean('parking');
 
 
-    table.timestamp('createdAt').defaultTo(knex.fn.now());
-    table.timestamp('updatedAt').defaultTo(knex.fn.now());
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+    table.timestamp('updated_at').defaultTo(knex.fn.now());
   });
 };
 

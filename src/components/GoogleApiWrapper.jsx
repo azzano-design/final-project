@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import DetailsForm  from './detailsform.jsx'
 import {InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap} from 'google-maps-react';
 import GoogleMapDrawFilter from "react-google-map-draw-filter";
-
+import axios from 'axios';
 
 
 export class MapContainer extends Component {
@@ -14,6 +14,7 @@ constructor (props) {
     loaded:false,
     activeMarkers: [],
     address: '',
+    rooms: [],
     markers: [
 
     ],
@@ -45,9 +46,34 @@ constructor (props) {
     ]
   };
 }
-componentDidMount(){
 
+getRooms() {
+  let rooms = [];
+  axios.get('/api/rooms/')
+    .then((response) => {
+      rooms = response.data;
+      this.setState({
+        rooms: rooms
+      });
+      console.log(this.state.rooms);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
+
+addMarkerFromDatabase() {
+  //TODO for each item in array this.state.rooms
+  //TODO convert this.state.rooms.street into geocoded address
+  //TODO add marker for each room
+}
+
+
+componentDidMount(){
+  this.getRooms();
+}
+
+
 
 addMarker(label, info, lat, long) {
   const { otherMarkers } = this.state;

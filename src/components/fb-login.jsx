@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class FacebookLogin extends Component {
   constructor() {
@@ -17,13 +18,31 @@ class FacebookLogin extends Component {
 
 
   statusChangeCallback(response) {
+    let result;
     if (response.status === 'connected') {
       this.setState({ isLogged: true })
       console.log("islogged", this.state.isLogged);
-      this.connectAPI();
-
-    }
-    else {
+      this.connectAPI(() => {
+        console.log("state ->", this.state);
+        this.getUserbyEmail(
+          this.state.currentUser.email, 
+          (err, result) => {
+            if (err) {
+              console.log("oh god, why why why, err")
+            } else {
+              if (result) {
+                // we have a user?  why do we have a user?  goddammit!!!!!!!!!!!!!!!!!!!!
+              } else {
+                this.setNewUser(
+                  this.state.currentUser.name,
+                  this.state.currentUser.email,
+                  this.state.currentUser.profilePicURL);
+              }
+            }
+          }
+        );
+      });
+    } else {
       this.setState({ isLogged: false });
       console.log("islogged", this.state.isLogged);
       console.log("Not authenticated");
@@ -55,17 +74,45 @@ class FacebookLogin extends Component {
 
   }
 
-  getUserbyEmail(userEmail) {
-    axios.get('http://localhost:5000/api/login', {
+  getUserbyEmail(userEmail, callback) {
+    console.log("useremail", userEmail);
+    axios.get('/api/login', {
       params: {
         email: userEmail
       }
     })
     .then((response) => {
-      console.log(response);
+      console.log("response data" + JSON.stringify(response.data));
+      // var data = JSON.parse(response.data);
+      var data = response.data;
+      console.log("parsed response:", data);
+      if (data.err) {
+        // oh no, shit is on fire
+        callback(data.err);
+      } else {
+        var user = data.result;
+        callback(undefined, user);
+      }
     })
     .catch((error) => {
+      console.log("mess in getUserByEmail", error);
+    });
+  }
+
+  setNewUser(userName, userEmail, profilePicURL, callback){
+    if (!callback) callback = ()=>{};
+    axios.post('/api/login', {
+      name: userName,
+      email: userEmail,
+      pictureURL: profilePicURL
+    })
+    .then(function (response) {
+      console.log(response);
+      callback(undefined, response);
+    })
+    .catch(function (error) {
       console.log(error);
+      callback(error);
     });
   }
 
@@ -86,11 +133,14 @@ class FacebookLogin extends Component {
     });
   }
 
-  connectAPI() {
+  connectAPI(callback) {
     FB.api('/me?fields=name,email,picture.width(160).height(160)', (response) => {
       if (response && !response.error) {
         this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
+        console.log("current user", this.state.currentUser)
       }
+      callback();
+
     })
   }
 

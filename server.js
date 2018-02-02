@@ -1,7 +1,7 @@
 const express = require('express');
 const pg = require('pg');
 const app = express();
-const settings = require("./settings"); // settings.json
+const settings = require("./settings");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 // const configuration = require('./knexfile.js')[development];
@@ -35,26 +35,41 @@ app.use(function (req, res, next) {
 
 
 app.get('/api/login', (request, response) => {
-  client.query("select * from users where email = 'bob@gmail.com'", (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    } else if (result.rows.length === 1) {
-      response.send('user has an account');
-    } else {
-      response.send('could not find user');
-    }
-  });
+  console.log("get-users request query", request.query);
+  client.query(
+    `select * from users where email = $1`,
+    [request.query.email],
+    (err, result) => {
+      if (err) {
+        console.error("error running query", err);
+        response.json({ err: 'db is fucked, halp' });
+      } else if (result.rows.length >= 1) {
+        console.log("some users", result.rows.length);
+        response.json({ result: result.rows[0] });
+      } else {
+        console.log("no users");
+        response.json({ result: undefined });
+      }
+    });
 
 });
 
 //login registration
 app.post('/api/login', (request, response) => {
-  client.query("INSERT INTO users(name, email) values('Bob', 'bob@gmail.com')", (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    }
-    response.status(201).send('new user registered');
-  });
+  console.log("request body to create user", request.body);
+
+  const { name, email } = request.body;
+  const query = [name, email];
+
+  console.log('HERE HERE', query);
+
+  client.query(`INSERT INTO users(name, email) VALUES($1, $2) RETURNING *`,
+    query, (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+      response.status(201).send('new user registered');
+    });
 });
 
 //search for rooms

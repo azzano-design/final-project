@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server.js",
+    "server": "nodemon server.js -L",
     "client": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --watch --watch-aggregate-timeout 300 --watch-poll 1000",
     "webpack": "./node_modules/.bin/webpack"
   },
@@ -18,11 +18,12 @@
     "bulma": "^0.6.2",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.5",
-    "history": "^4.7.2",
-    "knex": "^0.14.2",
     "geocoder": "^0.2.3",
     "google-maps-react": "^1.1.2",
+    "history": "^4.7.2",
+    "knex": "^0.14.2",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.14.12",
     "pg": "^7.4.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

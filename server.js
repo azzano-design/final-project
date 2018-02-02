@@ -1,7 +1,7 @@
 const express = require('express');
 const pg = require('pg');
 const app = express();
-const settings = require("./settings"); // settings.json
+const settings = require("./settings");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 // const configuration = require('./knexfile.js')[development];
@@ -40,24 +40,42 @@ app.use(function (req, res, next) {
 });
 
 
+app.get('/api/login', (request, response) => {
+  console.log("get-users request query", request.query);
+  client.query(
+    `select * from users where email = $1`,
+    [request.query.email],
+    (err, result) => {
+      if (err) {
+        console.error("error running query", err);
+        response.json({ err: 'db is fucked, halp' });
+      } else if (result.rows.length >= 1) {
+        console.log("some users", result.rows.length);
+        response.json({ result: result.rows[0] });
+      } else {
+        console.log("no users");
+        response.json({ result: undefined });
+      }
+    });
+
+});
+
 //login registration
 app.post('/api/login', (request, response) => {
-  client.query("select * from users where email = 'alice@gmail.com'", (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    } else if (result.rows >= 1) {
-      console.log(result.rows);
-      response.send('user has an account');
-    } else {
-      console.log(result.rows);
-      client.query("INSERT INTO users(name, email) values ('Alice', 'alice@gmail.com')", (err, result) => {
-        if (err) {
-          return console.error("error running query", err);
-        }
-      });
-      response.send('new user registered');
-    }
-  });
+  console.log("request body to create user", request.body);
+
+  const { name, email } = request.body;
+  const query = [name, email];
+
+  console.log('HERE HERE', query);
+
+  client.query(`INSERT INTO users(name, email) VALUES($1, $2) RETURNING *`,
+    query, (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+      response.status(201).send('new user registered');
+    });
 });
 
 app.get('/api/rooms' , (request, response) => {
@@ -119,6 +137,11 @@ app.post('/api/users/:id/messages', (request, response) => {
 
 });
 
+//post a room
+app.post('/api/rooms/:id', (request, response) => {
+
+});
+
 //load rooms profile
 app.get('/api/rooms/:id', (request, response) => {
 
@@ -144,9 +167,9 @@ app.post('/api/users/:id/applications', (request, response) => {
 app.get('/api/users', (request, response) => {
 
   // database('users').select().then((users) => {
-    // response.status(200).json(users);
+  // response.status(200).json(users);
   // }).catch((error) => {
-    // response.status(500).json({ error });
+  // response.status(500).json({ error });
   // });
 
   client.query("select * from users", (err, result) => {

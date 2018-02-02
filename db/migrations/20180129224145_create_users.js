@@ -4,9 +4,10 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.string('name').notNullable();
     table.string('email').notNullable();
-    table.string('phoneNumber');
-    table.timestamp('createdAt').defaultTo(knex.fn.now());
-    table.timestamp('updatedAt').defaultTo(knex.fn.now());
+    table.string('phone_number');
+    table.string('profile_pic_url');
+    table.timestamp('created_at').defaultTo(knex.fn.now());
+    table.timestamp('updated_at').defaultTo(knex.fn.now());
   });
 };
 

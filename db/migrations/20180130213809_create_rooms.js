@@ -21,6 +21,7 @@ exports.up = function(knex, Promise) {
     table.boolean('laundry_on_site');
     table.boolean('furniture');
     table.boolean('parking');
+    table.string('details');
 
 
     table.timestamp('created_at').defaultTo(knex.fn.now());

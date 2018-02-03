@@ -90,14 +90,14 @@ app.get('/api/rooms' , (request, response) => {
 
 app.post('/api/rooms', (request, response) => {
   // hmn, maybe want to JSON.parse ?
-  const { street, city, familyInRoom, rentAmount, availableDate } = request.body;
-  const landlordId = 1000000;
-  query = [landlordId, street, city, familyInRoom, rentAmount, availableDate];
+  const { landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking } = request.body;
+  query = [landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking];
   console.log(query);
-  client.query("INSERT INTO rooms(landlordId, street, city, familyInRoom, rentAmount, availableDate) values ($1, $2, $3, $4, $5, $6)", query, (err, result) => {
+  client.query("INSERT INTO rooms(landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19 )", query, (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
+    return response.status(201).send('new user registered');
   });
 });
 

@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class NewListing extends Component {
   constructor() {
@@ -16,62 +17,81 @@ class NewListing extends Component {
 
   }
 
+  // addListing(event, callback) {
+  //   event.preventDefault();
+  //   if (!callback) callback = ()=>{};
+  //   let data = {
+  //     landlord_id:1000000,
+  //     details: this.refs.details.value,
+  //     street: this.refs.street.value,
+  //     unit: this.refs.unit.value,
+  //     city: this.refs.city.value,
+  //     postal_code: this.refs.postalCode.value,
+  //     pet_friendly: this.refs.petFriendly.value,
+  //     rent_amount: this.refs.rentAmount.value,
+  //     deposit_amount: this.refs.depositAmount.value,
+  //     available_date: this.refs.availableDate.value,
+  //     water: this.refs.water.value,
+  //     eletricity: this.refs.eletricity.value,
+  //     internet: this.refs.internet.value,
+  //     heat: this.refs.heat.value,
+  //     natural_gas: this.refs.naturalGas.value,
+  //     storage: this.refs.storage.value,
+  //     laundry_on_site: this.refs.freeLaundry.value,
+  //     furniture: this.refs.furniture.value,
+  //     parking: this.refs.parking.value
+  //   }
+  //   console.log("data",data);
+  //   axios.post('/api/rooms', {
+  //     data: data
+  //   })
+  //   .then(function (response) {
+  //     console.log(response);
+  //     callback(undefined, response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //     callback(error);
+  //   });
+  // }
+
   addListing(event) {
     event.preventDefault();
     console.log('in method');
-
     let data = {
       details: this.refs.details.value,
-      address: this.refs.address.value,
-      cost: this.refs.cost.value,
-      landlord: this.refs.landlord.value,
       street: this.refs.street.value,
       unit: this.refs.unit.value,
       city: this.refs.city.value,
-      postalCode: this.refs.postalCode.value,
-      familyInRoom: true,
-      petFriendly: this.refs.petFriendly.value,
-      rentAmount: this.refs.rentAmount.value,
-      depositAmount: this.refs.depositAmount.value,
-      petAmount: this.refs.petAmount.value,
-      availableDate: this.refs.availableDate.value,
-      water: this.refs.water .value,
-      cablevision: this.refs.cablevision.value,
+      postal_code: this.refs.postalCode.value,
+      pet_friendly: this.refs.petFriendly.value,
+      rent_amount: this.refs.rentAmount.value,
+      deposit_amount: this.refs.depositAmount.value,
+      available_date: this.refs.availableDate.value,
+      water: this.refs.water.value,
       eletricity: this.refs.eletricity.value,
       internet: this.refs.internet.value,
       heat: this.refs.heat.value,
-      naturalGas: this.refs.naturalGas.value,
-      sewageDisposal: this.refs.sewageDisposal.value,
-      snowRemoval: this.refs.snowRemoval.value,
+      natural_gas: this.refs.naturalGas.value,
       storage: this.refs.storage.value,
-      recreation: this.refs.recreation.value,
-      garbageCollection: this.refs.garbageCollection.value,
-      recyclingServices: this.refs.recyclingServices.value,
-      kitchenScrapCollection: this.refs.kitchenScrapCollection.value,
-      laundryCoin: this.refs.laundryCoin.value,
-      freeLaundry: this.refs.freeLaundry.value,
-      refrigerator: this.refs.refrigerator.value,
-      dishwasher: this.refs.dishwasher.value,
-      stoveOven: this.refs.stoveOven.value,
-      windowCoverings: this.refs.windowCoverings.value,
+      laundry_on_site: this.refs.freeLaundry.value,
       furniture: this.refs.furniture.value,
       parking: this.refs.parking.value
     }
     console.log(data);
 
-    const request = new Request ('http://localhost:5000/api/rooms', {
-      method: 'POST',
-      headers: new Headers ({"Content-Type": "application/json", 'Accept': 'application/json'}),
-      body: JSON.stringify(data)
-    });
-
-    fetch(request)
-      .then(function(response){
-        response.json()
-          .then(function(data) {
-            console.log('my data', data);
-          })
-      })
+    // const request = new Request('http://localhost:5000/api/rooms', {
+    //   method: 'POST',
+    //   headers: new Headers({ "Content-Type": "application/json", 'Accept': 'application/json' }),
+    //   body: JSON.stringify(data)
+    // });
+    // fetch(request)
+    //   .then(function (response) {
+    //     response.json()
+    //       .then(function (data) {
+    //         console.log('my data', data);
+    //       })
+    //   })
 
   }
 
@@ -84,15 +104,6 @@ class NewListing extends Component {
             <input name='details' ref='details' placeholder='Description'></input>
           </div>
           <div className="field">
-            <input name='address' ref='address' placeholder='Address'></input>
-          </div>
-          <div className="field">
-            <input name='cost' ref='cost' placeholder='Cost'></input>
-          </div>
-          <div className="field">
-            <input name='landlord' ref='landlord' placeholder='Landlord'></input>
-          </div>
-          <div className="field">
             <input name='street' ref='street' placeholder="street"></input>
           </div>
           <div className="field">
@@ -102,31 +113,22 @@ class NewListing extends Component {
             <input name='city' ref='city' placeholder="city"></input>
           </div>
           <div className="field">
-            <input name='postalCode' ref='postalCode' placeholder="postalCode"></input>
+            <input name='postal_code' ref='postal_code' placeholder="postal Code"></input>
           </div>
           <div className="field">
-            <input type="checkbox" name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input>
+            <input type="checkbox" name='pet_friendly' ref='pet_friendly' placeholder="pet_friendly"></input>
           </div>
           <div className="field">
-            <input name='petFriendly' ref='petFriendly' placeholder="petFriendly"></input>
+            <input name='rent_amount' ref='rent_amount' placeholder="rent Amount"></input>
           </div>
           <div className="field">
-            <input name='rentAmount' ref='rentAmount' placeholder="rentAmount"></input>
+            <input name='deposit_amount' ref='deposit_amount' placeholder="deposit Amount"></input>
           </div>
           <div className="field">
-            <input name='depositAmount' ref='depositAmount' placeholder="depositAmount"></input>
-          </div>
-          <div className="field">
-            <input name='petAmount' ref='petAmount' placeholder="petAmount"></input>
-          </div>
-          <div className="field">
-            <input name='availableDate' ref='availableDate' placeholder="availableDate"></input>
+            <input name='available_date' ref='available_date' placeholder="available Date"></input>
           </div>
           <div className="field">
             <input type="checkbox" name='water' ref='water' placeholder="water"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='cablevision' ref='cablevision' placeholder="cablevision"></input>
           </div>
           <div className="field">
             <input type="checkbox" name='eletricity' ref='eletricity' placeholder="eletricity"></input>
@@ -138,46 +140,13 @@ class NewListing extends Component {
             <input type="checkbox" name='heat' ref='heat' placeholder="heat"></input>
           </div>
           <div className="field">
-            <input type="checkbox" name='naturalGas' ref='naturalGas' placeholder="naturalGas"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='sewageDisposal' ref='sewageDisposal' placeholder="sewageDisposal"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='snowRemoval' ref='snowRemoval' placeholder="snowRemoval"></input>
+            <input type="checkbox" name='natural_gas' ref='natural_gas' placeholder="natural Gas"></input>
           </div>
           <div className="field">
             <input type="checkbox" name='storage' ref='storage' placeholder="storage"></input>
           </div>
           <div className="field">
-            <input type="checkbox" name='recreation' ref='recreation' placeholder="recreation"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='garbageCollection' ref='garbageCollection' placeholder="garbageCollection"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='recyclingServices' ref='recyclingServices' placeholder="recyclingServices"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='kitchenScrapCollection' ref='kitchenScrapCollection' placeholder="kitchenScrapCollection"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='laundryCoin' ref='laundryCoin' placeholder="laundryCoin"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='freeLaundry' ref='freeLaundry' placeholder="freeLaundry"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='refrigerator' ref='refrigerator' placeholder="refrigerator"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='dishwasher' ref='dishwasher' placeholder="dishwasher"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='stoveOven' ref='stoveOven' placeholder="stoveOven"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='windowCoverings' ref='windowCoverings' placeholder="windowCoverings"></input>
+            <input type="checkbox" name='laundry_on_site' ref='laundry_on_site' placeholder="laundry on site"></input>
           </div>
           <div className="field">
             <input type="checkbox" name='furniture' ref='furniture' placeholder="furniture"></input>
@@ -186,9 +155,9 @@ class NewListing extends Component {
             <input type="checkbox" name='parking' ref='parking' placeholder="parking"></input>
           </div>
 
-        <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
-      </form>
-    </div>
+          <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
+        </form>
+      </div>
     )
   }
 }

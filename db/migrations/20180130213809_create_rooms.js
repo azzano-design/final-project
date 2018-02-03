@@ -22,7 +22,8 @@ exports.up = function(knex, Promise) {
     table.boolean('furniture');
     table.boolean('parking');
     table.string('details');
-
+    table.float('lat');
+    table.float('lng');
 
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());

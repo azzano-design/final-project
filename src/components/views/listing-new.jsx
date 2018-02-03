@@ -1,24 +1,40 @@
 import React, {Component} from 'react';
 
 class NewListing extends Component {
+
   constructor() {
     super();
-
     this.state = {
-      title: 'list your room'
+      value: false
+    }
+    this.handleCheckbox = this.handleCheckbox.bind(this);
+  }
+
+  handleCheckbox(event) {
+    const target = event.target;
+    console.log(event.target.value);
+    if (event.target.value === 'false') {
+      this.setState({
+        value: true
+      });
+    }
+    else {
+      this.setState({
+        value: false
+      });
     }
   }
+
   componentDidMount() {
     console.log('component sure as hell mounted');
   }
 
-  setTrueFalse() {
 
-  }
 
   addListing(event) {
     event.preventDefault();
     console.log('in method');
+
 
     let data = {
       details: this.refs.details.value,
@@ -105,7 +121,7 @@ class NewListing extends Component {
             <input name='postalCode' ref='postalCode' placeholder="postalCode"></input>
           </div>
           <div className="field">
-            <input type="checkbox" name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input>
+            <input type="checkbox" value={this.state.value} onChange={this.handleCheckbox} name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input>
           </div>
           <div className="field">
             <input name='petFriendly' ref='petFriendly' placeholder="petFriendly"></input>
@@ -185,7 +201,6 @@ class NewListing extends Component {
           <div className="field">
             <input type="checkbox" name='parking' ref='parking' placeholder="parking"></input>
           </div>
-
         <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
       </form>
     </div>
@@ -194,3 +209,4 @@ class NewListing extends Component {
 }
 
 export default NewListing;
+// export default GoogleApiWrapper({apiKey: ('AIzaSyB8uJxSx8YzDb-Nm8CP9KB-egJe3mZF7OI')})(NewListing)

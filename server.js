@@ -4,6 +4,9 @@ const app = express();
 const settings = require("./settings");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+const geocoder = require('geocoder');
+
+
 // const configuration = require('./knexfile.js')[development];
 // const database = require('knex')(configuration);
 
@@ -90,14 +93,31 @@ app.get('/api/rooms' , (request, response) => {
 
 app.post('/api/rooms', (request, response) => {
   // hmn, maybe want to JSON.parse ?
-  const { street, city, familyInRoom, rentAmount, availableDate } = request.body;
-  const landlordId = 1000000;
-  query = [landlordId, street, city, familyInRoom, rentAmount, availableDate];
-  console.log(query);
-  client.query("INSERT INTO rooms(landlordId, street, city, familyInRoom, rentAmount, availableDate) values ($1, $2, $3, $4, $5, $6)", query, (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    }
+  // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
+  const fullAddress = request.body.address + ' '+ request.body.city +' BC'
+
+  console.log('fulladdress: ', fullAddress);
+
+  geocoder.geocode(fullAddress, function ( err, data ) {
+    console.log(data.results[0].geometry.location);
+
+    const lat = data.results[0].geometry.location.lat
+    console.log(lat);
+
+    const lng = data.results[0].geometry.location.lng
+    console.log(lng)
+
+    // console.log("post api/rooms got lat/lng:", request.body.lat, request.body.lng);
+    const { street, city, familyInRoom, rentAmount, availableDate } = request.body;
+
+    const landlordId = 1000000;
+    query = [landlordId, street, city, familyInRoom, rentAmount, availableDate, lat, lng];
+    console.log(query);
+    client.query("INSERT INTO rooms(landlordId, street, city, familyInRoom, rentAmount, availableDate, lat, lng) values ($1, $2, $3, $4, $5, $6, $7, $8)", query, (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+    });
   });
 });
 

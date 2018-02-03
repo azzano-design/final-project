@@ -67,7 +67,6 @@ getRooms() {
       this.setState({
         rooms: rooms
       });
-      console.log(this.state.rooms);
     })
     .catch((error) => {
       console.log(error);
@@ -126,7 +125,7 @@ handleReturnedMarkers(markers) {
 
 toggleDraw(){
   this.setState({
-    drawMode:!this.state.drawMode ,
+    drawMode:!this.state.drawMode,
   });
 }
 

@@ -4,6 +4,9 @@ const app = express();
 const settings = require("./settings");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+const geocoder = require('geocoder');
+
+
 // const configuration = require('./knexfile.js')[development];
 // const database = require('knex')(configuration);
 
@@ -90,14 +93,33 @@ app.get('/api/rooms' , (request, response) => {
 
 app.post('/api/rooms', (request, response) => {
   // hmn, maybe want to JSON.parse ?
-  const { landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking } = request.body;
-  query = [landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking];
-  console.log(query);
-  client.query("INSERT INTO rooms(landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19 )", query, (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    }
-    return response.status(201).send('new user registered');
+  // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
+  const landlordId = 1000000;
+  
+  const fullAddress = request.body.address + ' ' + request.body.city + ' BC';
+
+  console.log('fulladdress: ', fullAddress);
+
+  geocoder.geocode(fullAddress, function ( err, data ) {
+    console.log(data.results[0].geometry.location);
+
+    const lat = data.results[0].geometry.location.lat;
+    console.log(lat);
+
+    const lng = data.results[0].geometry.location.lng;
+    console.log(lng);
+
+    // console.log("post api/rooms got lat/lng:", request.body.lat, request.body.lng);
+    const { landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking } = request.body;
+
+    query = [landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng];
+    console.log(query);
+    client.query("INSERT INTO rooms(landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21 )", query, (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+      return response.status(201).send('new user listing');
+    });
   });
 });
 

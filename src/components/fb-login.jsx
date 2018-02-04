@@ -3,8 +3,8 @@ import LoginMenu from './login-menu.jsx';
 import axios from 'axios';
 
 class FacebookLogin extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isLogged: false,
       currentUser: {
@@ -38,6 +38,7 @@ class FacebookLogin extends Component {
                   this.state.currentUser.name,
                   this.state.currentUser.email,
                   this.state.currentUser.profilePicURL);
+                // local storage
               }
             }
           }
@@ -46,6 +47,7 @@ class FacebookLogin extends Component {
     } else {
       this.setState({ isLogged: false });
       console.log("islogged", this.state.isLogged);
+
       console.log("Not authenticated");
     }
   };
@@ -54,7 +56,7 @@ class FacebookLogin extends Component {
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '175711163181508',
+        appId: '145837826089186',
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -108,7 +110,7 @@ class FacebookLogin extends Component {
       profile_pic_url: profilePicURL
     })
     .then(function (response) {
-      console.log(response);
+      console.log('setNewUser',response);
       callback(undefined, response);
     })
     .catch(function (error) {
@@ -140,6 +142,10 @@ class FacebookLogin extends Component {
       if (response && !response.error) {
         this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
         console.log("current user", this.state.currentUser)
+        let user =  {
+          name: 'konrad'
+        }
+        localStorage.setItem('user', JSON.stringify(this.state.currentUser));
       }
       callback();
 

@@ -2,9 +2,21 @@ import React, {Component} from 'react';
 import UserMenu from '../user-menu.jsx';
 
 class UserSettings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user:  JSON.parse(localStorage.getItem('user'))
+    }
+  }
   render() {
+    {console.log('local user',localStorage.getItem('user'))}
+    {console.log('state user', this.state.user)}
     return (
       <div>
+        <div>
+          <h1> {this.state.user.name} </h1>
+          <img src={this.state.user.profilePicURL} />
+        </div>
         <UserMenu/>
         <div className="container">
           <div className="columns">
@@ -16,7 +28,7 @@ class UserSettings extends Component {
                       <div className="field">
                         <label className="label" for="FirstName">First Name</label>
                         <div className="control">
-                          <input className="input" type="text" name="FirstName" placeholder="e.g Alex Smith"></input>
+                          <input className="input" type="text" name="FirstName" placeholder={this.state.user.name}></input>
                         </div>
                       </div>
                       <div className="field">

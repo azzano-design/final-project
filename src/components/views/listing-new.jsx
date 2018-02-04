@@ -6,7 +6,9 @@ class NewListing extends Component {
   constructor() {
     super();
     this.state = {
-      value: false
+      value: false,
+      file: '',
+      fileBase64String:"",
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
   }
@@ -30,7 +32,22 @@ class NewListing extends Component {
     console.log('component sure as hell mounted');
   }
 
+   _handleImageChange(e) {
+      e.preventDefault();
 
+      let reader = new FileReader();
+      let file = e.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file,
+          // imagePreviewUrl: reader.result
+        });
+        console.log(reader.result);
+      }
+
+      reader.readAsDataURL(file)
+    }
 
   // addListing(event, callback) {
   //   event.preventDefault();
@@ -172,6 +189,7 @@ class NewListing extends Component {
           <div className="field">
             <input type="checkbox" name='parking' ref='parking' placeholder="parking"></input>
           </div>
+          <input type="file" onChange={this._handleImageChange.bind(this)} />
         <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
       </form>
     </div>

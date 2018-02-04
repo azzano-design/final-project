@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class UserMenu extends Component {
+  constructor() {
+    super();
+
+  }
   render() {
     return (
       <div>

@@ -23,7 +23,9 @@ class NewListing extends Component {
       storage: false,
       laundry_on_site: false,
       furniture: false,
-      parking: false
+      parking: false,
+      file: '',
+      fileBase64String: "",
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -52,9 +54,21 @@ class NewListing extends Component {
     });
   }
 
+  _handleImageChange(e) {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
 
-  // componentDidMount() {
-  // }
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        // imagePreviewUrl: reader.result
+      });
+      console.log(reader.result);
+    }
+    reader.readAsDataURL(file)
+  }
+
 
   checkRequiredFields() {
     const listing = this.state;
@@ -279,6 +293,9 @@ class NewListing extends Component {
           </label>
           <br />
           <button className="button is-primary" type="submit" onClick={this.addListing}>Submit</button>
+
+          <input type="file" onChange={this._handleImageChange.bind(this)} />
+          <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
         </form>
       </div>
     )

@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('rooms').insert([
         {
-          id: 1,
+          id: 1000000,
           landlord_id: 1000000,
           street: '123 main st',
           unit: '32',
@@ -16,7 +16,7 @@ exports.seed = function (knex, Promise) {
           available_date: '2018/03/01'
         },
         {
-          id: 2,
+          id: 1000001,
           landlord_id: 1000000,
           street: '321 second st',
           unit: '54',
@@ -26,7 +26,7 @@ exports.seed = function (knex, Promise) {
           available_date: '2018/03/01'
         },
         {
-          id: 3,
+          id: 1000002,
           landlord_id: 1000001,
           street: '532 third st',
           unit: '12b',
@@ -36,7 +36,7 @@ exports.seed = function (knex, Promise) {
           available_date: '2018/01/01'
         },
         {
-          id: 4,
+          id: 1000003,
           landlord_id: 1000002,
           street: '654 fourth st',
           unit: 'b',
@@ -46,7 +46,7 @@ exports.seed = function (knex, Promise) {
           available_date: '2018/01/15'
         },
         {
-          id: 5,
+          id: 1000004,
           landlord_id: 1000002,
           street: '986 fifth st',
           unit: '',

@@ -6,175 +6,281 @@ class NewListing extends Component {
   constructor() {
     super();
     this.state = {
-      value: false
+      details: undefined,
+      street: undefined,
+      unit: undefined,
+      city: undefined,
+      postal_code: undefined,
+      pet_friendly: false,
+      rent_amount: undefined,
+      deposit_amount: undefined,
+      available_date: undefined,
+      water: false,
+      eletricity: false,
+      internet: false,
+      heat: false,
+      natural_gas: false,
+      storage: false,
+      laundry_on_site: false,
+      furniture: false,
+      parking: false
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.addListing = this.addListing.bind(this);
   }
 
   handleCheckbox(event) {
-    const target = event.target;
-    console.log(event.target.value);
-    if (event.target.value === 'false') {
+    const name = event.target.name;
+    if (this.state[name] === false) {
       this.setState({
-        value: true
+        [name]: true
       });
     }
     else {
       this.setState({
-        value: false
+        [name]: false
       });
     }
   }
 
-  componentDidMount() {
-    console.log('component sure as hell mounted');
+  handleInputChange(event) {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
   }
 
 
-
-  // addListing(event, callback) {
-  //   event.preventDefault();
-  //   if (!callback) callback = ()=>{};
-  //   let data = {
-  //     landlord_id:1000000,
-  //     details: this.refs.details.value,
-  //     street: this.refs.street.value,
-  //     unit: this.refs.unit.value,
-  //     city: this.refs.city.value,
-  //     postal_code: this.refs.postalCode.value,
-  //     pet_friendly: this.refs.petFriendly.value,
-  //     rent_amount: this.refs.rentAmount.value,
-  //     deposit_amount: this.refs.depositAmount.value,
-  //     available_date: this.refs.availableDate.value,
-  //     water: this.refs.water.value,
-  //     eletricity: this.refs.eletricity.value,
-  //     internet: this.refs.internet.value,
-  //     heat: this.refs.heat.value,
-  //     natural_gas: this.refs.naturalGas.value,
-  //     storage: this.refs.storage.value,
-  //     laundry_on_site: this.refs.freeLaundry.value,
-  //     furniture: this.refs.furniture.value,
-  //     parking: this.refs.parking.value
-  //   }
-  //   console.log("data",data);
-  //   axios.post('/api/rooms', {
-  //     data: data
-  //   })
-  //   .then(function (response) {
-  //     console.log(response);
-  //     callback(undefined, response);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //     callback(error);
-  //   });
+  // componentDidMount() {
   // }
+
+  checkRequiredFields() {
+    const listing = this.state;
+    const required_fields = ['street', 'city', 'rent_amount', 'available_date'];
+    for (let field of required_fields) {
+      console.log(`listing.${field}`, listing[field]);
+      if (!listing[field]) {
+        alert(`${field} is required.`);
+        return false;
+      }
+    }
+    return true;
+  }
 
   addListing(event) {
     event.preventDefault();
-    console.log('in method');
+    const listing = this.state;
+    if (this.checkRequiredFields()) {
+      axios.post('api/rooms', {
+        details: listing.details,
+        street: listing.street,
+        unit: listing.unit,
+        city: listing.city,
+        postal_code: listing.postal_code,
+        pet_friendly: listing.pet_friendly,
+        rent_amount: listing.rent_amount,
+        deposit_amount: listing.deposit_amount,
+        available_date: listing.available_date,
+        water: listing.water,
+        eletricity: listing.eletricity,
+        internet: listing.internet,
+        heat: listing.heat,
+        natural_gas: listing.natural_gas,
+        storage: listing.storage,
+        laundry_on_site: listing.laundry_in_site,
+        furniture: listing.furniture,
+        parking: listing.parking
 
-
-    let data = {
-      details: this.refs.details.value,
-      street: this.refs.street.value,
-      unit: this.refs.unit.value,
-      city: this.refs.city.value,
-      postal_code: this.refs.postalCode.value,
-      pet_friendly: this.refs.petFriendly.value,
-      rent_amount: this.refs.rentAmount.value,
-      deposit_amount: this.refs.depositAmount.value,
-      available_date: this.refs.availableDate.value,
-      water: this.refs.water.value,
-      eletricity: this.refs.eletricity.value,
-      internet: this.refs.internet.value,
-      heat: this.refs.heat.value,
-      natural_gas: this.refs.naturalGas.value,
-      storage: this.refs.storage.value,
-      laundry_on_site: this.refs.freeLaundry.value,
-      furniture: this.refs.furniture.value,
-      parking: this.refs.parking.value
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
-    console.log(data);
-
-    // const request = new Request('http://localhost:5000/api/rooms', {
-    //   method: 'POST',
-    //   headers: new Headers({ "Content-Type": "application/json", 'Accept': 'application/json' }),
-    //   body: JSON.stringify(data)
-    // });
-    // fetch(request)
-    //   .then(function (response) {
-    //     response.json()
-    //       .then(function (data) {
-    //         console.log('my data', data);
-    //       })
-    //   })
-
   }
-
 
   render() {
     return (
       <div>
         <form>
-          <div className="field">
-            <input name='details' ref='details' placeholder='Description'></input>
-          </div>
-          <div className="field">
-            <input name='street' ref='street' placeholder="street"></input>
-          </div>
-          <div className="field">
-            <input name='unit' ref='unit' placeholder="unit number"></input>
-          </div>
-          <div className="field">
-            <input name='city' ref='city' placeholder="city"></input>
-          </div>
-          <div className="field">
-            <input name='postal_code' ref='postal_code' placeholder="postal Code"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='pet_friendly' ref='pet_friendly' placeholder="pet_friendly"></input>
-            {/* <input type="checkbox" value={this.state.value} onChange={this.handleCheckbox} name='familyInRoom' ref='familyInRoom' placeholder="familyInRoom"></input> */}
-          </div>
-          <div className="field">
-            <input name='rent_amount' ref='rent_amount' placeholder="rent Amount"></input>
-          </div>
-          <div className="field">
-            <input name='deposit_amount' ref='deposit_amount' placeholder="deposit Amount"></input>
-          </div>
-          <div className="field">
-            <input name='available_date' ref='available_date' placeholder="available Date"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='water' ref='water' placeholder="water"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='eletricity' ref='eletricity' placeholder="eletricity"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='internet' ref='internet' placeholder="internet"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='heat' ref='heat' placeholder="heat"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='natural_gas' ref='natural_gas' placeholder="natural Gas"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='storage' ref='storage' placeholder="storage"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='laundry_on_site' ref='laundry_on_site' placeholder="laundry on site"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='furniture' ref='furniture' placeholder="furniture"></input>
-          </div>
-          <div className="field">
-            <input type="checkbox" name='parking' ref='parking' placeholder="parking"></input>
-          </div>
-        <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
-      </form>
-    </div>
+          <label>
+            Details:
+          <input
+              name="details"
+              type="text"
+              value={this.state.details}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Street:
+          <input
+              name="street"
+              type="text"
+              value={this.state.street}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Unit:
+          <input
+              name="unit"
+              type="text"
+              value={this.state.unit}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            City:
+          <input
+              name="city"
+              type="text"
+              value={this.state.city}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Postal Code:
+          <input
+              name="postal_code"
+              type="text"
+              value={this.state.postal_code}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Rent amount:
+          <input
+              name="rent_amount"
+              type="number"
+              value={this.state.rent_amount}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Deposit amount:
+          <input
+              name="deposit_amount"
+              type="number"
+              value={this.state.deposit_amount}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Available date:
+          <input
+              name="available_date"
+              type="date"
+              value={this.state.available_date}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Pet friendly:
+          <input
+              name="pet_friendly"
+              type="checkbox"
+              value={this.state.pet_friendly}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Water:
+          <input
+              name="water"
+              type="checkbox"
+              value={this.state.water}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Eletricity:
+          <input
+              name="eletricity"
+              type="checkbox"
+              value={this.state.eletricity}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Internet:
+          <input
+              name="internet"
+              type="checkbox"
+              value={this.state.internet}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Eletricity:
+          <input
+              name="eletricity"
+              type="checkbox"
+              value={this.state.eletricity}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Heat:
+          <input
+              name="heat"
+              type="checkbox"
+              value={this.state.heat}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Natural Gas:
+          <input
+              name="natural_gas"
+              type="checkbox"
+              value={this.state.natural_gas}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Storage:
+          <input
+              name="storage"
+              type="checkbox"
+              value={this.state.storage}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Laundry on site:
+          <input
+              name="laundry on site"
+              type="checkbox"
+              value={this.state.laundry_on_site}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Furniture:
+          <input
+              name="furniture"
+              type="checkbox"
+              value={this.state.furniture}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <label>
+            Parking:
+          <input
+              name="parking"
+              type="checkbox"
+              value={this.state.parking}
+              onChange={this.handleCheckbox} />
+          </label>
+          <br />
+          <button className="button is-primary" type="submit" onClick={this.addListing}>Submit</button>
+        </form>
+      </div>
     )
   }
 }

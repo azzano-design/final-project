@@ -1,3 +1,5 @@
+// import { resolveNs } from 'dns';
+
 const express = require('express');
 const pg = require('pg');
 const app = express();
@@ -81,7 +83,7 @@ app.post('/api/login', (request, response) => {
     });
 });
 
-app.get('/api/rooms' , (request, response) => {
+app.get('/api/rooms', (request, response) => {
   client.query("select * from rooms", (err, result) => {
     if (err) {
       return console.error("error running query", err);
@@ -92,15 +94,19 @@ app.get('/api/rooms' , (request, response) => {
 });
 
 app.post('/api/rooms', (request, response) => {
+  console.log("we are in the post api rooms");
   // hmn, maybe want to JSON.parse ?
   // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
-  const landlordId = 1000000;
+  const landlord_id = 1000000;
   
-  const fullAddress = request.body.address + ' ' + request.body.city + ' BC';
+  const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 
   console.log('fulladdress: ', fullAddress);
 
   geocoder.geocode(fullAddress, function ( err, data ) {
+    if(err){
+      console.log("error", err);
+    }
     console.log(data.results[0].geometry.location);
 
     const lat = data.results[0].geometry.location.lat;
@@ -125,6 +131,8 @@ app.post('/api/rooms', (request, response) => {
 
 //search for rooms
 app.get('/api/rooms/search', (request, response) => {
+  console.log("we are in the search");
+  response.send("this is search");
 
 });
 

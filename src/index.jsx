@@ -1,4 +1,6 @@
 require('../styles/main.scss');
+require("babel-core/register");
+require("babel-polyfill");
 
 import React from 'react';
 import ReactDom from 'react-dom';

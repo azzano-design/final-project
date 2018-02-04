@@ -24,12 +24,13 @@ class NewListing extends Component {
       laundry_on_site: false,
       furniture: false,
       parking: false,
-      file: '',
+      file: "",
       fileBase64String: "",
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addListing = this.addListing.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
   }
 
   handleCheckbox(event) {
@@ -54,8 +55,8 @@ class NewListing extends Component {
     });
   }
 
-  _handleImageChange(e) {
-    e.preventDefault();
+  handleImageChange(event) {
+    event.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
 
@@ -105,8 +106,8 @@ class NewListing extends Component {
         storage: listing.storage,
         laundry_on_site: listing.laundry_in_site,
         furniture: listing.furniture,
-        parking: listing.parking
-
+        parking: listing.parking,
+        file: listing.file
       })
         .then(function (response) {
           console.log(response);
@@ -292,10 +293,10 @@ class NewListing extends Component {
               onChange={this.handleCheckbox} />
           </label>
           <br />
+          <input type="file" onChange={this.handleImageChange} />
+          <br /><br />         
           <button className="button is-primary" type="submit" onClick={this.addListing}>Submit</button>
 
-          <input type="file" onChange={this._handleImageChange.bind(this)} />
-          <button className="button is-primary" type="submit" onClick={this.addListing.bind(this)}>Submit</button>
         </form>
       </div>
     )

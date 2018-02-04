@@ -54,7 +54,7 @@ class FacebookLogin extends Component {
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '330704774106294',
+        appId: '175711163181508',
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -157,10 +157,10 @@ class FacebookLogin extends Component {
       return (
         <div>
 
-          <LoginMenu user={this.state.currentUser} />
+          <LoginMenu user={this.state.currentUser} logout={this.logout.bind(this)}/>
 
         </div>
-      );
+      )
     }
   }
 }

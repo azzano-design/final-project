@@ -19,7 +19,7 @@ class LoginMenu extends Component {
             <a href="/#/user/settings" className="navbar-item">
               <img className="profilePic" src={this.props.user.profilePicURL}></img>{this.props.user.name}
             </a>
-            <span className="fb-logout-button navbar-item">
+            <span className="fb-logout-button navbar-item" onClick={this.props.logout}>
               <i className="fas fa-times fa-lg"></i>Logout
             </span>
           </div>

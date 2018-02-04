@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoginMenu from './login-menu.jsx';
 import axios from 'axios';
 
 class FacebookLogin extends Component {
@@ -25,7 +26,7 @@ class FacebookLogin extends Component {
       this.connectAPI(() => {
         console.log("state ->", this.state);
         this.getUserbyEmail(
-          this.state.currentUser.email, 
+          this.state.currentUser.email,
           (err, result) => {
             if (err) {
               console.log("oh god, why why why, err")
@@ -53,7 +54,7 @@ class FacebookLogin extends Component {
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '175711163181508',
+        appId: '330704774106294',
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -118,6 +119,7 @@ class FacebookLogin extends Component {
 
   checkLoginState() {
     FB.getLoginStatus((response) => {
+      console.log('res', response);
       this.statusChangeCallback(response);
     });
   }
@@ -145,14 +147,22 @@ class FacebookLogin extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={this.checkLoginState.bind(this)}></div>
-        <span onClick={this.logout.bind(this)}>logout</span>
-      </div>
-    );
-  }
+    if (this.state.isLogged === false){
+      return (
+        <div>
+          <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={this.checkLoginState.bind(this)}></div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
 
+          <LoginMenu user={this.state.currentUser} />
+
+        </div>
+      );
+    }
+  }
 }
 
 export default FacebookLogin;

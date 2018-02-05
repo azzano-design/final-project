@@ -22,7 +22,26 @@ exports.seed = function (knex, Promise) {
           name: 'Konrad Kowalski',
           email: 'konrad@gmail.com',
           phone_number: '7787787787'
+        },
+        {
+          id: 1000003,
+          name: 'Sen Chen',
+          email: 'Sen@gmail.com',
+          phone_number: '7787787787'
+        },
+        {
+          id: 1000004,
+          name: 'Alex Hill',
+          email: 'Chill@gmail.com',
+          phone_number: '7787787787'
+        },
+        {
+          id: 1000005,
+          name: 'Bruce Callander',
+          email: 'Bruce@gmail.com',
+          phone_number: '7787787787'
         }
+
       ]);
     });
 };

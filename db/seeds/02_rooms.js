@@ -10,19 +10,19 @@ exports.seed = function (knex, Promise) {
           landlord_id: 1000000,
           street: '2315 Brunswick St',
           city: 'Vancouver',
-          pet_friendly:
+          pet_friendly: TRUE,
           rent_amount: 1000,
-          deposit_amount:
+          deposit_amount: 500,
           available_date: '2018/03/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: 49.264254,
           lng: -123.097665
@@ -32,19 +32,19 @@ exports.seed = function (knex, Promise) {
           landlord_id: 1000000,
           street: 'Mount Pleasant',
           city: 'Vancouver',
-          pet_friendly:
+          pet_friendly: TRUE,
           rent_amount: 1000,
           deposit_amount:
           available_date: '2018/03/01',
-          water:
-          eletricity:
-          internet:
-          heat:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
           natural_gas:
           storage:
           laundry_on_site:
-          furniture:
-          parking:
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lng: -123.104124,
           lat: 49.266416
@@ -54,19 +54,19 @@ exports.seed = function (knex, Promise) {
           landlord_id: 1000001,
           street: 'Downtown Vancouver',
           city: 'Vancouver',
-          pet_friendly:
+          pet_friendly: TRUE,
           rent_amount: 1000,
           deposit_amount:
           available_date: '2018/01/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lng: -123.117943,
           lat: 49.278747
@@ -76,19 +76,19 @@ exports.seed = function (knex, Promise) {
           landlord_id: 1000002,
           street: 'EB Beach Ave FS Hornby St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: 1000,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/01/15',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lng: -123.132362,
           lat: 49.275147
@@ -98,2094 +98,1079 @@ exports.seed = function (knex, Promise) {
           landlord_id: 1000002,
           street: '128 west hastings st',
           city: 'Vancouver',
-          pet_friendly:
+          pet_friendly: TRUE,
           rent_amount: 1000,
-          deposit_amount:
+          deposit_amount: 600,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: 49.28184419999999,
           lng: -123.10816169999998
         },
         {
           id: 1000005,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000003,
+          street: '610 Granville Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1250,
+          deposit_amount:475,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000006,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000003,
+          street: 'The Elaine, 3819 & 3921 Cambie Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
+          available_date: '2018/03/01',
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
-          lat: ,
+          lat:
           lng:
         },
         {
           id: 1000007,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000004,
+          street: '1133 Hornby Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000008,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000005,
+          street: '1001 Homer Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000009,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000006,
+          street: '2145 York Avenue',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000010,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000006,
+          street: 'Beresford Apartments, 1221 Homer Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000011,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000006,
+          street: 'Penderville Apartments, 1748 East Pender Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000012,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000007,
+          street: '2706 - 501 Pacific Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000013,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000007,
+          street: '1801 - 1295 Richards Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000014,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000008,
+          street: '1058 Cambie Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000015,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000009,
+          street: '1603 - 1055 Homer Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000016,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000010,
+          street: '1501 - 1252 Hornby',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000017,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000011,
+          street: '403 - 1102 Hornby Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000018,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000012,
+          street: '1133 - 933 Hornby Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000019,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000013,
+          street: '1802 - 788 Richards Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000020,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000014,
+          street: '702 - 1277 Nelson Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000021,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000015,
+          street: '707 - 822 Seymour Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000022,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000016,
+          street: '602 - 819 Hamilton Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          pet_friendly: TRUE,
+          rent_amount: 2000,
+          deposit_amount: 750,
+          available_date:'2018/02/01',
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000023,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000017,
+          street: '221- 55 E. Cordova',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000024,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000017,
+          street: '210 - 55 E Cordova St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000025,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000018,
+          street: '803 - 128 Cordova St W',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000026,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000019,
+          street: '210 - 718 Main Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000027,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000020,
+          street: '1905 - 188 Keefer Place',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000028,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000021,
+          street: '1810 - 63 Keefer Place',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000029,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000021,
+          street: '605 - 633 Abbott St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000030,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000022,
+          street: '210 - 718 Main Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000031,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000023,
+          street: '2306 - 888 Homer Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000032,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000024,
+          street: '2610 - 939 Expo Blvd',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000033,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000024,
+          street: '1702 - 928 Beatty Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000034,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000025,
+          street: '1058 Cambie St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000035,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000026,
+          street: '710 - 1050 Burrard Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
+          details: TRUE,
           lat: ,
           lng:
         },
         {
           id: 1000036,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000027,
+          street: '2102 - 1200 Alberni',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: FALSE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000037,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000028,
+          street: '3405-1111 W Pender',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000038,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000029,
+          street: '2605 - 1077 West Cordova Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000039,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000030,
+          street: '2305 - 1166 Melville Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
+          details: TRUE,
           lat: ,
           lng:
         },
         {
           id: 1000040,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000030,
+          street: '2102 - 1200 Alberni',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: FALSE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000041,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000031,
+          street: '2302 - 1189 Melville',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000042,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000032,
+          street: '404 - 738 Broughton',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000043,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000033,
+          street: '2201 - 1420 West Georgia Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: FALSE,
+          details: TRUE,
           lat: ,
           lng:
         },
         {
           id: 1000044,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000034,
+          street: '902 - 560 Cardero',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
+          water: FALSE,
+          eletricity: FALSE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
+          details: TRUE,
           lat: ,
           lng:
         },
         {
           id: 1000045,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000035,
+          street: '1603 - 1723 Alberni Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000046,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000036,
+          street: '103 - 1860 Robson Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: TRUE,
+          rent_amount: 2500,
+          deposit_amount: 1000,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000047,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000037,
+          street: '9A - 1500 Alberni Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 3500,
+          deposit_amount: 1500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: FALSE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000048,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000038,
+          street: '1506 - 1420 West Georgia Street',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: FALSE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000049,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000039,
+          street: '303 - 717 Jervis St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: FALSE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: TRUE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000050,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000040,
+          street: '2102 - 1239 W Georgia St',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 2000,
+          deposit_amount: 750,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: FALSE,
+          heat: TRUE,
+          natural_gas: FALSE,
+          storage: TRUE,
+          laundry_on_site: FALSE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000051,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000041,
+          street: '2302 - 1189 Melville',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: TRUE,
+          parking: FALSE,
           details:
           lat: ,
           lng:
         },
         {
           id: 1000052,
-          landlord_id: ,
-          street: '',
+          landlord_id: 1000042,
+          street: '3405-1111 W Pender',
           city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
+          pet_friendly: FALSE,
+          rent_amount: 1500,
+          deposit_amount: 500,
           available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
+          water: TRUE,
+          eletricity: TRUE,
+          internet: TRUE,
+          heat: TRUE,
+          natural_gas: TRUE,
+          storage: TRUE,
+          laundry_on_site: TRUE,
+          furniture: FALSE,
+          parking: TRUE,
           details:
           lat: ,
           lng:
         },
-        {
-          id: 1000053,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000054,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000055,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000056,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000057,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000058,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000059,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          id: 1000060,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-        {
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000063,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000064,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000065,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000066,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000067,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000068,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000069,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000070,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000071,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000072,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000074,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000075,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        }
-        ,
-          id: 1000076,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000077,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000078,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000079,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000080,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000081,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000082,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000083,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000084,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000085,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000086,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000087,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000088,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000089,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000090,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000091,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000092,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000093,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000094,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000095,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000096,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000097,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000098,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000099,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        },
-          id: 1000100,
-          landlord_id: ,
-          street: '',
-          city: 'Vancouver',
-          pet_friendly:
-          rent_amount: ,
-          deposit_amount:
-          available_date: '2018/02/01',
-          water:
-          eletricity:
-          internet:
-          heat:
-          natural_gas:
-          storage:
-          laundry_on_site:
-          furniture:
-          parking:
-          details:
-          lat: ,
-          lng:
-        }
       ])
     });
 };

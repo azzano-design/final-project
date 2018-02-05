@@ -13,10 +13,6 @@ class UserSettings extends Component {
     {console.log('state user', this.state.user)}
     return (
       <div>
-        <div>
-          <h1> {this.state.user.name} </h1>
-          <img src={this.state.user.profilePicURL} />
-        </div>
         <UserMenu/>
         <div className="container">
           <div className="columns">
@@ -29,6 +25,10 @@ class UserSettings extends Component {
                         <label className="label" for="FirstName">First Name</label>
                         <div className="control">
                           <input className="input" type="text" name="FirstName" placeholder={this.state.user.name}></input>
+                        </div>
+                        <div>
+                          <h1> {this.state.user.name} </h1>
+                          <img src={this.state.user.profilePicURL} />
                         </div>
                       </div>
                       <div className="field">

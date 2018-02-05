@@ -7,7 +7,7 @@ exports.seed = function (knex, Promise) {
       return knex('rooms').insert([
         {
           id: 1000000,
-          landlord_id: 1000000,
+          landlord_id: 1000001,
           street: '2315 Brunswick St',
           city: 'Vancouver',
           pet_friendly: true,
@@ -29,7 +29,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 1000001,
-          landlord_id: 1000000,
+          landlord_id: 1000001,
           street: 'Mount Pleasant',
           city: 'Vancouver',
           pet_friendly: true,
@@ -73,7 +73,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 1000003,
-          landlord_id: 1000002,
+          landlord_id: 1000001,
           street: 'EB Beach Ave FS Hornby St',
           city: 'Vancouver',
           pet_friendly: true,
@@ -95,7 +95,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 1000004,
-          landlord_id: 1000002,
+          landlord_id: 1000001,
           street: '128 west hastings st',
           city: 'Vancouver',
           pet_friendly: true,
@@ -117,7 +117,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 1000005,
-          landlord_id: 1000003,
+          landlord_id: 1000001,
           street: '610 Granville Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -134,12 +134,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000006,
-          landlord_id: 1000003,
+          landlord_id: 1000001,
           street: 'The Elaine, 3819 & 3921 Cambie Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -156,12 +156,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat:
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000007,
-          landlord_id: 1000004,
+          landlord_id: 1000001,
           street: '1133 Hornby Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -178,12 +178,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000008,
-          landlord_id: 1000005,
+          landlord_id: 1000001,
           street: '1001 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -200,12 +200,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000009,
-          landlord_id: 1000006,
+          landlord_id: 1000001,
           street: '2145 York Avenue',
           city: 'Vancouver',
           pet_friendly: true,
@@ -222,12 +222,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000010,
-          landlord_id: 1000006,
+          landlord_id: 1000001,
           street: 'Beresford Apartments, 1221 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -244,12 +244,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000011,
-          landlord_id: 1000006,
+          landlord_id: 1000001,
           street: 'Penderville Apartments, 1748 East Pender Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -266,12 +266,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000012,
-          landlord_id: 1000007,
+          landlord_id: 1000001,
           street: '2706 - 501 Pacific Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -288,12 +288,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000013,
-          landlord_id: 1000007,
+          landlord_id: 1000001,
           street: '1801 - 1295 Richards Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -310,12 +310,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000014,
-          landlord_id: 1000008,
+          landlord_id: 1000001,
           street: '1058 Cambie Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -332,12 +332,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000015,
-          landlord_id: 1000009,
+          landlord_id: 1000001,
           street: '1603 - 1055 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -354,12 +354,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000016,
-          landlord_id: 1000010,
+          landlord_id: 1000001,
           street: '1501 - 1252 Hornby',
           city: 'Vancouver',
           pet_friendly: true,
@@ -376,12 +376,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000017,
-          landlord_id: 1000011,
+          landlord_id: 1000001,
           street: '403 - 1102 Hornby Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -398,12 +398,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000018,
-          landlord_id: 1000012,
+          landlord_id: 1000001,
           street: '1133 - 933 Hornby Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -420,12 +420,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000019,
-          landlord_id: 1000013,
+          landlord_id: 1000001,
           street: '1802 - 788 Richards Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -442,12 +442,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000020,
-          landlord_id: 1000014,
+          landlord_id: 1000001,
           street: '702 - 1277 Nelson Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -464,12 +464,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000021,
-          landlord_id: 1000015,
+          landlord_id: 1000001,
           street: '707 - 822 Seymour Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -486,12 +486,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000022,
-          landlord_id: 1000016,
+          landlord_id: 1000001,
           street: '602 - 819 Hamilton Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -508,12 +508,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000023,
-          landlord_id: 1000017,
+          landlord_id: 1000001,
           street: '221- 55 E. Cordova',
           city: 'Vancouver',
           pet_friendly: false,
@@ -530,12 +530,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000024,
-          landlord_id: 1000017,
+          landlord_id: 1000001,
           street: '210 - 55 E Cordova St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -552,12 +552,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000025,
-          landlord_id: 1000018,
+          landlord_id: 1000001,
           street: '803 - 128 Cordova St W',
           city: 'Vancouver',
           pet_friendly: true,
@@ -574,12 +574,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000026,
-          landlord_id: 1000019,
+          landlord_id: 1000001,
           street: '210 - 718 Main Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -596,12 +596,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000027,
-          landlord_id: 1000020,
+          landlord_id: 1000001,
           street: '1905 - 188 Keefer Place',
           city: 'Vancouver',
           pet_friendly: true,
@@ -618,12 +618,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000028,
-          landlord_id: 1000021,
+          landlord_id: 1000001,
           street: '1810 - 63 Keefer Place',
           city: 'Vancouver',
           pet_friendly: true,
@@ -640,12 +640,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000029,
-          landlord_id: 1000021,
+          landlord_id: 1000001,
           street: '605 - 633 Abbott St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -662,12 +662,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000030,
-          landlord_id: 1000022,
+          landlord_id: 1000001,
           street: '210 - 718 Main Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -684,12 +684,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000031,
-          landlord_id: 1000023,
+          landlord_id: 1000001,
           street: '2306 - 888 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -706,12 +706,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000032,
-          landlord_id: 1000024,
+          landlord_id: 1000001,
           street: '2610 - 939 Expo Blvd',
           city: 'Vancouver',
           pet_friendly: true,
@@ -728,12 +728,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000033,
-          landlord_id: 1000024,
+          landlord_id: 1000001,
           street: '1702 - 928 Beatty Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -750,12 +750,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000034,
-          landlord_id: 1000025,
+          landlord_id: 1000001,
           street: '1058 Cambie St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -772,12 +772,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000035,
-          landlord_id: 1000026,
+          landlord_id: 1000001,
           street: '710 - 1050 Burrard Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -794,12 +794,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000036,
-          landlord_id: 1000027,
+          landlord_id: 1000001,
           street: '2102 - 1200 Alberni',
           city: 'Vancouver',
           pet_friendly: false,
@@ -816,12 +816,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000037,
-          landlord_id: 1000028,
+          landlord_id: 1000001,
           street: '3405-1111 W Pender',
           city: 'Vancouver',
           pet_friendly: false,
@@ -838,12 +838,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000038,
-          landlord_id: 1000029,
+          landlord_id: 1000001,
           street: '2605 - 1077 West Cordova Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -860,12 +860,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000039,
-          landlord_id: 1000030,
+          landlord_id: 1000001,
           street: '2305 - 1166 Melville Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -882,12 +882,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000040,
-          landlord_id: 1000030,
+          landlord_id: 1000001,
           street: '2102 - 1200 Alberni',
           city: 'Vancouver',
           pet_friendly: true,
@@ -904,12 +904,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000041,
-          landlord_id: 1000031,
+          landlord_id: 1000001,
           street: '2302 - 1189 Melville',
           city: 'Vancouver',
           pet_friendly: true,
@@ -926,12 +926,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000042,
-          landlord_id: 1000032,
+          landlord_id: 1000001,
           street: '404 - 738 Broughton',
           city: 'Vancouver',
           pet_friendly: true,
@@ -948,12 +948,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000043,
-          landlord_id: 1000033,
+          landlord_id: 1000001,
           street: '2201 - 1420 West Georgia Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -970,12 +970,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000044,
-          landlord_id: 1000034,
+          landlord_id: 1000001,
           street: '902 - 560 Cardero',
           city: 'Vancouver',
           pet_friendly: false,
@@ -992,12 +992,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000045,
-          landlord_id: 1000035,
+          landlord_id: 1000001,
           street: '1603 - 1723 Alberni Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -1014,12 +1014,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000046,
-          landlord_id: 1000036,
+          landlord_id: 1000001,
           street: '103 - 1860 Robson Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -1036,12 +1036,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000047,
-          landlord_id: 1000037,
+          landlord_id: 1000001,
           street: '9A - 1500 Alberni Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1058,12 +1058,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000048,
-          landlord_id: 1000038,
+          landlord_id: 1000001,
           street: '1506 - 1420 West Georgia Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1080,12 +1080,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000049,
-          landlord_id: 1000039,
+          landlord_id: 1000001,
           street: '303 - 717 Jervis St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1102,12 +1102,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000050,
-          landlord_id: 1000040,
+          landlord_id: 1000001,
           street: '2102 - 1239 W Georgia St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1124,12 +1124,12 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000051,
-          landlord_id: 1000041,
+          landlord_id: 1000001,
           street: '2302 - 1189 Melville',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1146,12 +1146,12 @@ exports.seed = function (knex, Promise) {
           furniture: true,
           parking: false,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
         {
           id: 1000052,
-          landlord_id: 1000042,
+          landlord_id: 1000001,
           street: '3405-1111 W Pender',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1168,8 +1168,8 @@ exports.seed = function (knex, Promise) {
           furniture: false,
           parking: true,
           details: null,
-          lat: ,
-          lng:
+          lat: null,
+          lng: null
         },
       ])
     });

@@ -76,7 +76,29 @@ export class MapContainer extends Component {
       ]
     })
     for (let room of this.state.rooms){
-      const info = '<div class="fb-logout-button"><h2>NAME</h2><img src="/images/house.jpg"></img></div>'
+
+      const info =
+      '<div class="card">' +
+        '<div class="card-image">' +
+          '<figure class="image is-4by3">' +
+            '<img src="/images/house.jpg" alt="Placeholder image">' +
+          '</figure>' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<div class="media">' +
+          '<div class="media-content">' +
+            '<p class="title is-4">'+ room.street + '</p>' +
+            '<p class="subtitle is-6">$'+ room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="content">' +
+          '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+          '<br>' +
+          '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+
       this.addMarker(null, info, room.lat, room.lng);
     }
   }

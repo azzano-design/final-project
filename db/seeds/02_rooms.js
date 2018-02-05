@@ -23,7 +23,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
           lat: 49.264254,
           lng: -123.097665
         },
@@ -45,7 +45,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: true,
-          details: null,
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
           lng: -123.104124,
           lat: 49.266416
         },
@@ -67,7 +67,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
           lng: -123.117943,
           lat: 49.278747
         },
@@ -89,7 +89,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
           lng: -123.132362,
           lat: 49.275147
         },
@@ -111,7 +111,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
           lat: 49.28184419999999,
           lng: -123.10816169999998
         },
@@ -133,9 +133,9 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.283337,
+          lng: -123.116406
         },
         {
           id: 1000006,
@@ -155,9 +155,9 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat:
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2505836,
+          lng: -123.1157268
         },
         {
           id: 1000007,
@@ -177,9 +177,9 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2790825,
+          lng: -123.12768080000001
         },
         {
           id: 1000008,
@@ -199,13 +199,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.27732109999999,
+          lng: -123.12062630000003
         },
         {
           id: 1000009,
-          landlord_id: 1000006,
+          landlord_id: 1000000,
           street: '2145 York Avenue',
           city: 'Vancouver',
           pet_friendly: true,
@@ -221,13 +221,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.271826,
+          lng: -123.15395890000002
         },
         {
           id: 1000010,
-          landlord_id: 1000006,
+          landlord_id: 1000000,
           street: 'Beresford Apartments, 1221 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -243,13 +243,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2751553,
+          lng: -123.12378319999999
         },
         {
           id: 1000011,
-          landlord_id: 1000006,
+          landlord_id: 1000003,
           street: 'Penderville Apartments, 1748 East Pender Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -265,13 +265,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.28002439999999,
+          lng: -123.06919260000001
         },
         {
           id: 1000012,
-          landlord_id: 1000007,
+          landlord_id: 1000001,
           street: '2706 - 501 Pacific Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -287,13 +287,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2740806,
+          lng: -123.1273946
         },
         {
           id: 1000013,
-          landlord_id: 1000007,
+          landlord_id: 1000002,
           street: '1801 - 1295 Richards Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -309,13 +309,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2751294,
+          lng: -123.12571379999997
         },
         {
           id: 1000014,
-          landlord_id: 1000008,
+          landlord_id: 1000003,
           street: '1058 Cambie Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -331,13 +331,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.27511059999999,
+          lng: -123.11870090000002
         },
         {
           id: 1000015,
-          landlord_id: 1000009,
+          landlord_id: 1000000,
           street: '1603 - 1055 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -353,13 +353,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.276877,
+          lng: -123.12088299999999
         },
         {
           id: 1000016,
-          landlord_id: 1000010,
+          landlord_id: 1000001,
           street: '1501 - 1252 Hornby',
           city: 'Vancouver',
           pet_friendly: true,
@@ -375,13 +375,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2775863,
+          lng: -123.1288892
         },
         {
           id: 1000017,
-          landlord_id: 1000011,
+          landlord_id: 1000001,
           street: '403 - 1102 Hornby Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -397,13 +397,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2791238,
+          lng: -123.12655860000001
         },
         {
           id: 1000018,
-          landlord_id: 1000012,
+          landlord_id: 1000002,
           street: '1133 - 933 Hornby Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -419,13 +419,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.28132329999999,
+          lng: -123.12410139999997
         },
         {
           id: 1000019,
-          landlord_id: 1000013,
+          landlord_id: 1000000,
           street: '1802 - 788 Richards Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -441,13 +441,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2804843,
+          lng: -123.11698839999997
         },
         {
           id: 1000020,
-          landlord_id: 1000014,
+          landlord_id: 1000005,
           street: '702 - 1277 Nelson Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -463,13 +463,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.27926950000001,
+          lng: -123.12303830000002
         },
         {
           id: 1000021,
-          landlord_id: 1000015,
+          landlord_id: 1000004,
           street: '707 - 822 Seymour Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -485,13 +485,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.28032140000001,
+          lng: -123.11923039999999
         },
         {
           id: 1000022,
-          landlord_id: 1000016,
+          landlord_id: 1000001,
           street: '602 - 819 Hamilton Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -507,13 +507,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2786905,
+          lng: -123.11642310000002
         },
         {
           id: 1000023,
-          landlord_id: 1000017,
+          landlord_id: 1000005,
           street: '221- 55 E. Cordova',
           city: 'Vancouver',
           pet_friendly: false,
@@ -529,13 +529,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2826089,
+          lng: -123.1028938
         },
         {
           id: 1000024,
-          landlord_id: 1000017,
+          landlord_id: 1000005,
           street: '210 - 55 E Cordova St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -551,13 +551,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2826089,
+          lng: -123.1028938
         },
         {
           id: 1000025,
-          landlord_id: 1000018,
+          landlord_id: 1000003,
           street: '803 - 128 Cordova St W',
           city: 'Vancouver',
           pet_friendly: true,
@@ -573,13 +573,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.28297500000001,
+          lng: -123.1080839
         },
         {
           id: 1000026,
-          landlord_id: 1000019,
+          landlord_id: 1000002,
           street: '210 - 718 Main Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -595,13 +595,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2780953,
+          lng: -123.09955030000003
         },
         {
           id: 1000027,
-          landlord_id: 1000020,
+          landlord_id: 1000003,
           street: '1905 - 188 Keefer Place',
           city: 'Vancouver',
           pet_friendly: true,
@@ -617,13 +617,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.27968019999999,
+          lng: -123.10883060000003
         },
         {
           id: 1000028,
-          landlord_id: 1000021,
+          landlord_id: 1000003,
           street: '1810 - 63 Keefer Place',
           city: 'Vancouver',
           pet_friendly: true,
@@ -639,13 +639,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.279782,
+          lng: -123.10638799999998
         },
         {
           id: 1000029,
-          landlord_id: 1000021,
+          landlord_id: 1000000,
           street: '605 - 633 Abbott St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -661,13 +661,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2793042,
+          lng: -123.10782319999998
         },
         {
           id: 1000030,
-          landlord_id: 1000022,
+          landlord_id: 1000002,
           street: '210 - 718 Main Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -683,13 +683,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2780953,
+          lng: -123.09955030000003
         },
         {
           id: 1000031,
-          landlord_id: 1000023,
+          landlord_id: 1000000,
           street: '2306 - 888 Homer Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -705,13 +705,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2786482,
+          lng: -123.1179687
         },
         {
           id: 1000032,
-          landlord_id: 1000024,
+          landlord_id: 1000000,
           street: '2610 - 939 Expo Blvd',
           city: 'Vancouver',
           pet_friendly: true,
@@ -727,13 +727,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.27555160000001,
+          lng: -123.11542150000002
         },
         {
           id: 1000033,
-          landlord_id: 1000024,
+          landlord_id: 1000000,
           street: '1702 - 928 Beatty Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -749,13 +749,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2758282,
+          lng: -123.11562989999999
         },
         {
           id: 1000034,
-          landlord_id: 1000025,
+          landlord_id: 1000000,
           street: '1058 Cambie St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -771,13 +771,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2751106,
+          lng: -123.11870090000002
         },
         {
           id: 1000035,
-          landlord_id: 1000026,
+          landlord_id: 1000002,
           street: '710 - 1050 Burrard Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -793,13 +793,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2801011,
+          lng: -123.12652000000003
         },
         {
           id: 1000036,
-          landlord_id: 1000027,
+          landlord_id: 1000001,
           street: '2102 - 1200 Alberni',
           city: 'Vancouver',
           pet_friendly: false,
@@ -815,14 +815,14 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2935756,
+          lng: -123.13707959999999
         },
         {
           id: 1000037,
-          landlord_id: 1000028,
-          street: '3405-1111 W Pender',
+          landlord_id: 1000000,
+          street: '1111 W Pender',
           city: 'Vancouver',
           pet_friendly: false,
           rent_amount: 2500,
@@ -837,13 +837,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2877787,
+          lng: -123.12070890000001
         },
         {
           id: 1000038,
-          landlord_id: 1000029,
+          landlord_id: 1000001,
           street: '2605 - 1077 West Cordova Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -859,14 +859,14 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2883765,
+          lng: -123.11787830000003
         },
         {
           id: 1000039,
-          landlord_id: 1000030,
-          street: '2305 - 1166 Melville Street',
+          landlord_id: 1000002,
+          street: '1166 Melville Street',
           city: 'Vancouver',
           pet_friendly: false,
           rent_amount: 1500,
@@ -881,13 +881,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 40.8430923,
+          lng: -73.87098530000003
         },
         {
           id: 1000040,
-          landlord_id: 1000030,
+          landlord_id: 1000001,
           street: '2102 - 1200 Alberni',
           city: 'Vancouver',
           pet_friendly: true,
@@ -903,13 +903,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2867031,
+          lng: -123.12630680000001
         },
         {
           id: 1000041,
-          landlord_id: 1000031,
+          landlord_id: 1000003,
           street: '2302 - 1189 Melville',
           city: 'Vancouver',
           pet_friendly: true,
@@ -925,13 +925,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2877562,
+          lng: -123.12358670000003
         },
         {
           id: 1000042,
-          landlord_id: 1000032,
+          landlord_id: 1000002,
           street: '404 - 738 Broughton',
           city: 'Vancouver',
           pet_friendly: true,
@@ -947,13 +947,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2881867,
+          lng: -123.12879809999998
         },
         {
           id: 1000043,
-          landlord_id: 1000033,
+          landlord_id: 1000003,
           street: '2201 - 1420 West Georgia Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -969,13 +969,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2890569,
+          lng: -123.1288002
         },
         {
           id: 1000044,
-          landlord_id: 1000034,
+          landlord_id: 1000004,
           street: '902 - 560 Cardero',
           city: 'Vancouver',
           pet_friendly: false,
@@ -991,13 +991,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.29142859999999,
+          lng: -123.12894900000003
         },
         {
           id: 1000045,
-          landlord_id: 1000035,
+          landlord_id: 1000005,
           street: '1603 - 1723 Alberni Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -1013,13 +1013,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.291566,
+          lng: -123.13287830000002
         },
         {
           id: 1000046,
-          landlord_id: 1000036,
+          landlord_id: 1000005,
           street: '103 - 1860 Robson Street',
           city: 'Vancouver',
           pet_friendly: true,
@@ -1035,13 +1035,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.291783,
+          lng: -123.13653249999999
         },
         {
           id: 1000047,
-          landlord_id: 1000037,
+          landlord_id: 1000005,
           street: '9A - 1500 Alberni Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1057,13 +1057,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2893961,
+          lng: -123.13062839999998
         },
         {
           id: 1000048,
-          landlord_id: 1000038,
+          landlord_id: 1000005,
           street: '1506 - 1420 West Georgia Street',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1079,13 +1079,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2890569,
+          lng: -123.1288002
         },
         {
           id: 1000049,
-          landlord_id: 1000039,
+          landlord_id: 1000005,
           street: '303 - 717 Jervis St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1101,13 +1101,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2878218,
+          lng: -123.12824209999997
         },
         {
           id: 1000050,
-          landlord_id: 1000040,
+          landlord_id: 1000005,
           street: '2102 - 1239 W Georgia St',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1123,13 +1123,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.287695,
+          lng: -123.12562609999998
         },
         {
           id: 1000051,
-          landlord_id: 1000041,
+          landlord_id: 1000005,
           street: '2302 - 1189 Melville',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1145,13 +1145,13 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2877562,
+          lng: -123.12358670000003
         },
         {
           id: 1000052,
-          landlord_id: 1000042,
+          landlord_id: 1000005,
           street: '3405-1111 W Pender',
           city: 'Vancouver',
           pet_friendly: false,
@@ -1167,9 +1167,9 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: null,
-          lat: ,
-          lng:
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          lat: 49.2877787,
+          lng: -123.12070890000001
         },
       ])
     });

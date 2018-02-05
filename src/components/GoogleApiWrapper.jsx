@@ -70,7 +70,6 @@ export class MapContainer extends Component {
   }
 
   onMarkerClick(marker, e) {
-
     this.setState({
       activeMarkers: [marker]
     });
@@ -135,13 +134,25 @@ export class MapContainer extends Component {
 
   async handleSubmit(ev) {
     ev.preventDefault();
-    console.log("inside submit");
-    //  await this.setState({
-    //    rooms : []
-    //  });
-    this.state.rooms.forEach((room) => {
-      console.log("each room", room);
+    const { otherMarkers } = this.state;
+    this.setState({
+      otherMarkers: []
+    });
+    await this.state.rooms.forEach((room) => {
+      if (this.state.pet_friendly) {
+        if (room.pet_friendly) {
+          console.log("room pet_friendly true");
+          console.log("other markers before add", this.state.otherMarkers);
+          this.addMarker(null, room.street, room.lat, room.lng);
+          // this.setState({
+          //   otherMarkers: [
+          //     ...otherMarkers, room
+          //   ]
+          // })
+        }
+      }
     })
+    console.log("other markers after filtering", this.state.otherMarkers);
     // console.log("state", this.state);
     // console.log("rooms", this.state.rooms);
   }
@@ -195,11 +206,11 @@ export class MapContainer extends Component {
                 </div>
                 <div className="field">
                   <label>Pet Friendly</label>
-                  <input 
-                  name="pet_friendly" 
-                  type="checkbox"
-                  value={this.state.pet_friendly}
-                  onChange={this.handleCheckbox}></input>
+                  <input
+                    name="pet_friendly"
+                    type="checkbox"
+                    value={this.state.pet_friendly}
+                    onChange={this.handleCheckbox}></input>
                 </div>
                 <div className="field">
                   <label>Rent Amount</label>
@@ -210,7 +221,7 @@ export class MapContainer extends Component {
                     value={this.state.rent_amount_min}
                     onChange={this.handleInputChange}
                     placeholder="min"></input>
-                    <br />
+                  <br />
                   <input
                     name="rent_amount_max"
                     type="number"

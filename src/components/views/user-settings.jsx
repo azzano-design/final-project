@@ -6,6 +6,7 @@ class UserSettings extends Component {
     return (
       <div>
         <UserMenu/>
+
         <div className="container">
           <div className="columns">
             <section className="column">

@@ -15,7 +15,7 @@ export class MapContainer extends Component {
     this.state = {
       drawMode: false,
       loaded: false,
-      menuopen: false,
+      menuopen: true,
       activeMarkers: [],
       address: '',
       rooms: [],
@@ -76,22 +76,36 @@ export class MapContainer extends Component {
       ]
     })
     for (let room of this.state.rooms){
-      this.addMarker(null, room.street, room.lat, room.lng);
+
+      const info =
+      '<div class="card">' +
+        '<div class="card-image">' +
+          '<figure class="image is-4by3">' +
+            '<img src="/images/house.jpg" alt="Placeholder image">' +
+          '</figure>' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<div class="media">' +
+          '<div class="media-content">' +
+            '<p class="title is-4">'+ room.street + '</p>' +
+            '<p class="subtitle is-6">$'+ room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="content">' +
+          '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+          '<br>' +
+          '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+
+      this.addMarker(null, info, room.lat, room.lng);
     }
   }
-
-  addMarkerFromDatabase() {
-    //TODO for each item in array this.state.rooms
-    //TODO convert this.state.rooms.street into geocoded address
-    //TODO add marker for each room
-  }
-
 
   componentDidMount() {
     this.renderRooms();
   }
-
-
 
   addMarker(label, info, lat, long) {
     const { otherMarkers } = this.state;
@@ -115,9 +129,13 @@ export class MapContainer extends Component {
     if (this.state.activeMarkers) {
       return this.state.activeMarkers.map((marker, i) => (
         <div key={`marker${i}`}>
+        <div className="fb-logout-button">
           {marker.label}
           {marker.info}
-        </div>)
+        </div>
+        <img src="/images/house.jpg"></img>
+        </div>
+        )
       );
     }
   }
@@ -214,64 +232,130 @@ export class MapContainer extends Component {
           <div className="columns">
             <aside className="searchMenu column is-3">
               <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
-                <i class="fas fa-cog"></i>
+                <i className="fas fa-cog fa-2x"></i>
               </button>
-              <button onClick={this.toggleDraw.bind(this)}>Polygon Search</button>
               <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="field">
-                  <label>Available</label>
-                  <input type="date"></input>
+                <div className="columns">
+                  <div className="column">
+                    <div className="field">
+                      <label>Available</label>
+                      <input className="input" type="date"></input>
+                    </div>
+                    <div className="field">
+                      <label>Rent Amount</label>
+                      <input className="input" name="rent_amount"></input>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Pet Friendly</label>
-                  <input name="pet_friendly" type="checkbox"></input>
+                <div className="columns">
+                  <div className="column">
+                    <a className="button is-large" onClick={this.toggleDraw.bind(this)}>
+                      <span className="icon is-medium">
+                        <i className="fab fa-bandcamp"></i>
+                      </span>
+                      <span>Polygon Search</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Rent Amount</label>
-                  <input name="rent_amount"></input>
+                <div>
+                  <span className="searchHeading">Utilities</span>
                 </div>
-                <div className="field">
-                  <label>Available Date</label>
-                  <input name="available_date"></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Water</label>
+                        <label className="switch">
+                          <input name="water" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Eletricity</label>
+                        <label className="switch">
+                          <input name="electricity" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Heat</label>
+                        <label className="switch">
+                          <input name="heat" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Natural Gas</label>
+                        <label className="switch">
+                          <input name="natural_gas" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Water</label>
-                  <input name="water" type="checkbox"></input>
+                <div>
+                  <span className="searchHeading">Amenities</span>
                 </div>
-                <div className="field">
-                  <label>Eletricity</label>
-                  <input name="eletricity" type="checkbox"></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Storage</label>
+                        <label className="switch">
+                          <input name="gas" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Laundry</label>
+                        <label className="switch">
+                          <input name="onsite_laundry" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Parking</label>
+                        <label className="switch">
+                          <input name="parking" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Pet Friendly</label>
+                        <label className="switch">
+                          <input name="pet_friendly" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Internet</label>
+                        <label className="switch">
+                          <input name="internet" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Fully Furnished</label>
+                        <label className="switch">
+                          <input name="furnished" type="checkbox"></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Internet</label>
-                  <input name="internet" type="checkbox"></input>
+                <div className="columns">
+                  <div className="column">
+                    <button className="submit button is-primary is-large"><i className="fas fa-check"></i>Submit</button>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Heat</label>
-                  <input name="heat" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Natural Gas</label>
-                  <input name="natural_gas" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Storage</label>
-                  <input name="storage" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Onsite Laundry</label>
-                  <input name="laundry_on_site" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Fully Furnished</label>
-                  <input name="furniture" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Parking</label>
-                  <input name="parking" type="checkbox"></input>
-                </div>
-                <h1>{this.renderMarkerInfo.bind(this)()}</h1>
-                <button>Summit </button>
+                <span>Results:</span>
+                {this.renderMarkerInfo.bind(this)()}
               </form>
             </aside>
             <div className="column is-9">
@@ -303,58 +387,61 @@ export class MapContainer extends Component {
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="field">
                   <label>Available</label>
-                  <input type="date"></input>
+                  <input className="input" type="date"></input>
                 </div>
                 <div className="field">
                   <label>Pet Friendly</label>
-                  <input name="pet_friendly" type="checkbox"></input>
+                  <label className="switch">
+                    <input name="pet_friendly" type="checkbox"></input>
+                    <span className="slider round"></span>
+                  </label>
                 </div>
                 <div className="field">
                   <label>Rent Amount</label>
-                  <input name="rent_amount"></input>
+                  <input className="input" name="rent_amount"></input>
                 </div>
                 <div className="field">
                   <label>Available Date</label>
-                  <input name="available_date"></input>
+                  <input className="input" name="available_date"></input>
                 </div>
                 <div className="field">
                   <label>Water</label>
-                  <input name="water" type="checkbox"></input>
+                  <input className="input" name="water" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Eletricity</label>
-                  <input name="eletricity" type="checkbox"></input>
+                  <input className="input" name="eletricity" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Internet</label>
-                  <input name="internet" type="checkbox"></input>
+                  <input className="input" name="internet" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Heat</label>
-                  <input name="heat" type="checkbox"></input>
+                  <input className="input" name="heat" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Natural Gas</label>
-                  <input name="natural_gas" type="checkbox"></input>
+                  <input className="input" name="natural_gas" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Storage</label>
-                  <input name="storage" type="checkbox"></input>
+                  <input className="input" name="storage" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Onsite Laundry</label>
-                  <input name="laundry_on_site" type="checkbox"></input>
+                  <input className="input" name="laundry_on_site" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Fully Furnished</label>
-                  <input name="furniture" type="checkbox"></input>
+                  <input className="input" name="furniture" type="checkbox"></input>
                 </div>
                 <div className="field">
                   <label>Parking</label>
-                  <input name="parking" type="checkbox"></input>
+                  <input className="input" name="parking" type="checkbox"></input>
                 </div>
                 <h1>{this.renderMarkerInfo.bind(this)()}</h1>
-                <button>Summit </button>
+                <button className="button is-primary">Summit </button>
               </form>
             </aside>
             <div className="column is-9">

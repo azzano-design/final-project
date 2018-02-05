@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 class Home extends Component {
   render() {
     return (
-      <div className="container has-text-centered">
+      <div className="homeLanding container has-text-centered">
+
         <h1 className="title">
           Go from getting a tenant to a GREAT tenant.
         </h1>

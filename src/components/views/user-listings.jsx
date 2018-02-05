@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 import UserMenu from '../user-menu.jsx';
 
 class UserListings extends Component {
+
+  async renderUserListings() {
+
+  }
+
+  componentDidMount() {
+    this.renderUserListings();
+  }
+
+
   render() {
     return (
       <div>

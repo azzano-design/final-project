@@ -23,7 +23,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.264254,
           lng: -123.097665
         },
@@ -45,7 +45,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.104124,
           lat: 49.266416
         },
@@ -67,7 +67,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.117943,
           lat: 49.278747
         },
@@ -89,7 +89,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.132362,
           lat: 49.275147
         },
@@ -111,7 +111,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28184419999999,
           lng: -123.10816169999998
         },
@@ -133,7 +133,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.283337,
           lng: -123.116406
         },
@@ -155,7 +155,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2505836,
           lng: -123.1157268
         },
@@ -177,7 +177,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2790825,
           lng: -123.12768080000001
         },
@@ -199,7 +199,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27732109999999,
           lng: -123.12062630000003
         },
@@ -221,7 +221,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.271826,
           lng: -123.15395890000002
         },
@@ -243,7 +243,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751553,
           lng: -123.12378319999999
         },
@@ -265,7 +265,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28002439999999,
           lng: -123.06919260000001
         },
@@ -287,7 +287,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2740806,
           lng: -123.1273946
         },
@@ -309,7 +309,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751294,
           lng: -123.12571379999997
         },
@@ -331,7 +331,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27511059999999,
           lng: -123.11870090000002
         },
@@ -353,7 +353,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.276877,
           lng: -123.12088299999999
         },
@@ -375,7 +375,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2775863,
           lng: -123.1288892
         },
@@ -397,7 +397,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2791238,
           lng: -123.12655860000001
         },
@@ -419,7 +419,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28132329999999,
           lng: -123.12410139999997
         },
@@ -441,7 +441,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2804843,
           lng: -123.11698839999997
         },
@@ -463,7 +463,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27926950000001,
           lng: -123.12303830000002
         },
@@ -485,7 +485,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28032140000001,
           lng: -123.11923039999999
         },
@@ -507,7 +507,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2786905,
           lng: -123.11642310000002
         },
@@ -529,7 +529,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2826089,
           lng: -123.1028938
         },
@@ -551,7 +551,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2826089,
           lng: -123.1028938
         },
@@ -573,7 +573,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28297500000001,
           lng: -123.1080839
         },
@@ -595,7 +595,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2780953,
           lng: -123.09955030000003
         },
@@ -617,7 +617,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27968019999999,
           lng: -123.10883060000003
         },
@@ -639,7 +639,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.279782,
           lng: -123.10638799999998
         },
@@ -661,7 +661,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2793042,
           lng: -123.10782319999998
         },
@@ -683,7 +683,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2780953,
           lng: -123.09955030000003
         },
@@ -705,7 +705,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2786482,
           lng: -123.1179687
         },
@@ -727,7 +727,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27555160000001,
           lng: -123.11542150000002
         },
@@ -749,7 +749,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2758282,
           lng: -123.11562989999999
         },
@@ -771,7 +771,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751106,
           lng: -123.11870090000002
         },
@@ -793,7 +793,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2801011,
           lng: -123.12652000000003
         },
@@ -815,7 +815,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2935756,
           lng: -123.13707959999999
         },
@@ -837,7 +837,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877787,
           lng: -123.12070890000001
         },
@@ -859,7 +859,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2883765,
           lng: -123.11787830000003
         },
@@ -881,7 +881,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 40.8430923,
           lng: -73.87098530000003
         },
@@ -903,7 +903,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2867031,
           lng: -123.12630680000001
         },
@@ -925,7 +925,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877562,
           lng: -123.12358670000003
         },
@@ -947,7 +947,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2881867,
           lng: -123.12879809999998
         },
@@ -969,7 +969,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2890569,
           lng: -123.1288002
         },
@@ -991,7 +991,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.29142859999999,
           lng: -123.12894900000003
         },
@@ -1013,7 +1013,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.291566,
           lng: -123.13287830000002
         },
@@ -1035,7 +1035,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.291783,
           lng: -123.13653249999999
         },
@@ -1057,7 +1057,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2893961,
           lng: -123.13062839999998
         },
@@ -1079,7 +1079,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2890569,
           lng: -123.1288002
         },
@@ -1101,7 +1101,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: true,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2878218,
           lng: -123.12824209999997
         },
@@ -1123,7 +1123,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: false,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.287695,
           lng: -123.12562609999998
         },
@@ -1145,7 +1145,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: true,
           parking: false,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877562,
           lng: -123.12358670000003
         },
@@ -1167,7 +1167,7 @@ exports.seed = function (knex, Promise) {
           laundry_on_site: true,
           furniture: false,
           parking: true,
-          details: "Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who's responsible for the ask for this request?",
+          details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877787,
           lng: -123.12070890000001
         },

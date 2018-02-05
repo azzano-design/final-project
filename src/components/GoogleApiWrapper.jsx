@@ -219,111 +219,195 @@ export class MapContainer extends Component {
                 <i className="fas fa-cog fa-2x"></i>
               </button>
               <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="field">
-                  <label>Available</label>
-                  <input
-                    name="available_date"
-                    type="date"
-                    value={this.state.available_date}
-                    onChange={this.handleInputChange}></input>
+                <div className="columns">
+                  <div className="column">
+                    <div className="field">
+                      <label>Available</label>
+                      <input
+                        className="input"
+                        name="available_date"
+                        type="date"
+                        value={this.state.available_date}
+                        onChange={this.handleInputChange}></input>
+                    </div>
+                    <div className="field">
+                      <label>Rent Amount</label>
+                      <div className="columns">
+                        <div className="column">
+                          <input
+                            className="input"
+                            name="rent_amount_min"
+                            type="number"
+                            value={this.state.rent_amount_min}
+                            onChange={this.handleInputChange}
+                            placeholder="min">
+                          </input>
+                        </div>
+                        <div className="column">
+                          <input
+                            className="input"
+                            name="rent_amount_max"
+                            type="number"
+                            value={this.state.rent_amount_max}
+                            onChange={this.handleInputChange}
+                            placeholder="max">
+                          </input>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Pet Friendly</label>
-                  <input
-                    name="pet_friendly"
-                    type="checkbox"
-                    value={this.state.pet_friendly}
-                    onChange={this.handleCheckbox}></input>
+                <div className="columns">
+                  <div className="column">
+                    <a className="button is-large" onClick={this.toggleDraw.bind(this)}>
+                      <span className="icon is-medium">
+                        <i className="fab fa-bandcamp"></i>
+                      </span>
+                      <span>Polygon Search</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Rent Amount</label>
-                  <br />
-                  <input
-                    name="rent_amount_min"
-                    type="number"
-                    value={this.state.rent_amount_min}
-                    onChange={this.handleInputChange}
-                    placeholder="min"></input>
-                  <br />
-                  <input
-                    name="rent_amount_max"
-                    type="number"
-                    value={this.state.rent_amount_max}
-                    onChange={this.handleInputChange}
-                    placeholder="max"></input>
+                <div>
+                  <span className="searchHeading">Utilities</span>
                 </div>
-                <div className="field">
-                  <label>Water</label>
-                  <input
-                    name="water"
-                    type="checkbox"
-                    value={this.state.water}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Water</label>
+                        <label className="switch">
+                          <input
+                            name="water"
+                            type="checkbox"
+                            value={this.state.water}
+                            onChange={this.handleCheckbox}></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Eletricity</label>
+                        <label className="switch">
+                          <input
+                            name="eletricity"
+                            type="checkbox"
+                            value={this.state.eletricity}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Heat</label>
+                        <label className="switch">
+                          <input
+                            name="heat"
+                            type="checkbox"
+                            value={this.state.heat}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Natural Gas</label>
+                        <label className="switch">
+                          <input
+                            name="natural_gas"
+                            type="checkbox"
+                            value={this.state.natural_gas}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Eletricity</label>
-                  <input
-                    name="eletricity"
-                    type="checkbox"
-                    value={this.state.eletricity}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <span className="searchHeading">Amenities</span>
                 </div>
-                <div className="field">
-                  <label>Internet</label>
-                  <input
-                    name="internet"
-                    type="checkbox"
-                    value={this.state.internet}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Storage</label>
+                        <label className="switch">
+                          <input
+                            name="storage"
+                            type="checkbox"
+                            value={this.state.storage}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Onsite Laundry</label>
+                        <label className="switch">
+                          <input
+                            name="laundry_on_site"
+                            type="checkbox"
+                            value={this.state.laundry_on_site}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Parking</label>
+                        <label className="switch">
+                          <input name="parking"
+                            type="checkbox"
+                            value={this.state.parking}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Pet Friendly</label>
+                        <label className="switch">
+                          <input
+                            name="pet_friendly"
+                            type="checkbox"
+                            value={this.state.pet_friendly}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Internet</label>
+                        <label className="switch">
+                          <input
+                            name="internet"
+                            type="checkbox"
+                            value={this.state.internet}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Fully Furnished</label>
+                        <label className="switch">
+                          <input
+                            name="furnished"
+                            type="checkbox"
+                            value={this.state.furnished}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Heat</label>
-                  <input
-                    name="heat"
-                    type="checkbox"
-                    value={this.state.heat}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Natural Gas</label>
-                  <input
-                    name="natural_gas"
-                    type="checkbox"
-                    value={this.state.natural_gas}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Storage</label>
-                  <input
-                    name="storage"
-                    type="checkbox"
-                    value={this.state.storage}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Onsite Laundry</label>
-                  <input
-                    name="laundry_on_site"
-                    type="checkbox"
-                    value={this.state.laundry_on_site}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Fully Furnished</label>
-                  <input
-                    name="furnished"
-                    type="checkbox"
-                    value={this.state.furnished}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Parking</label>
-                  <input name="parking"
-                    type="checkbox"
-                    value={this.state.parking}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <h1>{this.renderMarkerInfo.bind(this)()}</h1>
+                {this.renderMarkerInfo.bind(this)()}
                 <button className="submit button is-primary is-large"><i className="fas fa-check"></i>Submit</button>
               </form>
             </aside>
@@ -350,114 +434,199 @@ export class MapContainer extends Component {
           <div className="columns">
             <aside className="searchMenu column is-3 closed">
               <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
-                <i className="fas fa-cog"></i>
+                <i className="fas fa-cog fa-2x"></i>
               </button>
-              <button onClick={this.toggleDraw.bind(this)}>Polygon Search</button>
               <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="field">
-                  <label>Available</label>
-                  <input
-                    name="available_date"
-                    type="date"
-                    value={this.state.available_date}
-                    onChange={this.handleInputChange}></input>
+                <div className="columns">
+                  <div className="column">
+                    <div className="field">
+                      <label>Available</label>
+                      <input
+                        className="input"
+                        name="available_date"
+                        type="date"
+                        value={this.state.available_date}
+                        onChange={this.handleInputChange}></input>
+                    </div>
+                    <div className="field">
+                      <label>Rent Amount</label>
+                      <div className="columns">
+                        <div className="column">
+                          <input
+                            className="input"
+                            name="rent_amount_min"
+                            type="number"
+                            value={this.state.rent_amount_min}
+                            onChange={this.handleInputChange}
+                            placeholder="min">
+                          </input>
+                        </div>
+                        <div className="column">
+                          <input
+                            className="input"
+                            name="rent_amount_max"
+                            type="number"
+                            value={this.state.rent_amount_max}
+                            onChange={this.handleInputChange}
+                            placeholder="max">
+                          </input>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Pet Friendly</label>
-                  <label className="switch">
-                    <input name="pet_friendly" type="checkbox"></input>
-                    <span className="slider round"></span>
-                  </label>
+                <div className="columns">
+                  <div className="column">
+                    <a className="button is-large" onClick={this.toggleDraw.bind(this)}>
+                      <span className="icon is-medium">
+                        <i className="fab fa-bandcamp"></i>
+                      </span>
+                      <span>Polygon Search</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Rent Amount</label>
-                  <br />
-                  <input
-                    name="rent_amount_min"
-                    type="number"
-                    value={this.state.rent_amount_min}
-                    onChange={this.handleInputChange}
-                    placeholder="min"></input>
-                  <input
-                    name="rent_amount_max"
-                    type="number"
-                    value={this.state.rent_amount_max}
-                    onChange={this.handleInputChange}
-                    placeholder="max"></input>
+                <div>
+                  <span className="searchHeading">Utilities</span>
                 </div>
-                <div className="field">
-                  <label>Water</label>
-                  <input
-                    name="water"
-                    type="checkbox"
-                    value={this.state.water}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Water</label>
+                        <label className="switch">
+                          <input
+                            name="water"
+                            type="checkbox"
+                            value={this.state.water}
+                            onChange={this.handleCheckbox}></input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Eletricity</label>
+                        <label className="switch">
+                          <input
+                            name="eletricity"
+                            type="checkbox"
+                            value={this.state.eletricity}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Heat</label>
+                        <label className="switch">
+                          <input
+                            name="heat"
+                            type="checkbox"
+                            value={this.state.heat}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Natural Gas</label>
+                        <label className="switch">
+                          <input
+                            name="natural_gas"
+                            type="checkbox"
+                            value={this.state.natural_gas}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Eletricity</label>
-                  <input
-                    name="eletricity"
-                    type="checkbox"
-                    value={this.state.eletricity}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <span className="searchHeading">Amenities</span>
                 </div>
-                <div className="field">
-                  <label>Internet</label>
-                  <input
-                    name="internet"
-                    type="checkbox"
-                    value={this.state.internet}
-                    onChange={this.handleCheckbox}></input>
+                <div>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Storage</label>
+                        <label className="switch">
+                          <input
+                            name="storage"
+                            type="checkbox"
+                            value={this.state.storage}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Onsite Laundry</label>
+                        <label className="switch">
+                          <input
+                            name="laundry_on_site"
+                            type="checkbox"
+                            value={this.state.laundry_on_site}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Parking</label>
+                        <label className="switch">
+                          <input name="parking"
+                            type="checkbox"
+                            value={this.state.parking}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label>Pet Friendly</label>
+                        <label className="switch">
+                          <input
+                            name="pet_friendly"
+                            type="checkbox"
+                            value={this.state.pet_friendly}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Internet</label>
+                        <label className="switch">
+                          <input
+                            name="internet"
+                            type="checkbox"
+                            value={this.state.internet}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                      <div className="field">
+                        <label>Fully Furnished</label>
+                        <label className="switch">
+                          <input
+                            name="furnished"
+                            type="checkbox"
+                            value={this.state.furnished}
+                            onChange={this.handleCheckbox}>
+                          </input>
+                          <span className="slider round"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="field">
-                  <label>Heat</label>
-                  <input
-                    name="heat"
-                    type="checkbox"
-                    value={this.state.heat}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Natural Gas</label>
-                  <input
-                    name="natural_gas"
-                    type="checkbox"
-                    value={this.state.natural_gas}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Storage</label>
-                  <input
-                    name="storage"
-                    type="checkbox"
-                    value={this.state.storage}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Onsite Laundry</label>
-                  <input
-                    name="laundry_on_site"
-                    type="checkbox"
-                    value={this.state.laundry_on_site}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Fully Furnished</label>
-                  <input
-                    name="furniture"
-                    type="checkbox"
-                    value={this.state.furniture}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <div className="field">
-                  <label>Parking</label>
-                  <input name="parking"
-                    type="checkbox"
-                    value={this.state.parking}
-                    onChange={this.handleCheckbox}></input>
-                </div>
-                <h1>{this.renderMarkerInfo.bind(this)()}</h1>
-                <button>Submit</button>
+                {this.renderMarkerInfo.bind(this)()}
+                <button className="submit button is-primary is-large"><i className="fas fa-check"></i>Submit</button>
               </form>
             </aside>
             <div className="column is-9">

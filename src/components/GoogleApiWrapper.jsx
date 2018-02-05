@@ -76,7 +76,8 @@ export class MapContainer extends Component {
       ]
     })
     for (let room of this.state.rooms){
-      this.addMarker(null, room.street, room.lat, room.lng);
+      const info = '<div class="fb-logout-button"><h2>NAME</h2><img src="/images/house.jpg"></img></div>'
+      this.addMarker(null, info, room.lat, room.lng);
     }
   }
 
@@ -106,8 +107,11 @@ export class MapContainer extends Component {
     if (this.state.activeMarkers) {
       return this.state.activeMarkers.map((marker, i) => (
         <div key={`marker${i}`}>
+        <div className="fb-logout-button">
           {marker.label}
           {marker.info}
+        </div>
+        <img src="/images/house.jpg"></img>
         </div>
         )
       );

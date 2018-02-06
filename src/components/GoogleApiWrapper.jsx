@@ -46,28 +46,28 @@ export class MapContainer extends Component {
         ...rooms
       ]
     })
-    for (let room of this.state.rooms){
+    // for (let room of this.state.rooms){
 
-      const info =
-      '<div class="listing-single">' +
-        '<div class="listing-header">' +
-          '<span class="listing-title">'+ room.street + '</span>' +
-          '<div class="listing-image-container">' +
-            '<div class="listing-image-filter"></div>'+
-            '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
-            '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
-            '<a href="#" class="listing-contact">Apply</a>' +
-          '</div>' +
-        '</div>' +
-        '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
-        '<div class="columns">' +
-          '<div class="column"></div>' +
-          '<div class="column"></div>' +
-        '</div>' +
-      '</div>'
+    //   const info =
+    //   '<div class="listing-single">' +
+    //     '<div class="listing-header">' +
+    //       '<span class="listing-title">'+ room.street + '</span>' +
+    //       '<div class="listing-image-container">' +
+    //         '<div class="listing-image-filter"></div>'+
+    //         '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
+    //         '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
+    //         '<a href="#" class="listing-contact">Apply</a>' +
+    //       '</div>' +
+    //     '</div>' +
+    //     '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
+    //     '<div class="columns">' +
+    //       '<div class="column"></div>' +
+    //       '<div class="column"></div>' +
+    //     '</div>' +
+    //   '</div>'
 
-      this.addMarker(null, info, room.lat, room.lng );
-    }
+    //   this.addMarker(null, info, room.lat, room.lng );
+    // }
   }
 
   componentDidMount() {
@@ -108,7 +108,6 @@ export class MapContainer extends Component {
             otherMarkers: [...temp, newMarker]
           });
           console.log("state other markers", this.state.otherMarkers);
-
         }
       }
     }
@@ -130,7 +129,7 @@ export class MapContainer extends Component {
           </div>
           <img src="/images/house.jpg"></img>
         </div>
-        )
+      )
       );
     }
   }
@@ -194,7 +193,7 @@ export class MapContainer extends Component {
     }
     console.log("this.state.name", this.state[name]);
   }
-  
+
   render() {
 
     // change map size
@@ -225,12 +224,12 @@ export class MapContainer extends Component {
       return (
         <div>
           <div className="columns">
-            <aside className="search-menu column is-3">
+            <aside className="search-menu column is-3 ">
               <div className="search-menu-container">
                 <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form>
                   <div className="columns">
                     <div className="column">
                       <div className="field">
@@ -448,7 +447,7 @@ export class MapContainer extends Component {
                 <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form>
                   <div className="columns">
                     <div className="column">
                       <div className="field">
@@ -639,8 +638,6 @@ export class MapContainer extends Component {
                   </div>
                 </form>
               </div>
-                </div>
-              </form>
             </aside>
             <div className="map-container column is-9">
               <div className="App">

@@ -73,7 +73,6 @@ app.post('/api/login', (request, response) => {
   const query = [name, email, profile_pic_url];
 
   console.log('HERE HERE', query);
-
   client.query(`INSERT INTO users(name, email, profile_pic_url) VALUES($1, $2, $3) RETURNING *`,
     query, (err, result) => {
       if (err) {
@@ -98,7 +97,7 @@ app.post('/api/rooms', (request, response) => {
   // hmn, maybe want to JSON.parse ?
   // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
   const landlord_id = 1000000;
-  
+
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 
   console.log('fulladdress: ', fullAddress);

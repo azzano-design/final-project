@@ -18,6 +18,8 @@ class FacebookLogin extends Component {
   }
 
 
+
+
   statusChangeCallback(response) {
     let result;
     if (response.status === 'connected') {

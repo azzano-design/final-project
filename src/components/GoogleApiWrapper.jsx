@@ -46,8 +46,9 @@ export class MapContainer extends Component {
         ...rooms
       ]
     })
-    for (let room of this.state.rooms){
+    // for (let room of this.state.rooms){
 
+<<<<<<< HEAD
       const info =
       '<div class="listing-single">' +
         '<div class="listing-header">' +
@@ -65,28 +66,71 @@ export class MapContainer extends Component {
           '<div class="column"></div>' +
         '</div>' +
       '</div>'
+=======
+    //   const info =
+    //   '<div class="listing-single">' +
+    //     '<div class="listing-header">' +
+    //       '<span class="listing-title">'+ room.street + '</span>' +
+    //       '<div class="listing-image-container">' +
+    //         '<div class="listing-image-filter"></div>'+
+    //         '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
+    //         '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
+    //         '<a href="#" class="listing-contact">Apply</a>' +
+    //       '</div>' +
+    //     '</div>' +
+    //     '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
+    //     '<div class="columns">' +
+    //       '<div class="column"></div>' +
+    //       '<div class="column"></div>' +
+    //     '</div>' +
+    //   '</div>'
+>>>>>>> 47a790b404a483f2f1f6aba7288a016a899cb654
 
-      this.addMarker(null, info, room.lat, room.lng );
-    }
+    //   this.addMarker(null, info, room.lat, room.lng );
+    // }
   }
 
   componentDidMount() {
     this.renderRooms();
   }
 
-  addMarker(label, info, lat, long) {
-    const { otherMarkers } = this.state;
-    const newMarker = {
-      info,
-      latLng: { lng: long, lat },
-      icon: { url: '/images/icon.png' },
-    };
 
-    this.setState({
-      otherMarkers: [
-        ...otherMarkers, newMarker
-      ]
-    });
+  async addMarker(room) {
+    const info =
+      '<div class="card">' +
+      '<div class="card-image">' +
+      '<figure class="image is-4by3">' +
+      '<img src="/images/house.jpg" alt="Placeholder image">' +
+      '</figure>' +
+      '</div>' +
+      '<div class="card-content">' +
+      '<div class="media">' +
+      '<div class="media-content">' +
+      '<p class="title is-4">' + room.street + '</p>' +
+      '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+      '</div>' +
+      '</div>' +
+      '<div class="content">' +
+      '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+      '<br>' +
+      '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+      '</div>' +
+      '</div>' +
+      '</div>'
+    const temp = this.state.otherMarkers;
+    console.log('call addMarker');
+    const newMarker = { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
+    for (let otherRoom in temp) {
+      if (room.lat !== otherRoom.lat) {
+        if (room.lng !== otherRoom.lng) {
+          temp.push(newMarker);
+          await this.setState({
+            otherMarkers: [...temp, newMarker]
+          });
+          console.log("state other markers", this.state.otherMarkers);
+        }
+      }
+    }
   }
 
   onMarkerClick(marker, e) {
@@ -99,13 +143,13 @@ export class MapContainer extends Component {
     if (this.state.activeMarkers) {
       return this.state.activeMarkers.map((marker, i) => (
         <div key={`marker${i}`}>
-        <div className="fb-logout-button">
-          {marker.label}
-          {marker.address}
+          <div>
+            {marker.label}
+            {marker.info}
+          </div>
+          <img src="/images/house.jpg"></img>
         </div>
-        <img src="/images/house.jpg"></img>
-        </div>
-        )
+      )
       );
     }
   }
@@ -152,6 +196,15 @@ export class MapContainer extends Component {
         [name]: true
       });
 
+      let filteredRooms = this.state.rooms.filter(
+        (room) => {
+          return room[name] === true
+        }
+      );
+      console.log("filtered rooms", filteredRooms);
+      filteredRooms.map((room) => {
+        this.addMarker(room);
+      })
     }
     else {
       this.setState({
@@ -161,33 +214,8 @@ export class MapContainer extends Component {
     console.log("this.state.name", this.state[name]);
   }
 
-
-  async handleSubmit(ev) {
-    ev.preventDefault();
-    const { otherMarkers } = this.state;
-    this.setState({
-      otherMarkers: []
-    });
-    await this.state.rooms.forEach((room) => {
-      if (this.state.pet_friendly) {
-        if (room.pet_friendly) {
-          console.log("room pet_friendly true");
-          console.log("other markers before add", this.state.otherMarkers);
-          this.addMarker(null, room.street, room.lat, room.lng);
-          // this.setState({
-          //   otherMarkers: [
-          //     ...otherMarkers, room
-          //   ]
-          // })
-        }
-      }
-    })
-    console.log("other markers after filtering", this.state.otherMarkers);
-    // console.log("state", this.state);
-    // console.log("rooms", this.state.rooms);
-  }
-
   render() {
+
     // change map size
     const mapStyle = {
       width: window.innerWidth,
@@ -214,20 +242,16 @@ export class MapContainer extends Component {
       zIndex: 1
     }
 
-    const markers = [
-
-    ];
-
     if (this.state.menuopen === true) {
       return (
         <div>
           <div className="columns">
-            <aside className="search-menu column is-3">
+            <aside className="search-menu column is-3 ">
               <div className="search-menu-container">
                 <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form>
                   <div className="columns">
                     <div className="column">
                       <div className="field">
@@ -416,7 +440,6 @@ export class MapContainer extends Component {
                       </div>
                     </div>
                   </div>
-                  {this.renderMarkerInfo.bind(this)()}
                 </form>
               </div>
             </aside>
@@ -446,7 +469,7 @@ export class MapContainer extends Component {
                 <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form>
                   <div className="columns">
                     <div className="column">
                       <div className="field">
@@ -635,7 +658,6 @@ export class MapContainer extends Component {
                       </div>
                     </div>
                   </div>
-                  {this.renderMarkerInfo.bind(this)()}
                 </form>
               </div>
             </aside>

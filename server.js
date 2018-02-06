@@ -169,6 +169,7 @@ app.post('/api/users/:id', (request, response) => {
 //load rooms for a specific user
 app.get('/api/users/:id/rooms', (request, response) => {
   const user_id = request.params.id;
+
   const query = [user_id];
   client.query("select * from rooms where landord_id=$1", query, (err, result) => {
     if (err) {
@@ -233,6 +234,3 @@ app.get('/api/users', (request, response) => {
   });
 
 });
-
-
-

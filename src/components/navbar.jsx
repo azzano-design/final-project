@@ -22,7 +22,9 @@ class Navbar extends Component {
                       <span></span>
                     </span>
                   </div>
-                  <FacebookLogin />
+                  <div className="navbar-end">
+                    <FacebookLogin />
+                  </div>
                 </div>
             </div>
           </div>

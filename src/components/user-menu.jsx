@@ -8,13 +8,13 @@ class UserMenu extends Component {
   render() {
     return (
       <div>
-        <div className="container">
+        <div className="top-padding container">
           <div className="columns">
             <section className="column">
               <div className="container">
                 <div className="tabs is-centered">
                   <ul>
-                    <li className="is-active">
+                    <li>
                       <a href="/#/user/settings">My Preferences</a>
                     </li>
                     <li>

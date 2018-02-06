@@ -15,56 +15,27 @@ export class MapContainer extends Component {
     this.state = {
       drawMode: false,
       loaded: false,
-      menuopen: true,
+      menuopen: false,
       activeMarkers: [],
       address: '',
+      available_date: undefined,
+      pet_friendly: false,
+      rent_amount_min: undefined,
+      rent_amount_max: undefined,
+      water: false,
+      eletricity: false,
+      internet: false,
+      heat: false,
+      natural_gas: false,
+      storage: false,
+      laundry_on_site: false,
+      furnished: false,
+      parking: false,
       rooms: [],
-      markers: [
-
-      ],
-      otherMarkers: [
-        // {
-        //   info: '<div class="fb-logout-button"><h2>NAME</h2></div>',
-        //   label: 'Y',
-        //   title: 'hello',
-        //   latLng: { lng: -123.097665, lat: 49.264254 },
-        //   icon: {
-        //     url: '/images/icon.png'
-        //   },
-        //   availabledate: '02/03/2018'
-        // },
-
-        // {
-        //   label: 'B',
-        //   info: '- Marker2',
-        //   latLng: { lng: -123.104124, lat: 49.266416 },
-        //   icon: {
-        //     url: '/images/icon.png'
-        //   },
-        //   availabledate: '02/03/2018'
-        // },
-
-        // {
-        //   label: 'C',
-        //   info: '- Marker 3',
-        //   latLng: { lng: -123.117943, lat: 49.278747 },
-        //   icon: {
-        //     url: '/images/icon.png'
-        //   },
-        //   availabledate: '02/03/2018'
-        // },
-
-        // {
-        //   label: 'E',
-        //   info: '- Marker 5',
-        //   latLng: { lng: -123.132362, lat: 49.275147 },
-        //   icon: {
-        //     url: '/images/icon.png'
-        //   },
-        //   availabledate: '02/03/2018'
-        // }
-      ]
+      otherMarkers: []
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleCheckbox = this.handleCheckbox.bind(this);
   }
 
   async renderRooms() {
@@ -78,28 +49,24 @@ export class MapContainer extends Component {
     for (let room of this.state.rooms){
 
       const info =
-      '<div class="card">' +
-        '<div class="card-image">' +
-          '<figure class="image is-4by3">' +
-            '<img src="/images/house.jpg" alt="Placeholder image">' +
-          '</figure>' +
-        '</div>' +
-        '<div class="card-content">' +
-        '<div class="media">' +
-          '<div class="media-content">' +
-            '<p class="title is-4">'+ room.street + '</p>' +
-            '<p class="subtitle is-6">$'+ room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+      '<div class="listing-single">' +
+        '<div class="listing-header">' +
+          '<span class="listing-title">'+ room.street + '</span>' +
+          '<div class="listing-image-container">' +
+            '<div class="listing-image-filter"></div>'+
+            '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
+            '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
+            '<a href="#" class="listing-contact">Apply</a>' +
           '</div>' +
         '</div>' +
-        '<div class="content">' +
-          '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
-          '<br>' +
-          '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
-          '</div>' +
+        '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
+        '<div class="columns">' +
+          '<div class="column"></div>' +
+          '<div class="column"></div>' +
         '</div>' +
       '</div>'
 
-      this.addMarker(null, info, room.lat, room.lng);
+      this.addMarker(null, info, room.lat, room.lng );
     }
   }
 
@@ -107,19 +74,47 @@ export class MapContainer extends Component {
     this.renderRooms();
   }
 
-  addMarker(label, info, lat, long) {
-    const { otherMarkers } = this.state;
-    const newMarker = { info, latLng: { lng: long, lat }, icon: { url: '/images/icon.png' } };
 
-    this.setState({
-      otherMarkers: [
-        ...otherMarkers, newMarker
-      ]
-    });
+  async addMarker(room) {
+    const info =
+      '<div class="card">' +
+      '<div class="card-image">' +
+      '<figure class="image is-4by3">' +
+      '<img src="/images/house.jpg" alt="Placeholder image">' +
+      '</figure>' +
+      '</div>' +
+      '<div class="card-content">' +
+      '<div class="media">' +
+      '<div class="media-content">' +
+      '<p class="title is-4">' + room.street + '</p>' +
+      '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+      '</div>' +
+      '</div>' +
+      '<div class="content">' +
+      '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+      '<br>' +
+      '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+      '</div>' +
+      '</div>' +
+      '</div>'
+    const temp = this.state.otherMarkers;
+    console.log('call addMarker');
+    const newMarker = { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
+    for (let otherRoom in temp) {
+      if (room.lat !== otherRoom.lat) {
+        if (room.lng !== otherRoom.lng) {
+          temp.push(newMarker);
+          await this.setState({
+            otherMarkers: [...temp, newMarker]
+          });
+          console.log("state other markers", this.state.otherMarkers);
+
+        }
+      }
+    }
   }
 
   onMarkerClick(marker, e) {
-
     this.setState({
       activeMarkers: [marker]
     });
@@ -129,11 +124,11 @@ export class MapContainer extends Component {
     if (this.state.activeMarkers) {
       return this.state.activeMarkers.map((marker, i) => (
         <div key={`marker${i}`}>
-        <div className="fb-logout-button">
-          {marker.label}
-          {marker.info}
-        </div>
-        <img src="/images/house.jpg"></img>
+          <div>
+            {marker.label}
+            {marker.info}
+          </div>
+          <img src="/images/house.jpg"></img>
         </div>
         )
       );
@@ -158,46 +153,50 @@ export class MapContainer extends Component {
     });
   }
 
-  handleChange(event) {
-    this.setState({ address: event.target.value });
-    console.log(this.state.address);
-  }
-
-  handleSubmit(ev) {
-    ev.preventDefault();
-    console.log(ev.target.details.value);
-    console.log(ev.target.address.value);
-    console.log(this.state.address);
-
-    let newMarker = {
-      Address: ev.target.address.value,
-      Description: ev.target.details.value,
-      Cost: ev.target.cost.value,
-      Landlord: ev.target.landlord.value,
-    }
-    console.log('new marker', newMarker);
+  handleInputChange(event) {
+    const value = event.target.value;
+    const name = event.target.name;
+    console.log("name", name);
     this.setState({
-      markers: this.state.markers.concat(newMarker)
+      [name]: value
     });
-    console.log(this.state.markers);
+    console.log("this.state.name", this.state[name]);
 
-    const geocoder = new window.google.maps.Geocoder();
-    geocoder.geocode({ address: this.state.address }, (results, status) => {
-      const location = {
-        lat: results[0].geometry.location.lat(),
-        lng: results[0].geometry.location.lng()
-      };
-      this.addMarker('Listing', '', location.lat, location.lng);
-    });
+    const filteredRooms = []
 
-  }
-  onFormSubmit(event) {
-    event.preventDefault();
-    console.log(event.target.details.value);
-    console.log(event.target.address.value);
+    if (this.setState.name === true) {
+      this.setState.otherMakers = []
+    }
   }
 
+  handleCheckbox(event) {
+    const name = event.target.name;
+    console.log("name", name);
+    if (this.state[name] === false) {
+      this.setState({
+        [name]: true
+      });
+
+      let filteredRooms = this.state.rooms.filter(
+        (room) => {
+          return room[name] === true
+        }
+      );
+      console.log("filtered rooms", filteredRooms);
+      filteredRooms.map((room) => {
+        this.addMarker(room);
+      })
+    }
+    else {
+      this.setState({
+        [name]: false
+      });
+    }
+    console.log("this.state.name", this.state[name]);
+  }
+  
   render() {
+
     // change map size
     const mapStyle = {
       width: window.innerWidth,
@@ -222,143 +221,208 @@ export class MapContainer extends Component {
       zIndex: 1
     }
 
-    const markers = [
-
-    ];
-
     if (this.state.menuopen === true) {
       return (
         <div>
           <div className="columns">
-            <aside className="searchMenu column is-3">
-              <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
-                <i className="fas fa-cog fa-2x"></i>
-              </button>
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="columns">
-                  <div className="column">
-                    <div className="field">
-                      <label>Available</label>
-                      <input className="input" type="date"></input>
-                    </div>
-                    <div className="field">
-                      <label>Rent Amount</label>
-                      <input className="input" name="rent_amount"></input>
-                    </div>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column">
-                    <a className="button is-large" onClick={this.toggleDraw.bind(this)}>
-                      <span className="icon is-medium">
-                        <i className="fab fa-bandcamp"></i>
-                      </span>
-                      <span>Polygon Search</span>
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <span className="searchHeading">Utilities</span>
-                </div>
-                <div>
+            <aside className="search-menu column is-3">
+              <div className="search-menu-container">
+                <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
+                  <i className="fas fa-cog fa-2x"></i>
+                </button>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                   <div className="columns">
                     <div className="column">
                       <div className="field">
-                        <label>Water</label>
-                        <label className="switch">
-                          <input name="water" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
+                        <label>Available</label>
+                        <input
+                          className="input"
+                          name="available_date"
+                          type="date"
+                          value={this.state.available_date}
+                          onChange={this.handleInputChange}></input>
                       </div>
                       <div className="field">
-                        <label>Eletricity</label>
-                        <label className="switch">
-                          <input name="electricity" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="column">
-                      <div className="field">
-                        <label>Heat</label>
-                        <label className="switch">
-                          <input name="heat" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
-                      <div className="field">
-                        <label>Natural Gas</label>
-                        <label className="switch">
-                          <input name="natural_gas" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
+                        <label>Rent Amount</label>
+                        <div className="columns">
+                          <div className="column">
+                            <input
+                              className="input"
+                              name="rent_amount_min"
+                              type="number"
+                              value={this.state.rent_amount_min}
+                              onChange={this.handleInputChange}
+                              placeholder="min">
+                            </input>
+                          </div>
+                          <div className="column">
+                            <input
+                              className="input"
+                              name="rent_amount_max"
+                              type="number"
+                              value={this.state.rent_amount_max}
+                              onChange={this.handleInputChange}
+                              placeholder="max">
+                            </input>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div>
-                  <span className="searchHeading">Amenities</span>
-                </div>
-                <div>
                   <div className="columns">
                     <div className="column">
-                      <div className="field">
-                        <label>Storage</label>
-                        <label className="switch">
-                          <input name="gas" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
-                      <div className="field">
-                        <label>Laundry</label>
-                        <label className="switch">
-                          <input name="onsite_laundry" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
-                      <div className="field">
-                        <label>Parking</label>
-                        <label className="switch">
-                          <input name="parking" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
+                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
                     </div>
-                    <div className="column">
-                      <div className="field">
-                        <label>Pet Friendly</label>
-                        <label className="switch">
-                          <input name="pet_friendly" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
+                  </div>
+                  <div>
+                    <span className="searchHeading">Utilities</span>
+                  </div>
+                  <div>
+                    <div className="columns">
+                      <div className="column">
+                        <div className="field">
+                          <label>Water</label>
+                          <label className="switch">
+                            <input
+                              name="water"
+                              type="checkbox"
+                              value={this.state.water}
+                              onChange={this.handleCheckbox}></input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Eletricity</label>
+                          <label className="switch">
+                            <input
+                              name="eletricity"
+                              type="checkbox"
+                              value={this.state.eletricity}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
                       </div>
-                      <div className="field">
-                        <label>Internet</label>
-                        <label className="switch">
-                          <input name="internet" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
-                      </div>
-                      <div className="field">
-                        <label>Fully Furnished</label>
-                        <label className="switch">
-                          <input name="furnished" type="checkbox"></input>
-                          <span className="slider round"></span>
-                        </label>
+                      <div className="column">
+                        <div className="field">
+                          <label>Heat</label>
+                          <label className="switch">
+                            <input
+                              name="heat"
+                              type="checkbox"
+                              value={this.state.heat}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Natural Gas</label>
+                          <label className="switch">
+                            <input
+                              name="natural_gas"
+                              type="checkbox"
+                              value={this.state.natural_gas}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="columns">
-                  <div className="column">
-                    <button className="submit button is-primary is-large"><i className="fas fa-check"></i>Submit</button>
+                  <div>
+                    <span className="searchHeading">Amenities</span>
                   </div>
-                </div>
-                <span>Results:</span>
-                {this.renderMarkerInfo.bind(this)()}
-              </form>
+                  <div>
+                    <div className="columns">
+                      <div className="column">
+                        <div className="field">
+                          <label>Storage</label>
+                          <label className="switch">
+                            <input
+                              name="storage"
+                              type="checkbox"
+                              value={this.state.storage}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Onsite Laundry</label>
+                          <label className="switch">
+                            <input
+                              name="laundry_on_site"
+                              type="checkbox"
+                              value={this.state.laundry_on_site}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Parking</label>
+                          <label className="switch">
+                            <input name="parking"
+                              type="checkbox"
+                              value={this.state.parking}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="column">
+                        <div className="field">
+                          <label>Pet Friendly</label>
+                          <label className="switch">
+                            <input
+                              name="pet_friendly"
+                              type="checkbox"
+                              value={this.state.pet_friendly}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Internet</label>
+                          <label className="switch">
+                            <input
+                              name="internet"
+                              type="checkbox"
+                              value={this.state.internet}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Fully Furnished</label>
+                          <label className="switch">
+                            <input
+                              name="furnished"
+                              type="checkbox"
+                              value={this.state.furnished}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </aside>
-            <div className="column is-9">
+            <div className="map-container column is-9">
               <div className="App">
                 <GoogleMapDrawFilter
                   drawMode={this.state.drawMode}
@@ -379,72 +443,206 @@ export class MapContainer extends Component {
       return (
         <div>
           <div className="columns">
-            <aside className="searchMenu column is-3 closed">
-              <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
-                <i class="fas fa-cog"></i>
-              </button>
-              <button onClick={this.toggleDraw.bind(this)}>Polygon Search</button>
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="field">
-                  <label>Available</label>
-                  <input className="input" type="date"></input>
+            <aside className="search-menu column is-3 closed">
+              <div className="search-menu-container">
+                <button id="menu-toggle" onClick={this.toggleMenu.bind(this)}>
+                  <i className="fas fa-cog fa-2x"></i>
+                </button>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                  <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label>Available</label>
+                        <input
+                          className="input"
+                          name="available_date"
+                          type="date"
+                          value={this.state.available_date}
+                          onChange={this.handleInputChange}></input>
+                      </div>
+                      <div className="field">
+                        <label>Rent Amount</label>
+                        <div className="columns">
+                          <div className="column">
+                            <input
+                              className="input"
+                              name="rent_amount_min"
+                              type="number"
+                              value={this.state.rent_amount_min}
+                              onChange={this.handleInputChange}
+                              placeholder="min">
+                            </input>
+                          </div>
+                          <div className="column">
+                            <input
+                              className="input"
+                              name="rent_amount_max"
+                              type="number"
+                              value={this.state.rent_amount_max}
+                              onChange={this.handleInputChange}
+                              placeholder="max">
+                            </input>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="searchHeading">Utilities</span>
+                  </div>
+                  <div>
+                    <div className="columns">
+                      <div className="column">
+                        <div className="field">
+                          <label>Water</label>
+                          <label className="switch">
+                            <input
+                              name="water"
+                              type="checkbox"
+                              value={this.state.water}
+                              onChange={this.handleCheckbox}></input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Eletricity</label>
+                          <label className="switch">
+                            <input
+                              name="eletricity"
+                              type="checkbox"
+                              value={this.state.eletricity}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="column">
+                        <div className="field">
+                          <label>Heat</label>
+                          <label className="switch">
+                            <input
+                              name="heat"
+                              type="checkbox"
+                              value={this.state.heat}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Natural Gas</label>
+                          <label className="switch">
+                            <input
+                              name="natural_gas"
+                              type="checkbox"
+                              value={this.state.natural_gas}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="searchHeading">Amenities</span>
+                  </div>
+                  <div>
+                    <div className="columns">
+                      <div className="column">
+                        <div className="field">
+                          <label>Storage</label>
+                          <label className="switch">
+                            <input
+                              name="storage"
+                              type="checkbox"
+                              value={this.state.storage}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Onsite Laundry</label>
+                          <label className="switch">
+                            <input
+                              name="laundry_on_site"
+                              type="checkbox"
+                              value={this.state.laundry_on_site}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Parking</label>
+                          <label className="switch">
+                            <input name="parking"
+                              type="checkbox"
+                              value={this.state.parking}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="column">
+                        <div className="field">
+                          <label>Pet Friendly</label>
+                          <label className="switch">
+                            <input
+                              name="pet_friendly"
+                              type="checkbox"
+                              value={this.state.pet_friendly}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Internet</label>
+                          <label className="switch">
+                            <input
+                              name="internet"
+                              type="checkbox"
+                              value={this.state.internet}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                        <div className="field">
+                          <label>Fully Furnished</label>
+                          <label className="switch">
+                            <input
+                              name="furnished"
+                              type="checkbox"
+                              value={this.state.furnished}
+                              onChange={this.handleCheckbox}>
+                            </input>
+                            <span className="slider round"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
                 </div>
-                <div className="field">
-                  <label>Pet Friendly</label>
-                  <label className="switch">
-                    <input name="pet_friendly" type="checkbox"></input>
-                    <span className="slider round"></span>
-                  </label>
-                </div>
-                <div className="field">
-                  <label>Rent Amount</label>
-                  <input className="input" name="rent_amount"></input>
-                </div>
-                <div className="field">
-                  <label>Available Date</label>
-                  <input className="input" name="available_date"></input>
-                </div>
-                <div className="field">
-                  <label>Water</label>
-                  <input className="input" name="water" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Eletricity</label>
-                  <input className="input" name="eletricity" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Internet</label>
-                  <input className="input" name="internet" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Heat</label>
-                  <input className="input" name="heat" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Natural Gas</label>
-                  <input className="input" name="natural_gas" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Storage</label>
-                  <input className="input" name="storage" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Onsite Laundry</label>
-                  <input className="input" name="laundry_on_site" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Fully Furnished</label>
-                  <input className="input" name="furniture" type="checkbox"></input>
-                </div>
-                <div className="field">
-                  <label>Parking</label>
-                  <input className="input" name="parking" type="checkbox"></input>
-                </div>
-                <h1>{this.renderMarkerInfo.bind(this)()}</h1>
-                <button className="button is-primary">Summit </button>
               </form>
             </aside>
-            <div className="column is-9">
+            <div className="map-container column is-9">
               <div className="App">
                 <GoogleMapDrawFilter
                   drawMode={this.state.drawMode}

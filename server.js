@@ -73,7 +73,6 @@ app.post('/api/login', (request, response) => {
   const query = [name, email, profile_pic_url];
 
   console.log('HERE HERE', query);
-
   client.query(`INSERT INTO users(name, email, profile_pic_url) VALUES($1, $2, $3) RETURNING *`,
     query, (err, result) => {
       if (err) {
@@ -131,8 +130,6 @@ app.post('/api/rooms', (request, response) => {
 
 //search for rooms
 app.get('/api/rooms/search', (request, response) => {
-  console.log("we are in the search");
-  response.send("this is search");
 
 });
 
@@ -144,25 +141,43 @@ app.post('/api/rooms/search', (request, response) => {
 
 //load users profile
 app.get('/api/users/:id', (request, response) => {
-
+  const user_id = request.params.id;
+  const query = [user_id];
+  client.query("select * from users where id=$1", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
 });
 
 //edit users profile
 app.post('/api/users/:id', (request, response) => {
-
+  const user_id = request.params.id;
+  const { phone_number } = request.body;
+  const query = [user_id, phone_number];
+  client.query("UPDATE users SET phone_number =$2 where id=$1", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
 });
 
 //load rooms for a specific user
 app.get('/api/users/:id/rooms', (request, response) => {
   const user_id = request.params.id;
-   const query = [user_id];
-   client.query("select * from rooms where landord_id=$1", query, (err, result) => {
-     if (err) {
-       return console.error("error running query", err);
-     }
-     console.log(result.rows);
-     response.json(result.rows);
-   });
+
+  const query = [user_id];
+  client.query("select * from rooms where landord_id=$1", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
 });
 
 //load messages for a specific user

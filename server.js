@@ -98,7 +98,7 @@ app.post('/api/rooms', (request, response) => {
   // hmn, maybe want to JSON.parse ?
   // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
   const landlord_id = 1000000;
-  
+
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 
   console.log('fulladdress: ', fullAddress);
@@ -154,7 +154,15 @@ app.post('/api/users/:id', (request, response) => {
 
 //load rooms for a specific user
 app.get('/api/users/:id/rooms', (request, response) => {
-
+  const user_id = request.params.id;
+   const query = [user_id];
+   client.query("select * from rooms where landord_id=$1", query, (err, result) => {
+     if (err) {
+       return console.error("error running query", err);
+     }
+     console.log(result.rows);
+     response.json(result.rows);
+   });
 });
 
 //load messages for a specific user
@@ -211,6 +219,3 @@ app.get('/api/users', (request, response) => {
   });
 
 });
-
-
-

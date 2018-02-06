@@ -56,7 +56,7 @@ export class MapContainer extends Component {
             '<div class="listing-image-filter"></div>'+
             '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
             '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
-            '<a href="#" class="listing-contact">Apply</a>' +
+            '<a href="mailto:brendanazzano@gmail.com?Subject=Room%20Application%20-%20Room%20Number&Body=Hi%2C%0A%0AMy%20name%20is%3A%20Brendan%2C%0A%0AI%27m%20interested%20in%20your%20listing." class="listing-contact">Apply</a>' +
           '</div>' +
         '</div>' +
         '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
@@ -194,13 +194,15 @@ export class MapContainer extends Component {
       height: window.innerHeight,
     }
 
+    const style = [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"lightness":"0"},{"color":"#f7f1df"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"55"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"color":"#58585b"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"color":"#939396"},{"lightness":"46"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"17"}]}]
+
     //change map default focus
     const mapConfig = {
       zoom: 14,
       lat: 49.275147,
       lng: -123.132362,
       scrollwheel: false,
-      disableDefaultUI: true
+      disableDefaultUI: true,
     }
     const polygonOptions = {
       fillColor: '#A3A2AF',

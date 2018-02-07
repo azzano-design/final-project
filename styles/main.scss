@@ -359,8 +359,9 @@ label {
   height: 500px;
   width: 650px
 }
-.listing-header {
 
+.user-page.listing-single {
+  height: auto;
 }
 
 .listing-title {
@@ -371,11 +372,19 @@ label {
   padding: 10px 0px 10px 0px;
   display: block;
 }
+.user-page .listing-title {
+  padding: 20px 0px 10px 0px;
+  margin-left:20px;
+}
 .listing-image-container {
   position:relative;
   width:640px;
   margin-bottom: 25px;
 }
+.user-page .listing-image-container {
+  margin-bottom: 0px;
+}
+
 .listing-image-container img {
   vertical-align: middle;
   max-width: 100% !important;
@@ -430,7 +439,7 @@ span.feature-heading {
   display: block;
   font-weight: bolder;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-bottom: 10px;
 }
 span.feature {
@@ -439,7 +448,7 @@ span.feature {
 }
 
 .polygon {
-  margin-top:25px;
+  margin-top:50px;
 }
 // Profile
 .tabs ul {

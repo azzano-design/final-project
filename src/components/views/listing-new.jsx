@@ -203,16 +203,18 @@ class NewListing extends Component {
                           </label>
                         </div>
                         <div className="column">
-                          <label>
-                            Deposit amount:
+                          <div className="control has-icons-left">
                             <input
                               className="input is-rounded"
-                              name="deposit_amount"
-                              type="number"
-                              value={this.state.deposit_amount}
+                              name="available_date"
+                              type="date"
+                              value={this.state.available_date}
                               onChange={this.handleInputChange}
                             />
-                          </label>
+                            <span className="icon is-small is-left">
+                              <i className="fas fa-calendar"></i>
+                            </span>
+                          </div>
                         </div>
                       </div>
 
@@ -221,7 +223,7 @@ class NewListing extends Component {
                           <label>
                             Details:
                             <input
-                              className="input is-rounded"
+                              className="textarea is-rounded"
                               name="details"
                               type="textarea"
                               value={this.state.details}
@@ -232,18 +234,7 @@ class NewListing extends Component {
                       </div>
 
                       <div className="columns">
-                        <div className="column">
-                          <label>
-                            Available date:
-                            <input
-                              className="input is-rounded"
-                              name="available_date"
-                              type="date"
-                              value={this.state.available_date}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
+
                       </div>
 
                       <div className="columns">

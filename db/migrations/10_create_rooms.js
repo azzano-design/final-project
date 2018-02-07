@@ -4,13 +4,13 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.integer('landlord_id').unsigned();
     table.foreign('landlord_id').references('id').inTable('users');
+    table.string('landlord_email');
     table.string('street').notNullable();
     table.string('unit');
     table.string('city').notNullable();
     table.string('postal_code');
     table.boolean('pet_friendly');
     table.integer('rent_amount').notNullable();
-    table.integer('deposit_amount');
     table.date('available_date').notNullable();
     table.boolean('water');
     table.boolean('eletricity');
@@ -24,6 +24,7 @@ exports.up = function(knex, Promise) {
     table.string('details');
     table.float('lat');
     table.float('lng');
+    table.string('file');
 
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());

@@ -24,7 +24,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.264254,
-          lng: -123.097665
+          lng: -123.097665,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000001,
@@ -46,7 +47,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.104124,
-          lat: 49.266416
+          lat: 49.266416,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000002,
@@ -68,7 +70,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.117943,
-          lat: 49.278747
+          lat: 49.278747,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000003,
@@ -90,7 +93,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lng: -123.132362,
-          lat: 49.275147
+          lat: 49.275147,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000004,
@@ -112,7 +116,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28184419999999,
-          lng: -123.10816169999998
+          lng: -123.10816169999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000005,
@@ -134,7 +139,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.283337,
-          lng: -123.116406
+          lng: -123.116406,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000006,
@@ -156,7 +162,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2505836,
-          lng: -123.1157268
+          lng: -123.1157268,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000007,
@@ -178,7 +185,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2790825,
-          lng: -123.12768080000001
+          lng: -123.12768080000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000008,
@@ -200,7 +208,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27732109999999,
-          lng: -123.12062630000003
+          lng: -123.12062630000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000009,
@@ -222,7 +231,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.271826,
-          lng: -123.15395890000002
+          lng: -123.15395890000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000010,
@@ -244,7 +254,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751553,
-          lng: -123.12378319999999
+          lng: -123.12378319999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000011,
@@ -266,7 +277,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28002439999999,
-          lng: -123.06919260000001
+          lng: -123.06919260000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000012,
@@ -288,7 +300,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2740806,
-          lng: -123.1273946
+          lng: -123.1273946,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000013,
@@ -310,7 +323,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751294,
-          lng: -123.12571379999997
+          lng: -123.12571379999997,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000014,
@@ -332,7 +346,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27511059999999,
-          lng: -123.11870090000002
+          lng: -123.11870090000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000015,
@@ -354,7 +369,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.276877,
-          lng: -123.12088299999999
+          lng: -123.12088299999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000016,
@@ -376,7 +392,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2775863,
-          lng: -123.1288892
+          lng: -123.1288892,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000017,
@@ -398,7 +415,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2791238,
-          lng: -123.12655860000001
+          lng: -123.12655860000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000018,
@@ -420,7 +438,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28132329999999,
-          lng: -123.12410139999997
+          lng: -123.12410139999997,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000019,
@@ -442,7 +461,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2804843,
-          lng: -123.11698839999997
+          lng: -123.11698839999997,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000020,
@@ -464,7 +484,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27926950000001,
-          lng: -123.12303830000002
+          lng: -123.12303830000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000021,
@@ -486,7 +507,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28032140000001,
-          lng: -123.11923039999999
+          lng: -123.11923039999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000022,
@@ -508,7 +530,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2786905,
-          lng: -123.11642310000002
+          lng: -123.11642310000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000023,
@@ -530,7 +553,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2826089,
-          lng: -123.1028938
+          lng: -123.1028938,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000024,
@@ -552,7 +576,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2826089,
-          lng: -123.1028938
+          lng: -123.1028938,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000025,
@@ -574,7 +599,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.28297500000001,
-          lng: -123.1080839
+          lng: -123.1080839,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000026,
@@ -596,7 +622,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2780953,
-          lng: -123.09955030000003
+          lng: -123.09955030000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000027,
@@ -618,7 +645,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27968019999999,
-          lng: -123.10883060000003
+          lng: -123.10883060000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000028,
@@ -640,7 +668,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.279782,
-          lng: -123.10638799999998
+          lng: -123.10638799999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000029,
@@ -662,7 +691,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2793042,
-          lng: -123.10782319999998
+          lng: -123.10782319999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000030,
@@ -684,7 +714,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2780953,
-          lng: -123.09955030000003
+          lng: -123.09955030000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000031,
@@ -706,7 +737,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2786482,
-          lng: -123.1179687
+          lng: -123.1179687,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000032,
@@ -728,7 +760,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.27555160000001,
-          lng: -123.11542150000002
+          lng: -123.11542150000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000033,
@@ -750,7 +783,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2758282,
-          lng: -123.11562989999999
+          lng: -123.11562989999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000034,
@@ -772,7 +806,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2751106,
-          lng: -123.11870090000002
+          lng: -123.11870090000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000035,
@@ -794,7 +829,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2801011,
-          lng: -123.12652000000003
+          lng: -123.12652000000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000036,
@@ -816,7 +852,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2935756,
-          lng: -123.13707959999999
+          lng: -123.13707959999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000037,
@@ -838,7 +875,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877787,
-          lng: -123.12070890000001
+          lng: -123.12070890000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000038,
@@ -860,7 +898,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2883765,
-          lng: -123.11787830000003
+          lng: -123.11787830000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000039,
@@ -882,7 +921,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 40.8430923,
-          lng: -73.87098530000003
+          lng: -73.87098530000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000040,
@@ -904,7 +944,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2867031,
-          lng: -123.12630680000001
+          lng: -123.12630680000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000041,
@@ -926,7 +967,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877562,
-          lng: -123.12358670000003
+          lng: -123.12358670000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000042,
@@ -948,7 +990,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2881867,
-          lng: -123.12879809999998
+          lng: -123.12879809999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000043,
@@ -970,7 +1013,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2890569,
-          lng: -123.1288002
+          lng: -123.1288002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000044,
@@ -992,7 +1036,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.29142859999999,
-          lng: -123.12894900000003
+          lng: -123.12894900000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000045,
@@ -1014,7 +1059,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.291566,
-          lng: -123.13287830000002
+          lng: -123.13287830000002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000046,
@@ -1036,7 +1082,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.291783,
-          lng: -123.13653249999999
+          lng: -123.13653249999999,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000047,
@@ -1058,7 +1105,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2893961,
-          lng: -123.13062839999998
+          lng: -123.13062839999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000048,
@@ -1080,7 +1128,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2890569,
-          lng: -123.1288002
+          lng: -123.1288002,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000049,
@@ -1102,7 +1151,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2878218,
-          lng: -123.12824209999997
+          lng: -123.12824209999997,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000050,
@@ -1124,7 +1174,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.287695,
-          lng: -123.12562609999998
+          lng: -123.12562609999998,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000051,
@@ -1146,7 +1197,8 @@ exports.seed = function (knex, Promise) {
           parking: false,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877562,
-          lng: -123.12358670000003
+          lng: -123.12358670000003,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
         {
           id: 1000052,
@@ -1168,7 +1220,8 @@ exports.seed = function (knex, Promise) {
           parking: true,
           details: "Pro-sumer software we need distributors to evangelize the new line to local markets",
           lat: 49.2877787,
-          lng: -123.12070890000001
+          lng: -123.12070890000001,
+          landlord_email: 'arthurdl_91@hotmail.com'
         },
       ])
     });

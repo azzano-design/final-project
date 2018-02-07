@@ -58,7 +58,7 @@ class FacebookLogin extends Component {
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '330704774106294',
+        appId: '175711163181508',
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -125,7 +125,19 @@ class FacebookLogin extends Component {
     FB.getLoginStatus((response) => {
       if (response && response.status === 'connected') {
         FB.logout((response) => {
-          this.setState({ isLogged: false });
+          this.setState(
+            { isLogged: false,
+              currentUser: {
+                id: null,
+                name: '',
+                email: '',
+                phoneNumber: '',
+                profilePicURL: ''
+              }
+            }, () => {
+              localStorage.clear();
+            }
+          );
         });
       }
     });

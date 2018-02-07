@@ -42,26 +42,18 @@ export class MapContainer extends Component {
 
   createMarker(room) {
     const info =
-    '<div class="card">' +
-    '<div class="card-image">' +
-    '<figure class="image is-4by3">' +
-    '<img src="/images/house.jpg" alt="Placeholder image">' +
-    '</figure>' +
-    '</div>' +
-    '<div class="card-content">' +
-    '<div class="media">' +
-    '<div class="media-content">' +
-    '<p class="title is-4">' + room.street + '</p>' +
-    '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
-    '</div>' +
-    '</div>' +
-    '<div class="content">' +
-    '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
-    '<br>' +
-    '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
-    '</div>' +
-    '</div>' +
-    '</div>';
+    '<div class="listing-single">' +
+      '<div class="listing-header">' +
+        '<span class="listing-title">'+ room.street + '</span>' +
+        '<div class="listing-image-container">' +
+          '<div class="listing-image-filter"></div>'+
+          '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
+          '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
+          '<a href="#" class="listing-contact">Apply</a>' +
+        '</div>' +
+      '</div>' +
+      '<p>' + room.details + '</p>' +
+    '</div>'
     return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
   }
 
@@ -79,6 +71,7 @@ export class MapContainer extends Component {
 
   componentDidMount() {
     this.renderRooms();
+
   }
 
   onMarkerClick(marker, e) {
@@ -97,8 +90,7 @@ export class MapContainer extends Component {
           </div>
           <img src="/images/house.jpg"></img>
         </div>
-      )
-      );
+      ));
     }
   }
 
@@ -165,13 +157,15 @@ export class MapContainer extends Component {
       height: window.innerHeight,
     }
 
+    const style = [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"lightness":"0"},{"color":"#f7f1df"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"55"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"color":"#58585b"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"color":"#939396"},{"lightness":"46"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"17"}]}]
+
     //change map default focus
     const mapConfig = {
       zoom: 14,
       lat: 49.275147,
       lng: -123.132362,
       scrollwheel: false,
-      disableDefaultUI: true
+      disableDefaultUI: true,
     }
     const polygonOptions = {
       fillColor: '#A3A2AF',
@@ -182,6 +176,9 @@ export class MapContainer extends Component {
       editable: true,
       zIndex: 1
     }
+
+
+
 
     if (this.state.menuopen === true) {
       return (
@@ -229,16 +226,6 @@ export class MapContainer extends Component {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
-                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
-                        <span className="icon is-medium">
-                          <i className="fab fa-bandcamp"></i>
-                        </span>
-                        <span>Polygon Search</span>
-                      </a>
                     </div>
                   </div>
                   <div>
@@ -379,6 +366,16 @@ export class MapContainer extends Component {
                           </label>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                      <a className="polygon button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
                     </div>
                   </div>
                 </form>

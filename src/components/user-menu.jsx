@@ -21,7 +21,7 @@ class UserMenu extends Component {
                       <a href="/#/user/listings">My Listings</a>
                     </li>
                     <li>
-                      <a href="/#/user/applications">My Applications</a>
+                      <a href="/#/listing/new">Add New Listing</a>
                     </li>
                   </ul>
                 </div>

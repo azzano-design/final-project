@@ -30,7 +30,7 @@ export class MapContainer extends Component {
       natural_gas: false,
       storage: false,
       laundry_on_site: false,
-      furnished: false,
+      furniture: false,
       parking: false,
       rooms: [],
       otherMarkers: [],
@@ -41,6 +41,22 @@ export class MapContainer extends Component {
   }
 
   createMarker(room) {
+    let date = ''+ room.available_date +'';
+    date = date.substring(0, date.length - 14)
+
+    let landlordEmail = 'landlord@place.com'
+
+    let roomName = ''+ room.street+ ''
+    roomName = roomName.replace(" ", "%20");
+
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    let tenantName = ''+ user.name + ''
+    let tenantEmail = ''+ user.email + ''
+    let tenantPhone = ''+ user.phoneNumber + ''
+
+    let applyLink = 'mailto:'+landlordEmail+'?CC='+tenantEmail+'&Subject=Application%20-%20'+roomName+'&Body=Hello%2C%0A%0AMy%20name%20is%20'+tenantName+'%2C%20and%20I%20am%20applying%20to%20'+roomName+'%20from%2010/Tenant.%0A%0AI%20can%20be%20reached%20at%20'+tenantPhone+'%20number%20to%20discuss%20a%20viewing.%0A%0AThank%20you%2C%0A%0A'+tenantName+''
+
     const info =
     '<div class="listing-single">' +
       '<div class="listing-header">' +
@@ -49,9 +65,10 @@ export class MapContainer extends Component {
           '<div class="listing-image-filter"></div>'+
           '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
           '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
-          '<a href="#" class="listing-contact">Apply</a>' +
+          '<a href="'+applyLink+'" class="listing-contact">Apply</a>' +
         '</div>' +
       '</div>' +
+      '<span class="available_date">Available: ' + date +'</span>' +
       '<p>' + room.details + '</p>' +
     '</div>'
     return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
@@ -190,44 +207,6 @@ export class MapContainer extends Component {
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
                 <form>
-                  <div className="columns">
-                    <div className="column">
-                      <div className="field">
-                        <label>Available</label>
-                        <input
-                          className="input"
-                          name="available_date"
-                          type="date"
-                          value={this.state.available_date}
-                          onChange={this.handleInputChange}></input>
-                      </div>
-                      <div className="field">
-                        <label>Rent Amount</label>
-                        <div className="columns">
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_min"
-                              type="number"
-                              value={this.state.rent_amount_min}
-                              onChange={this.handleInputChange}
-                              placeholder="min">
-                            </input>
-                          </div>
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_max"
-                              type="number"
-                              value={this.state.rent_amount_max}
-                              onChange={this.handleInputChange}
-                              placeholder="max">
-                            </input>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <div>
                     <span className="searchHeading">Utilities</span>
                   </div>
@@ -357,9 +336,9 @@ export class MapContainer extends Component {
                           <label>Fully Furnished</label>
                           <label className="switch">
                             <input
-                              name="furnished"
+                              name="furniture"
                               type="checkbox"
-                              value={this.state.furnished}
+                              value={this.state.furniture}
                               onChange={this.handleCheckbox}>
                             </input>
                             <span className="slider round"></span>
@@ -408,54 +387,6 @@ export class MapContainer extends Component {
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
                 <form>
-                  <div className="columns">
-                    <div className="column">
-                      <div className="field">
-                        <label>Available</label>
-                        <input
-                          className="input"
-                          name="available_date"
-                          type="date"
-                          value={this.state.available_date}
-                          onChange={this.handleInputChange}></input>
-                      </div>
-                      <div className="field">
-                        <label>Rent Amount</label>
-                        <div className="columns">
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_min"
-                              type="number"
-                              value={this.state.rent_amount_min}
-                              onChange={this.handleInputChange}
-                              placeholder="min">
-                            </input>
-                          </div>
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_max"
-                              type="number"
-                              value={this.state.rent_amount_max}
-                              onChange={this.handleInputChange}
-                              placeholder="max">
-                            </input>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
-                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
-                        <span className="icon is-medium">
-                          <i className="fab fa-bandcamp"></i>
-                        </span>
-                        <span>Polygon Search</span>
-                      </a>
-                    </div>
-                  </div>
                   <div>
                     <span className="searchHeading">Utilities</span>
                   </div>
@@ -585,15 +516,25 @@ export class MapContainer extends Component {
                           <label>Fully Furnished</label>
                           <label className="switch">
                             <input
-                              name="furnished"
+                              name="furniture"
                               type="checkbox"
-                              value={this.state.furnished}
+                              value={this.state.furniture}
                               onChange={this.handleCheckbox}>
                             </input>
                             <span className="slider round"></span>
                           </label>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                      <a className="polygon button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
                     </div>
                   </div>
                 </form>

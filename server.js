@@ -171,7 +171,7 @@ app.get('/api/users/:id/rooms', (request, response) => {
   const user_id = request.params.id;
 
   const query = [user_id];
-  client.query("select * from rooms where landord_id=$1", query, (err, result) => {
+  client.query("select * from rooms where landlord_id=$1", query, (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
@@ -180,28 +180,13 @@ app.get('/api/users/:id/rooms', (request, response) => {
   });
 });
 
-//load messages for a specific user
-app.get('/api/users/:id/messages', (request, response) => {
-
-});
-
-//post message from a specific user
-app.post('/api/users/:id/messages', (request, response) => {
-
-});
-
-//post a room
+//edit a room
 app.post('/api/rooms/:id', (request, response) => {
 
 });
 
 //load rooms profile
 app.get('/api/rooms/:id', (request, response) => {
-
-});
-
-//edit rooms profile
-app.post('/api/rooms/:id', (request, response) => {
 
 });
 
@@ -218,14 +203,12 @@ app.post('/api/users/:id/applications', (request, response) => {
 
 
 app.get('/api/users', (request, response) => {
+  console.log("request query", request.query);
+  const name =  request.query.name;
+  const query = [name];
+  console.log("query", query);
 
-  // database('users').select().then((users) => {
-  // response.status(200).json(users);
-  // }).catch((error) => {
-  // response.status(500).json({ error });
-  // });
-
-  client.query("select * from users", (err, result) => {
+  client.query("select id from users where name=$1", query, (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }

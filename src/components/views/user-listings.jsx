@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import UserMenu from '../user-menu.jsx';
 import fetch from 'node-fetch';
-import axios from 'axios'
-
-// Match current user
-// filter out listings whose landlord id matches the current user's id.
-// current user facebook name matches name in table  - take landlord id
-// mathc landlord id using the filter array function.
+import axios from 'axios';
 
 class UserListings extends Component {
 
@@ -29,15 +24,11 @@ class UserListings extends Component {
         }
       })
       .then((response) => {
-        console.log("response data" + JSON.stringify(response.data));
         const data = response.data;
-        console.log("parsed response:", data);
         if (data.err) {
-          // oh no, shit is on fire
           callback(data.err);
         } else {
           user_id = data[0].id;
-          console.log("user_id", user_id);
           callback(undefined, user_id);
         }
       })
@@ -53,7 +44,6 @@ class UserListings extends Component {
     .then((response) => {
       const data = response.data;
       if (data.err) {
-        // oh no, shit is on fire
         callback(data.err);
       } else {
         rooms = data;
@@ -67,7 +57,6 @@ class UserListings extends Component {
 
   async renderUserListings() {
     const currentUser = JSON.parse(localStorage.getItem('user'));
-    console.log("current user name", currentUser.name);
     this.getUserIdByName(currentUser.name, (err, result)=> {
       if(err){
         console.log("error in getUserIdByName", err)
@@ -76,7 +65,6 @@ class UserListings extends Component {
           if(err){
             console.log("error in getRoomsByUserId", err);
           } else {
-            console.log("result getRoomsByUserId", result);
             result.forEach((room) => {
               this.setState({
                 rooms: this.state.rooms.concat(room)
@@ -132,8 +120,7 @@ class UserListings extends Component {
         <div className="sideScroll columns">
           {
             this.state.rooms.map((item) => {
-              console.log("current user", currentUser);
-               return userListing(item.street, item.city)
+              return userListing(item.street, item.city)
             })
           }
           <div className="sideScroll-inner"></div>

@@ -22,15 +22,12 @@ class FacebookLogin extends Component {
     if (response.status === 'connected') {
       this.setState({ isLogged: true })
       this.connectAPI(() => {
-        console.log("state ->", this.state);
         this.getUserbyEmail(
           this.state.currentUser.email,
           (err, result) => {
             if (err) {
-              console.log("oh god, why why why, err", err);
             } else {
               if (result) {
-                console.log("get user by email result", result);
                 const currentUser = this.state.currentUser
                 this.setState({
                   currentUser: {
@@ -41,14 +38,12 @@ class FacebookLogin extends Component {
                     profilePicURL: currentUser.profilePicURL
                   }
                 })
-                console.log("current user", this.state.currentUser)
                 localStorage.setItem('user', JSON.stringify(this.state.currentUser));
               } else {
                 this.setNewUser(
                   this.state.currentUser.name,
                   this.state.currentUser.email,
                   this.state.currentUser.profilePicURL);
-                // local storage
               }
             }
           }
@@ -56,9 +51,6 @@ class FacebookLogin extends Component {
       });
     } else {
       this.setState({ isLogged: false });
-      console.log("islogged", this.state.isLogged);
-
-      console.log("Not authenticated");
     }
   };
 
@@ -66,7 +58,7 @@ class FacebookLogin extends Component {
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '330704774106294',
+        appId: '175711163181508',
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -94,12 +86,8 @@ class FacebookLogin extends Component {
       }
     })
     .then((response) => {
-      console.log("response data" + JSON.stringify(response.data));
-      // var data = JSON.parse(response.data);
       var data = response.data;
-      console.log("parsed response:", data);
       if (data.err) {
-        // oh no, shit is on fire
         callback(data.err);
       } else {
         var user = data.result;
@@ -119,11 +107,9 @@ class FacebookLogin extends Component {
       profile_pic_url: profilePicURL
     })
     .then(function (response) {
-      console.log('setNewUser',response);
       callback(undefined, response);
     })
     .catch(function (error) {
-      console.log(error);
       callback(error);
     });
   }
@@ -139,8 +125,7 @@ class FacebookLogin extends Component {
     FB.getLoginStatus((response) => {
       if (response && response.status === 'connected') {
         FB.logout((response) => {
-          this.setState({ isLogged: false })
-          console.log(this.state.isLogged)
+          this.setState({ isLogged: false });
         });
       }
     });
@@ -150,8 +135,6 @@ class FacebookLogin extends Component {
     FB.api('/me?fields=name,email,picture.width(160).height(160)', (response) => {
       if (response && !response.error) {
         this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
-        console.log("current user", this.state.currentUser);
-        // localStorage.setItem('user', JSON.stringify(this.state.currentUser));
       }
       callback();
 

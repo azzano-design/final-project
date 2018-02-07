@@ -33,7 +33,7 @@ export class MapContainer extends Component {
       furnished: false,
       parking: false,
       rooms: [],
-      otherMarkers: []
+      otherMarkers: [],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
@@ -72,6 +72,7 @@ export class MapContainer extends Component {
 
   componentDidMount() {
     this.renderRooms();
+
   }
 
 
@@ -127,8 +128,7 @@ export class MapContainer extends Component {
           </div>
           <img src="/images/house.jpg"></img>
         </div>
-      )
-      );
+      ));
     }
   }
 

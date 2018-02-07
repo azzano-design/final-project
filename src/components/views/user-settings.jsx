@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserMenu from '../user-menu.jsx';
+import axios from 'axios';
 
 class UserSettings extends Component {
   constructor(props) {
@@ -7,7 +8,35 @@ class UserSettings extends Component {
     this.state = {
       user:  JSON.parse(localStorage.getItem('user'))
     }
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
+
+  handleInputChange(event) {
+    console.log("event.target.value", event.target.value);
+    if(!event.target.value){
+      event.target.value = "";
+    }
+    this.setState({
+      user: {
+        id: this.state.user.id,
+        name: this.state.user.name,
+        email: this.state.user.email,
+        profilePicURL: this.state.user.profilePicURL,
+        phoneNumber: event.target.value
+      }
+    });
+  }
+
+  submitPhoneNumber(event){
+    event.preventDefault();
+    let phone_number = this.state.user.phoneNumber;
+    const user_id = this.state.user.id
+    axios.post(`http://localhost:5000/api/users/${user_id}`,  {phone_number: phone_number})
+    .then((result) => {
+      console.log('result', result);
+    })
+  }
+
   render() {
     {console.log('local user',localStorage.getItem('user'))}
     {console.log('state user', this.state.user)}
@@ -21,7 +50,7 @@ class UserSettings extends Component {
               <div className="container">
                 <div className="columns">
                   <div className="column">
-                    <form>
+                    <form onSubmit={this.submitPhoneNumber.bind(this)}>
                       <div className="columns">
                         <div className="column is-half is-offset-one-quarter">
                           <div className="profileCircle">
@@ -32,7 +61,7 @@ class UserSettings extends Component {
                           <div className="field">
                             <label className="label">Phone Number</label>
                             <div className="control">
-                              <input className="input" type="phone" placeholder="e.g. 1-604-123-1214"></input>
+                            <input className="input" type="tel" placeholder="e.g. 1-604-123-1214" size="10" value={this.state.user.phoneNumber || ""}  onChange={this.handleInputChange} ></input>
                             </div>
                           </div>
                           <div className="control">

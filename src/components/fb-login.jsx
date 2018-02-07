@@ -21,17 +21,28 @@ class FacebookLogin extends Component {
     let result;
     if (response.status === 'connected') {
       this.setState({ isLogged: true })
-      console.log("islogged", this.state.isLogged);
       this.connectAPI(() => {
         console.log("state ->", this.state);
         this.getUserbyEmail(
           this.state.currentUser.email,
           (err, result) => {
             if (err) {
-              console.log("oh god, why why why, err")
+              console.log("oh god, why why why, err", err);
             } else {
               if (result) {
-                // we have a user?  why do we have a user?  goddammit!!!!!!!!!!!!!!!!!!!!
+                console.log("get user by email result", result);
+                const currentUser = this.state.currentUser
+                this.setState({
+                  currentUser: {
+                    id: result.id,
+                    name: currentUser.name,
+                    email: currentUser.email,
+                    phoneNumber: result.phone_number,
+                    profilePicURL: currentUser.profilePicURL
+                  }
+                })
+                console.log("current user", this.state.currentUser)
+                localStorage.setItem('user', JSON.stringify(this.state.currentUser));
               } else {
                 this.setNewUser(
                   this.state.currentUser.name,
@@ -139,11 +150,8 @@ class FacebookLogin extends Component {
     FB.api('/me?fields=name,email,picture.width(160).height(160)', (response) => {
       if (response && !response.error) {
         this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
-        console.log("current user", this.state.currentUser)
-        let user =  {
-          name: 'konrad'
-        }
-        localStorage.setItem('user', JSON.stringify(this.state.currentUser));
+        console.log("current user", this.state.currentUser);
+        // localStorage.setItem('user', JSON.stringify(this.state.currentUser));
       }
       callback();
 

@@ -117,7 +117,6 @@ class UserListings extends Component {
         </footer>
       </div>
     )
-    console.log('ROOMS LENGTH---->', this.state.rooms)
     return (<div>
       <UserMenu />
       <div className="container">

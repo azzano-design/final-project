@@ -156,6 +156,7 @@ app.get('/api/users/:id', (request, response) => {
 app.post('/api/users/:id', (request, response) => {
   const user_id = request.params.id;
   const { phone_number } = request.body;
+  console.log("phone number", request.body.phone_number);
   const query = [user_id, phone_number];
   client.query("UPDATE users SET phone_number =$2 where id=$1", query, (err, result) => {
     if (err) {

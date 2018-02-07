@@ -12,7 +12,6 @@ class UserSettings extends Component {
   }
 
   handleInputChange(event) {
-    console.log("event.target.value", event.target.value);
     if(!event.target.value){
       event.target.value = "";
     }
@@ -29,17 +28,18 @@ class UserSettings extends Component {
 
   submitPhoneNumber(event){
     event.preventDefault();
+    localStorage.setItem('user', JSON.stringify(this.state.user));
     let phone_number = this.state.user.phoneNumber;
     const user_id = this.state.user.id
     axios.post(`http://localhost:5000/api/users/${user_id}`,  {phone_number: phone_number})
     .then((result) => {
-      console.log('result', result);
+      if (result.statusText === 'OK'){
+        alert("Profile updated with success.");
+      }
     })
   }
 
   render() {
-    {console.log('local user',localStorage.getItem('user'))}
-    {console.log('state user', this.state.user)}
     return (
       <div>
         <UserMenu/>
@@ -57,7 +57,7 @@ class UserSettings extends Component {
                             <img src={this.state.user.profilePicURL} />
                           </div>
                           <div className="control has-icons-left has-icons-right">
-                            <input className="input is-success is-rounded" type="text" placeholder={this.state.user.name}></input>
+                            <input className="input is-success is-rounded" type="text" value={this.state.user.name} readOnly></input>
                             <span className="icon is-small is-left">
                               <i className="fas fa-user"></i>
                             </span>
@@ -66,7 +66,7 @@ class UserSettings extends Component {
                             </span>
                           </div>
                           <div className="control has-icons-left has-icons-right">
-                            <input className="input is-success is-rounded" type="text" placeholder={this.state.user.email}></input>
+                            <input className="input is-success is-rounded" type="text" value={this.state.user.email} readOnly></input>
                             <span className="icon is-small is-left">
                               <i className="fas fa-envelope"></i>
                             </span>

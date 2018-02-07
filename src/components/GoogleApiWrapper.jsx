@@ -12,6 +12,7 @@ import FacebookLogin from './fb-login.jsx';
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
+    console.log('map container constructor called');
     this.state = {
       drawMode: false,
       loaded: false,
@@ -41,7 +42,7 @@ export class MapContainer extends Component {
   async renderRooms() {
     const response = await fetch('http://localhost:5000/api/rooms')
     const rooms = await response.json()
-    await this.setState({
+    this.setState({
       rooms: [
         ...rooms
       ]
@@ -75,42 +76,40 @@ export class MapContainer extends Component {
   }
 
 
-  async addMarker(room) {
-    const info =
-      '<div class="card">' +
-      '<div class="card-image">' +
-      '<figure class="image is-4by3">' +
-      '<img src="/images/house.jpg" alt="Placeholder image">' +
-      '</figure>' +
-      '</div>' +
-      '<div class="card-content">' +
-      '<div class="media">' +
-      '<div class="media-content">' +
-      '<p class="title is-4">' + room.street + '</p>' +
-      '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
-      '</div>' +
-      '</div>' +
-      '<div class="content">' +
-      '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
-      '<br>' +
-      '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
-      '</div>' +
-      '</div>' +
-      '</div>'
+  addMarker(rooms) {
     const temp = this.state.otherMarkers;
     console.log('call addMarker');
-    const newMarker = { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
-    for (let otherRoom in temp) {
-      if (room.lat !== otherRoom.lat) {
-        if (room.lng !== otherRoom.lng) {
-          temp.push(newMarker);
-          await this.setState({
-            otherMarkers: [...temp, newMarker]
-          });
-          console.log("state other markers", this.state.otherMarkers);
-        }
-      }
-    }
+    const roomsToAdd = rooms.filter(function (room) {
+      return !temp.some(function (marker) {
+        return marker.lat == room.lat && marker.lng == room.lng;
+      });
+    });
+    this.setState({
+      otherMarkers: this.state.otherMarkers.concat(roomsToAdd.map(function (room) {
+        const info =
+        '<div class="card">' +
+        '<div class="card-image">' +
+        '<figure class="image is-4by3">' +
+        '<img src="/images/house.jpg" alt="Placeholder image">' +
+        '</figure>' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<div class="media">' +
+        '<div class="media-content">' +
+        '<p class="title is-4">' + room.street + '</p>' +
+        '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+        '</div>' +
+        '</div>' +
+        '<div class="content">' +
+        '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+        '<br>' +
+        '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+        return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
+      }))
+    });
   }
 
   onMarkerClick(marker, e) {
@@ -181,10 +180,10 @@ export class MapContainer extends Component {
           return room[name] === true
         }
       );
+      console.log('this.state.rooms', this.state.rooms);
       console.log("filtered rooms", filteredRooms);
-      filteredRooms.map((room) => {
-        this.addMarker(room);
-      })
+      this.addMarker(filteredRooms);
+      console.log('this.state.otherMarkers in handleCheckbox:', this.state.otherMarkers);
     }
     else {
       this.setState({
@@ -219,6 +218,8 @@ export class MapContainer extends Component {
       editable: true,
       zIndex: 1
     }
+
+    console.log('menuopen:', this.state.menuopen, this.state.otherMarkers);
 
     if (this.state.menuopen === true) {
       return (

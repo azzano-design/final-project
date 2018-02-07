@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import UserMenu from '../user-menu.jsx';
 import fetch from 'node-fetch';
+import axios from 'axios'
 
 // Match current user
 // filter out listings whose landlord id matches the current user's id.
@@ -18,13 +19,74 @@ class UserListings extends Component {
     }
   }
 
-  async renderUserListings() {
-    const response = await fetch('http://localhost:5000/api/rooms')
-    const rooms = await response.json()
-    await this.setState({
-      rooms: [...rooms]
-    })
+  async getUserIdByName(userName ,callback) {
+    if (!callback) callback = ()=>{};
+    let user_id = undefined;
+    await axios.get('http://localhost:5000/api/users',
+      {
+        params: {
+          name: userName
+        }
+      })
+      .then((response) => {
+        console.log("response data" + JSON.stringify(response.data));
+        const data = response.data;
+        console.log("parsed response:", data);
+        if (data.err) {
+          // oh no, shit is on fire
+          callback(data.err);
+        } else {
+          user_id = data[0].id;
+          console.log("user_id", user_id);
+          callback(undefined, user_id);
+        }
+      })
+      .catch((error) => {
+        console.log("mess in getUserIdByName", error);
+      });
+  }
 
+  async getRoomsByUserId(userId, callback) {
+    if (!callback) callback = ()=>{};
+    let rooms = [];
+    await axios.get(`http://localhost:5000/api/users/${userId}/rooms`)
+    .then((response) => {
+      const data = response.data;
+      if (data.err) {
+        // oh no, shit is on fire
+        callback(data.err);
+      } else {
+        rooms = data;
+        callback(undefined, rooms);
+      }
+    })
+    .catch((error) => {
+      console.log("mess in getRoomsByUserId", error);
+    });
+  }
+
+  async renderUserListings() {
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    console.log("current user name", currentUser.name);
+    this.getUserIdByName(currentUser.name, (err, result)=> {
+      if(err){
+        console.log("error in getUserIdByName", err)
+      } else {
+        this.getRoomsByUserId(result, (err, result) => {
+          if(err){
+            console.log("error in getRoomsByUserId", err);
+          } else {
+            console.log("result getRoomsByUserId", result);
+            result.forEach((room) => {
+              this.setState({
+                rooms: this.state.rooms.concat(room)
+              })
+            })
+          }
+        })
+      }
+
+    });
   }
 
   componentDidMount() {
@@ -34,11 +96,11 @@ class UserListings extends Component {
   render() {
     const currentUser = localStorage.getItem('user');
 
-    const userListing = (address, city) =>  (
+    const userListing = (address, city) => (
       <div className="card">
         <div className="card-content">
-          <p>{ address } </p>
-          <p>{ city } </p>
+          <p>{address} </p>
+          <p>{city} </p>
           <img src="/images/house.jpg"></img>
         </div>
         <footer className="card-footer">
@@ -54,10 +116,10 @@ class UserListings extends Component {
           </p>
         </footer>
       </div>
-  )
+    )
     console.log('ROOMS LENGTH---->', this.state.rooms)
     return (<div>
-      <UserMenu/>
+      <UserMenu />
       <div className="container">
         <div className="columns">
           <section className="column">
@@ -120,20 +182,12 @@ class UserListings extends Component {
                   </div>
                 </div>
                 <div className="column">
-
-
-      // for loop that renders out the rooms -> all data parsed into userlisting
-
                   {
                     this.state.rooms.map((item) => {
                       console.log("current user", currentUser);
                        return userListing(item.street, item.city)
                     })
-
-
                   }
-
-
                   <div className="applicant card">
                     <div className="level-item">
                       <span>No applicants yet...</span>

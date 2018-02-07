@@ -80,7 +80,6 @@ class FacebookLogin extends Component {
   }
 
   getUserbyEmail(userEmail, callback) {
-    console.log("useremail", userEmail);
     axios.get('/api/login', {
       params: {
         email: userEmail

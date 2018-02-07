@@ -44,6 +44,22 @@ $primary: #C3E3D3;
   margin-right:5px;
 }
 // Home
+
+.bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
 .homeLanding {
   min-height: 100vh;
   width:100%;
@@ -51,6 +67,25 @@ $primary: #C3E3D3;
   padding: 0px;
   margin: 0px;
   background: $primary;
+}
+
+.title {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  z-index: 999;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+}
+.subtitle {
+  position: absolute;
+  top: 48%;
+  left: 30%;
+  right: -50%;
+  color: #363636;
+  width: 45%;
 }
 
 main {

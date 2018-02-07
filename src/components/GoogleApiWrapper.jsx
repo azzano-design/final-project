@@ -34,9 +34,35 @@ export class MapContainer extends Component {
       parking: false,
       rooms: [],
       otherMarkers: [],
+      currentFilters: []
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
+  }
+
+  createMarker(room) {
+    const info =
+    '<div class="card">' +
+    '<div class="card-image">' +
+    '<figure class="image is-4by3">' +
+    '<img src="/images/house.jpg" alt="Placeholder image">' +
+    '</figure>' +
+    '</div>' +
+    '<div class="card-content">' +
+    '<div class="media">' +
+    '<div class="media-content">' +
+    '<p class="title is-4">' + room.street + '</p>' +
+    '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
+    '</div>' +
+    '</div>' +
+    '<div class="content">' +
+    '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
+    '<br>' +
+    '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
   }
 
   async renderRooms() {
@@ -45,7 +71,8 @@ export class MapContainer extends Component {
     this.setState({
       rooms: [
         ...rooms
-      ]
+      ],
+      otherMarkers: rooms.map(this.createMarker)
     })
     // for (let room of this.state.rooms){
     //   const info =
@@ -68,48 +95,12 @@ export class MapContainer extends Component {
 
     //   this.addMarker(null, info, room.lat, room.lng );
     // }
+    console.log('rooms:', rooms);
   }
 
   componentDidMount() {
     this.renderRooms();
 
-  }
-
-
-  addMarker(rooms) {
-    const temp = this.state.otherMarkers;
-    console.log('call addMarker');
-    const roomsToAdd = rooms.filter(function (room) {
-      return !temp.some(function (marker) {
-        return marker.lat == room.lat && marker.lng == room.lng;
-      });
-    });
-    this.setState({
-      otherMarkers: this.state.otherMarkers.concat(roomsToAdd.map(function (room) {
-        const info =
-        '<div class="card">' +
-        '<div class="card-image">' +
-        '<figure class="image is-4by3">' +
-        '<img src="/images/house.jpg" alt="Placeholder image">' +
-        '</figure>' +
-        '</div>' +
-        '<div class="card-content">' +
-        '<div class="media">' +
-        '<div class="media-content">' +
-        '<p class="title is-4">' + room.street + '</p>' +
-        '<p class="subtitle is-6">$' + room.rent_amount + ' /month - Available: ' + '<time datetime="2016-1-1">' + room.available_date + '</time></p>' +
-        '</div>' +
-        '</div>' +
-        '<div class="content">' +
-        '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request? or three-martini lunch. Granularity productize make sure to include in your wheelhouse, not a hill to die on or can you ballpark the cost per unit for me productize, and when does this sunset?</p>' +
-        '<br>' +
-        '<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-        return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };
-      }))
-    });
   }
 
   onMarkerClick(marker, e) {
@@ -169,27 +160,22 @@ export class MapContainer extends Component {
   handleCheckbox(event) {
     const name = event.target.name;
     console.log("name", name);
-    if (this.state[name] === false) {
-      this.setState({
-        [name]: true
-      });
-
-      let filteredRooms = this.state.rooms.filter(
-        (room) => {
-          return room[name] === true
-        }
-      );
-      console.log('this.state.rooms', this.state.rooms);
-      console.log("filtered rooms", filteredRooms);
-      this.addMarker(filteredRooms);
-      console.log('this.state.otherMarkers in handleCheckbox:', this.state.otherMarkers);
-    }
-    else {
-      this.setState({
-        [name]: false
-      });
-    }
-    console.log("this.state.name", this.state[name]);
+    const toggle = !this.state[name];
+    const currentFilters = toggle ? this.state.currentFilters.concat(name) : this.state.currentFilters.filter(function (filter) {
+      return filter != name;
+    });
+    const filteredRooms = this.state.rooms.filter(
+      (room) => {
+        return currentFilters.every(function (filter) {
+          return room[filter] == true;
+        });
+      }
+    ).map(this.createMarker);
+    this.setState({
+      [name]: toggle,
+      currentFilters: currentFilters,
+      otherMarkers: filteredRooms
+    })
   }
 
   render() {
@@ -219,8 +205,6 @@ export class MapContainer extends Component {
       editable: true,
       zIndex: 1
     }
-
-    console.log('menuopen:', this.state.menuopen, this.state.otherMarkers);
 
     if (this.state.menuopen === true) {
       return (
@@ -268,16 +252,6 @@ export class MapContainer extends Component {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
-                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
-                        <span className="icon is-medium">
-                          <i className="fab fa-bandcamp"></i>
-                        </span>
-                        <span>Polygon Search</span>
-                      </a>
                     </div>
                   </div>
                   <div>
@@ -418,6 +392,16 @@ export class MapContainer extends Component {
                           </label>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
                     </div>
                   </div>
                 </form>

@@ -47,26 +47,6 @@ export class MapContainer extends Component {
       ]
     })
     // for (let room of this.state.rooms){
-
-<<<<<<< HEAD
-      const info =
-      '<div class="listing-single">' +
-        '<div class="listing-header">' +
-          '<span class="listing-title">'+ room.street + '</span>' +
-          '<div class="listing-image-container">' +
-            '<div class="listing-image-filter"></div>'+
-            '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
-            '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
-            '<a href="mailto:brendanazzano@gmail.com?Subject=Room%20Application%20-%20Room%20Number&Body=Hi%2C%0A%0AMy%20name%20is%3A%20Brendan%2C%0A%0AI%27m%20interested%20in%20your%20listing." class="listing-contact">Apply</a>' +
-          '</div>' +
-        '</div>' +
-        '<p>Pro-sumer software we need distributors to evangelize the new line to local markets, for dogpile that but best practices pipeline, and Bob called an all-hands this afternoon, nor going forward. Fire up your browser can I just chime in on that one, for who\'s responsible for the ask for this request?</p>' +
-        '<div class="columns">' +
-          '<div class="column"></div>' +
-          '<div class="column"></div>' +
-        '</div>' +
-      '</div>'
-=======
     //   const info =
     //   '<div class="listing-single">' +
     //     '<div class="listing-header">' +
@@ -84,7 +64,6 @@ export class MapContainer extends Component {
     //       '<div class="column"></div>' +
     //     '</div>' +
     //   '</div>'
->>>>>>> 47a790b404a483f2f1f6aba7288a016a899cb654
 
     //   this.addMarker(null, info, room.lat, room.lng );
     // }

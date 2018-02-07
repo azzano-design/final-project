@@ -387,54 +387,6 @@ export class MapContainer extends Component {
                   <i className="fas fa-cog fa-2x"></i>
                 </button>
                 <form>
-                  <div className="columns">
-                    <div className="column">
-                      <div className="field">
-                        <label>Available</label>
-                        <input
-                          className="input"
-                          name="available_date"
-                          type="date"
-                          value={this.state.available_date}
-                          onChange={this.handleInputChange}></input>
-                      </div>
-                      <div className="field">
-                        <label>Rent Amount</label>
-                        <div className="columns">
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_min"
-                              type="number"
-                              value={this.state.rent_amount_min}
-                              onChange={this.handleInputChange}
-                              placeholder="min">
-                            </input>
-                          </div>
-                          <div className="column">
-                            <input
-                              className="input"
-                              name="rent_amount_max"
-                              type="number"
-                              value={this.state.rent_amount_max}
-                              onChange={this.handleInputChange}
-                              placeholder="max">
-                            </input>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
-                      <a className="button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
-                        <span className="icon is-medium">
-                          <i className="fab fa-bandcamp"></i>
-                        </span>
-                        <span>Polygon Search</span>
-                      </a>
-                    </div>
-                  </div>
                   <div>
                     <span className="searchHeading">Utilities</span>
                   </div>
@@ -573,6 +525,16 @@ export class MapContainer extends Component {
                           </label>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="columns">
+                    <div className="column">
+                      <a className="polygon button is-rounded is-large" onClick={this.toggleDraw.bind(this)}>
+                        <span className="icon is-medium">
+                          <i className="fab fa-bandcamp"></i>
+                        </span>
+                        <span>Polygon Search</span>
+                      </a>
                     </div>
                   </div>
                 </form>

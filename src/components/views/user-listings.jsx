@@ -96,123 +96,51 @@ class UserListings extends Component {
   render() {
     const currentUser = localStorage.getItem('user');
 
-    const userListing = (address, city) => (
-      <div className="card">
-        <div className="card-content">
-          <p>{address} </p>
-          <p>{city} </p>
-          <img src="/images/house.jpg"></img>
-        </div>
-        <footer className="card-footer">
-          <p className="card-footer-item">
-            <span>
-              <a href="#" className="button is-warning">Edit Listing</a>
-            </span>
-          </p>
-          <p className="card-footer-item">
-            <span>
-              <a href="#" className="button is-danger">Remove Listing</a>
-            </span>
-          </p>
-        </footer>
-      </div>
-    )
-    return (<div>
-      <UserMenu />
-      <div className="container">
-        <div className="columns">
-          <section className="column">
-            <div className="container">
-              <div className="columns">
-                <div className="column">
-                  <div className="card">
-
-                    <div className="card-content">
-                      <h1>
-                        {this.listing}
-                      </h1>
-                      <img src="/images/house.jpg"></img>
-                    </div>
-
-                    <footer className="card-footer">
-                      <p className="card-footer-item">
-                        <span>
-                          <a href="#" className="button is-warning">Edit Listing</a>
-                        </span>
-                      </p>
-                      <p className="card-footer-item">
-                        <span>
-                          <a href="#" className="button is-danger">Remove Listing</a>
-                        </span>
-                      </p>
-                    </footer>
-                  </div>
-                  <div className="applicant card">
-                    <div className="level-item">
-                      <div className="">
-                        <div className="circle level-left level-item">
-                          <img src="/images/house.jpg"></img>
-                        </div>
-                      </div>
-                      <div className="column level-item">
-                        <span>John Doe</span>
-                      </div>
-                      <div className="column level-item level-right">
-                        <i className="far fa-check-circle fa-2x"></i>
-                        <i className="far fa-times-circle fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="applicant card">
-                    <div className="level-item">
-                      <div className="">
-                        <div className="circle level-left level-item">
-                          <img src="/images/house.jpg"></img>
-                        </div>
-                      </div>
-                      <div className="column level-item">
-                        <span>John Doe</span>
-                      </div>
-                      <div className="column level-item level-right">
-                        <i className="far fa-check-circle fa-2x"></i>
-                        <i className="far fa-times-circle fa-2x"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="column">
-                  {
-                    this.state.rooms.map((item) => {
-                      console.log("current user", currentUser);
-                       return userListing(item.street, item.city)
-                    })
-                  }
-                  <div className="applicant card">
-                    <div className="level-item">
-                      <span>No applicants yet...</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="card">
-                    <div className="card-content">
-                      <i className="fas fa-plus-circle fa-3x"></i>
-                    </div>
-                    <footer className="card-footer">
-                      <p className="card-footer-item">
-                        <span>
-                          <a href="/#/listing/new">Add new listing</a>
-                        </span>
-                      </p>
-                    </footer>
-                  </div>
+    const userListing =
+      (address, city) => (
+        <div className="column">
+          <div className="card">
+            <div className="listing-single">
+              <div className="listing-header">
+                <span className="listing-title">{address}</span>
+                <div className="listing-image-container">
+                  <div className="listing-image-filter"></div>
+                  <img src="/images/house.jpg" alt="Placeholder image" className="listing-image"></img>
+                  <span className="listing-price">$ RENT</span>
                 </div>
               </div>
             </div>
-          </section>
+            <footer className="card-footer">
+              <p className="card-footer-item">
+                <span>
+                  <a href="#" className="button is-warning">Edit Listing</a>
+                </span>
+              </p>
+              <p className="card-footer-item">
+                <span>
+                  <a href="#" className="button is-danger">Remove Listing</a>
+                </span>
+              </p>
+            </footer>
+          </div>
+        </div>
+    )
+    return (
+    <div>
+      <UserMenu />
+      <div className="animated fadeIn">
+        <div className="sideScroll columns">
+          {
+            this.state.rooms.map((item) => {
+              console.log("current user", currentUser);
+               return userListing(item.street, item.city)
+            })
+          }
+          <div className="sideScroll-inner"></div>
         </div>
       </div>
-    </div>)
+    </div>
+    )
   }
 }
 

@@ -28,20 +28,87 @@ $primary: #C3E3D3;
 
 .fb-logout-button {
   color:#000 !important;
-  background:$primary;
   padding:10px;
 }
 
+.fb-logout-button:hover {
+  background: #00b89c;
+}
 .navbar-burger {
   color:#000;
 }
 .navbar-end a {
     color: #000 !important;
 }
+.navbar-item svg {
+  margin-right:10px;
+}
+.navbar-item:hover svg {
+  color:#fff;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
+}
+
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 
 .profilePic {
   border-radius: 50%;
-  margin-right:5px;
+  margin-right:10px;
 }
 // Home
 
@@ -306,8 +373,8 @@ label {
 }
 .listing-image-container {
   position:relative;
-  width:600px;
-  margin-bottom: 40px;
+  width:640px;
+  margin-bottom: 25px;
 }
 .listing-image-container img {
   vertical-align: middle;
@@ -330,8 +397,8 @@ label {
   background: #C3E3D3;
   margin-top: -15px;
   position: absolute;
-  bottom: -20px;
-  right: 105px;
+  top: -20px;
+  right: 145px;
   font-weight: bold;
   padding: 20px;
   font-size: 1.25em;
@@ -347,8 +414,8 @@ label {
   background: $primary;
   margin-top: -15px;
   position: absolute;
-  bottom: -20px;
-  right: -50px;
+  top: -20px;
+  right: -10px;
   font-weight: bold;
   padding: 20px;
   font-size: 1.25em;
@@ -356,8 +423,70 @@ label {
   border-right: 4px solid #7dc3a0;
 }
 
+.listing-form {
+  margin-bottom:5%;
+}
+span.feature-heading {
+  display: block;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+span.feature {
+  padding: 10px;
+  font-size: 1.5em;
+}
 
+.polygon {
+  margin-top:25px;
+}
 // Profile
+.tabs ul {
+  border-bottom-color: #ffffff;
+}
+.tabs li {
+  display: block;
+  margin-right: 15px;
+}
+.tabs a {
+  border-bottom: 2px solid #efefef;
+}
+.tabs a:hover {
+  border-bottom: 2px solid $primary;
+}
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
 
 .profileCircle {
   position: relative;
@@ -367,11 +496,28 @@ label {
   background: white;
   border: 1px solid #ccc;
   overflow:hidden;
-  margin-left:auto;
-  margin-right:auto;
+  margin: 50px auto 50px auto;
 }
 
 .profileCircle img {
   height:100%;
   width:100%;
+}
+
+.control {
+  margin-top:10px;
+  margin-top:20px;
+}
+.input.is-success, .textarea.is-success {
+    border-color: $primary;
+}
+.sideScroll {
+  margin-top:25px;
+  overflow-y:scroll;
+}
+.sideScroll .column:first-child {
+  margin-left:2%;
+}
+.sideScroll .column:last-child {
+  margin-right:2%;
 }

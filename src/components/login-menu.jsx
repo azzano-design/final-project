@@ -13,9 +13,6 @@ class LoginMenu extends Component {
             <a href="/#/search" className="navbar-item">
               <i className="fas fa-search fa-lg"></i>Search
             </a>
-            <a href="/#/inbox" className="navbar-item">
-              <i className="fas fa-inbox fa-lg"></i>Inbox
-            </a>
             <a href="/#/user/settings" className="navbar-item">
               <img className="profilePic" src={this.props.user.profilePicURL}></img>{this.props.user.name}
             </a>

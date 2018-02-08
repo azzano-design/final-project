@@ -136,6 +136,37 @@ $primary: #C3E3D3;
   background: $primary;
 }
 
+.videoOverlay {
+  background: linear-gradient(270deg, #c3e3d3, #ffffff00);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+
 .title {
   color: #363636;
   font-size: 2rem;
@@ -153,6 +184,7 @@ $primary: #C3E3D3;
   right: -50%;
   color: #363636;
   width: 45%;
+  z-index:998;
 }
 
 main {
@@ -193,6 +225,10 @@ main.search aside {
   height: 100vh;
   padding: 20% 20% 0px 20%;
   margin: 0px !important;
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243, 243, 243, 0.22) 50%,rgba(249, 249, 249, 1) 51%,rgba(255, 255, 255, 0.08) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243, 243, 243, 0.22) 50%,rgba(249, 249, 249, 1) 51%,rgba(255, 255, 255, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243, 243, 243, 0.22) 50%,rgba(249, 249, 249, 1) 51%,rgba(255, 255, 255, 0.08) 100%);
 }
 .search-menu .search-menu-container form {
   transition: all linear 2000ms;
@@ -224,6 +260,7 @@ main.search aside {
   &:focus{
     outline: none;
   }
+
 }
 
 .search-menu.closed .search-menu-container #menu-toggle {
@@ -278,8 +315,8 @@ main.search aside {
 
 .searchHeading {
   font-weight: bolder;
-  padding-top:25px;
-  padding-bottom:10px;
+  padding-top:50px;
+  padding-bottom:25px;
   display:block;
 }
 
@@ -381,6 +418,22 @@ label {
   width:640px;
   margin-bottom: 25px;
 }
+.listing-image {
+  height: 350px;
+  background-size: cover;
+  background-position: center center;
+}
+
+span.available_date {
+  font-weight: bold;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+
+.listing-single p {
+  margin-top:10px;
+}
+
 .user-page .listing-image-container {
   margin-bottom: 0px;
 }
@@ -407,7 +460,7 @@ label {
   margin-top: -15px;
   position: absolute;
   top: -20px;
-  right: 145px;
+  right: 155px;
   font-weight: bold;
   padding: 20px;
   font-size: 1.25em;
@@ -529,4 +582,42 @@ span.feature {
 }
 .sideScroll .column:last-child {
   margin-right:2%;
+}
+
+.preview-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 650px;
+  min-height: 450px;
+  background: #f7f7f7;
+  padding:0px;
+  position:relative;
+
+  span {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 25%;
+    font-size: 2em;
+    color: #ccc;
+  }
+
+  img {
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:2;
+  }
+}
+.submit-column {
+  margin-top:25px;
+  margin-bottom:25px;
+}
+.is-centered {
+  text-align:center;
 }

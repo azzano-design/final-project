@@ -140,6 +140,9 @@ class FacebookLogin extends Component {
           );
         });
       }
+      FB.Event.subscribe("auth.logout", function() {
+        window.location = '/#/'
+      });
     });
   }
 

@@ -34,7 +34,7 @@ class UserSettings extends Component {
     axios.post(`http://localhost:5000/api/users/${user_id}`,  {phone_number: phone_number})
     .then((result) => {
       if (result.statusText === 'OK'){
-        alert("Profile updated with success.");
+        alert("Profile updated successfully.");
       }
     })
   }

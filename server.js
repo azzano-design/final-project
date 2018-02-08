@@ -96,7 +96,6 @@ app.post('/api/rooms', (request, response) => {
   console.log("we are in the post api rooms");
   // hmn, maybe want to JSON.parse ?
   // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
-  const landlord_id = 1000000;
 
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 

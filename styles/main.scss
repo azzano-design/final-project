@@ -418,6 +418,22 @@ label {
   width:640px;
   margin-bottom: 25px;
 }
+.listing-image {
+  height: 350px;
+  background-size: cover;
+  background-position: center center;
+}
+
+span.available_date {
+  font-weight: bold;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+
+.listing-single p {
+  margin-top:10px;
+}
+
 .user-page .listing-image-container {
   margin-bottom: 0px;
 }
@@ -444,7 +460,7 @@ label {
   margin-top: -15px;
   position: absolute;
   top: -20px;
-  right: 145px;
+  right: 155px;
   font-weight: bold;
   padding: 20px;
   font-size: 1.25em;

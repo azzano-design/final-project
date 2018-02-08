@@ -82,6 +82,7 @@ class NewListing extends Component {
         return false;
       }
     }
+    alert("Listing added successfully.");
     return true;
   }
 

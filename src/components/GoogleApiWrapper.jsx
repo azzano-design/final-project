@@ -63,12 +63,12 @@ export class MapContainer extends Component {
         '<span class="listing-title">'+ room.street + '</span>' +
         '<div class="listing-image-container">' +
           '<div class="listing-image-filter"></div>'+
-          '<img src="/images/house.jpg" alt="Placeholder image" class="listing-image"></img>' +
+          '<div class="listing-image" style="background-image:url('+room.file+');">'+
           '<span class="listing-price">$'+ room.rent_amount + ' /month</span>' +
           '<a href="'+applyLink+'" class="listing-contact">Apply</a>' +
         '</div>' +
       '</div>' +
-      '<span class="available_date">Available: ' + date +'</span>' +
+      '<span class="available_date">Available:</span><span>' + date +'</span>' +
       '<p>' + room.details + '</p>' +
     '</div>'
     return { info, latLng: { lng: room.lng, lat: room.lat }, icon: { url: '/images/icon.png' } };

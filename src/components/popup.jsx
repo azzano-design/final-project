@@ -43,7 +43,6 @@ class Popup extends Component {
       .then((response) => {
         const data = response.data;
         const room = data[0];
-        console.log("data from get room by id", data);
         if (data.err) {
           console.log("data.err", data.err)
         } else {
@@ -67,8 +66,6 @@ class Popup extends Component {
             parking: room.parking,
             file: room.file,
             imagePreviewUrl: room.file,
-          }, () => {
-            console.log("this.state after loading room", this.state)
           })
         }
       })
@@ -128,11 +125,13 @@ class Popup extends Component {
 
 
   editListing(event) {
-    const user = JSON.parse(localStorage.getItem('user'));
     event.preventDefault();
+    const room_id = this.props.room_id;
+    console.log('room id in edit',room_id)
+    const user = JSON.parse(localStorage.getItem('user'));
     const listing = this.state;
     if (this.checkRequiredFields()) {
-      axios.post('api/rooms', {
+      axios.post(`api/rooms/${room_id}/update`, {
         details: listing.details,
         street: listing.street,
         unit: listing.unit,
@@ -154,10 +153,11 @@ class Popup extends Component {
         landlord_id: user.id,
         landlord_email: user.email
       })
-        .then(function (response) {
+        .then((response) => {
           console.log(response);
-          if (response.statusText === "Created") {
-            alert("Listing created with success.");
+          const data = response.data;
+          if (response.statusText === 'OK'){
+            alert("Listing updated successfully.");
           }
         })
         .catch(function (error) {
@@ -177,7 +177,7 @@ class Popup extends Component {
                 <div className="container">
                   <div className="columns">
                     <div className="column">
-                      <form>
+                      <form onSubmit={this.editListing}>
                         <div className="columns">
                           <div className="column">
                             <input type="file" onChange={this.handleImageChange} />

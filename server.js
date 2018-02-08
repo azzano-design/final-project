@@ -12,7 +12,7 @@ const geocoder = require('geocoder');
 // const configuration = require('./knexfile.js')[development];
 // const database = require('knex')(configuration);
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -46,7 +46,6 @@ app.use(function (req, res, next) {
 
 
 app.get('/api/login', (request, response) => {
-  console.log("get-users request query", request.query);
   client.query(
     `select * from users where email = $1`,
     [request.query.email],
@@ -55,10 +54,8 @@ app.get('/api/login', (request, response) => {
         console.error("error running query", err);
         response.json({ err: 'db is fucked, halp' });
       } else if (result.rows.length >= 1) {
-        console.log("some users", result.rows.length);
         response.json({ result: result.rows[0] });
       } else {
-        console.log("no users");
         response.json({ result: undefined });
       }
     });
@@ -67,12 +64,10 @@ app.get('/api/login', (request, response) => {
 
 //login registration
 app.post('/api/login', (request, response) => {
-  console.log("request body to create user", request.body);
 
   const { name, email, profile_pic_url } = request.body;
   const query = [name, email, profile_pic_url];
 
-  console.log('HERE HERE', query);
   client.query(`INSERT INTO users(name, email, profile_pic_url) VALUES($1, $2, $3) RETURNING *`,
     query, (err, result) => {
       if (err) {
@@ -87,7 +82,6 @@ app.get('/api/rooms', (request, response) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 });
@@ -99,22 +93,19 @@ app.post('/api/rooms', (request, response) => {
 
   console.log('fulladdress: ', fullAddress);
 
-  geocoder.geocode(fullAddress, function ( err, data ) {
-    if(err){
+  geocoder.geocode(fullAddress, function (err, data) {
+    if (err) {
       console.log("error", err);
     }
-    console.log(data.results[0].geometry.location);
 
     const lat = data.results[0].geometry.location.lat;
-    console.log(lat);
 
     const lng = data.results[0].geometry.location.lng;
-    console.log(lng);
 
     const { landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, file } = request.body;
 
     query = [landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file];
-    console.log(query);
+
     client.query("INSERT INTO rooms(landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22 )", query, (err, result) => {
       if (err) {
         return console.error("error running query", err);
@@ -129,7 +120,7 @@ app.get('/api/rooms/:id', (request, response) => {
   const room_id = request.params.id;
   const query = [room_id];
   client.query("select * from rooms where id=$1", query, (err, result) => {
-    if(err) {
+    if (err) {
       return console.error("error running query", err);
     }
     response.json(result.rows);
@@ -144,7 +135,6 @@ app.get('/api/users/:id', (request, response) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 });
@@ -153,13 +143,11 @@ app.get('/api/users/:id', (request, response) => {
 app.post('/api/users/:id', (request, response) => {
   const user_id = request.params.id;
   const { phone_number } = request.body;
-  console.log("phone number", request.body.phone_number);
   const query = [user_id, phone_number];
   client.query("UPDATE users SET phone_number =$2 where id=$1", query, (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 });
@@ -173,14 +161,39 @@ app.get('/api/users/:id/rooms', (request, response) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 });
 
 //edit a room
 app.post('/api/rooms/:id/update', (request, response) => {
+  console.log("inside update room route");
+  const room_id = request.query.id;
 
+  const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
+
+
+  geocoder.geocode(fullAddress, function (err, data) {
+    if (err) {
+      console.log("error", err);
+    }
+
+    const lat = data.results[0].geometry.location.lat;
+
+    const lng = data.results[0].geometry.location.lng;
+
+    const { landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, file } = request.body;
+
+    query = [landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file, room_id];
+
+    client.query("UPDATE rooms SET landlord_id =$1, landlord_email = $2, details = $3, street = $4, unit= $5, city= $6, postal_code= $7, pet_friendly= $8, rent_amount= $9, available_date= $10, water= $11, eletricity= $12, internet= $13, heat= $14, natural_gas= $15, storage= $16, laundry_on_site= $17, furniture= $18, parking= $19, lat= $20, lng= $21, file= $22 where id=$23;", query, (err, result) => {
+      if (err) {
+        return console.error("error running query", err);
+      }
+      console.log("Updated");
+      response.json(result.rows);
+    });
+  });
 });
 
 app.post('/api/rooms/:id/delete', (request, response) => {
@@ -190,7 +203,6 @@ app.post('/api/rooms/:id/delete', (request, response) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 });
@@ -213,16 +225,13 @@ app.post('/api/users/:id/applications', (request, response) => {
 
 
 app.get('/api/users', (request, response) => {
-  console.log("request query", request.query);
-  const name =  request.query.name;
+  const name = request.query.name;
   const query = [name];
-  console.log("query", query);
 
   client.query("select id from users where name=$1", query, (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log(result.rows);
     response.json(result.rows);
   });
 

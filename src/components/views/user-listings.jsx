@@ -85,7 +85,7 @@ class UserListings extends Component {
     const currentUser = localStorage.getItem('user');
 
     const userListing =
-      (address, city, rent_amount, description) => (
+      (address, city, rent_amount, description, file) => (
         <div className="column">
           <div className="card">
             <div className="user-page listing-single">
@@ -93,7 +93,7 @@ class UserListings extends Component {
                 <span className="listing-title">{address}</span>
                 <div className="listing-image-container">
                   <div className="listing-image-filter"></div>
-                  <img src="/images/house.jpg" alt="Placeholder image" className="listing-image"></img>
+                  <img src={file} alt="Placeholder image" className="listing-image"></img>
                   <span className="listing-price">$ {rent_amount}</span>
                 </div>
                 <p>{description}</p>
@@ -102,7 +102,7 @@ class UserListings extends Component {
             <footer className="card-footer">
               <p className="card-footer-item">
                 <span>
-                  <a href="#" className="button is-warning">Edit Listing</a>
+                  <a href='#' className="button is-warning">Edit Listing</a>
                 </span>
               </p>
               <p className="card-footer-item">
@@ -121,7 +121,7 @@ class UserListings extends Component {
         <div className="sideScroll columns">
           {
             this.state.rooms.map((item) => {
-               return userListing(item.street, item.city, item.rent_amount, item.description)
+               return userListing(item.street, item.city, item.rent_amount, item.description, item.file)
             })
           }
           <div className="sideScroll-inner"></div>

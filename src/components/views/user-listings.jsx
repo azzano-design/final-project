@@ -77,6 +77,38 @@ class UserListings extends Component {
     });
   }
 
+  editListing(event){
+    const room_id = event.target.dataset.id;
+    axios.post(`http:localhost:5000/api/rooms/${room_id}/update`)
+  }
+
+  deleteListing(event){
+    const room_id = event.target.dataset.id;
+    if (confirm('Are you sure you want to delete?')) {
+      axios.post(`api/rooms/${room_id}/delete`)
+      .then((response) => {
+        const data = response.data;
+        if(data.err){
+          console.log("err", data.err)
+        } else {
+          console.log("data", data);
+          this.setState({
+            rooms: this.state.rooms.filter((room) =>{
+              return room.id === Number(room_id);
+            })
+          })
+        }
+      })
+      .catch((error) => {
+        console.log("mess in deleteListing", error);
+      });
+    } else {
+      //Do nothing!
+    }
+
+  }
+
+
   componentDidMount() {
     this.renderUserListings();
   }
@@ -85,7 +117,7 @@ class UserListings extends Component {
     const currentUser = localStorage.getItem('user');
 
     const userListing =
-      (address, city, rent_amount, description) => (
+      (address, city, rent_amount, description, id) => (
         <div className="column">
           <div className="card">
             <div className="user-page listing-single">
@@ -102,12 +134,12 @@ class UserListings extends Component {
             <footer className="card-footer">
               <p className="card-footer-item">
                 <span>
-                  <a href="#" className="button is-warning">Edit Listing</a>
+                  <button data-id={id} className="button is-danger" onClick={this.editListing.bind(this)}>Edit Listing</button>
                 </span>
               </p>
               <p className="card-footer-item">
                 <span>
-                  <a href="#" className="button is-danger">Remove Listing</a>
+                  <button data-id={id} className="button is-danger" onClick={this.deleteListing.bind(this)}>Remove Listing</button>
                 </span>
               </p>
             </footer>
@@ -121,7 +153,8 @@ class UserListings extends Component {
         <div className="sideScroll columns">
           {
             this.state.rooms.map((item) => {
-               return userListing(item.street, item.city, item.rent_amount, item.description)
+              console.log("item id", item.id);
+               return userListing(item.street, item.city, item.rent_amount, item.description, item.id)
             })
           }
           <div className="sideScroll-inner"></div>

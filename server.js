@@ -94,9 +94,6 @@ app.get('/api/rooms', (request, response) => {
 
 app.post('/api/rooms', (request, response) => {
   console.log("we are in the post api rooms");
-  // hmn, maybe want to JSON.parse ?
-  // SELECT * FROM "rooms" WHERE "rooms"."landlordId" = 1000000;
-  const landlord_id = 1000000;
 
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 
@@ -114,7 +111,6 @@ app.post('/api/rooms', (request, response) => {
     const lng = data.results[0].geometry.location.lng;
     console.log(lng);
 
-    // console.log("post api/rooms got lat/lng:", request.body.lat, request.body.lng);
     const { landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, file } = request.body;
 
     query = [landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file];
@@ -123,7 +119,7 @@ app.post('/api/rooms', (request, response) => {
       if (err) {
         return console.error("error running query", err);
       }
-      return response.status(201).send('new listing added to database');
+      return response.status(201).json(result.rows);
     });
   });
 });
@@ -182,8 +178,20 @@ app.get('/api/users/:id/rooms', (request, response) => {
 });
 
 //edit a room
-app.post('/api/rooms/:id', (request, response) => {
+app.post('/api/rooms/:id/update', (request, response) => {
 
+});
+
+app.post('/api/rooms/:id/delete', (request, response) => {
+  const room_id = request.params.id;
+  const query = [room_id];
+  client.query("DELETE FROM rooms where id=$1", query, (err, result) => {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    console.log(result.rows);
+    response.json(result.rows);
+  });
 });
 
 //load rooms profile

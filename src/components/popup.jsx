@@ -158,6 +158,7 @@ class Popup extends Component {
           const data = response.data;
           if (response.statusText === 'OK'){
             alert("Listing updated successfully.");
+            window.location = '/#/user/listing'
           }
         })
         .catch(function (error) {

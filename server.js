@@ -168,7 +168,8 @@ app.get('/api/users/:id/rooms', (request, response) => {
 //edit a room
 app.post('/api/rooms/:id/update', (request, response) => {
   console.log("inside update room route");
-  const room_id = request.query.id;
+  const room_id = request.params.id;
+  console.log("room_id", room_id);
 
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
 

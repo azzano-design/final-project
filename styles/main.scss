@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 
 // Typography
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Abril Fatface', cursive;
 }
@@ -9,10 +10,15 @@ h1, h2, h3, h4, h5, h6 {
 // Brand Color
 $primary: #C3E3D3;
 
+
+// Global
+
 * ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0px;
+  background: transparent;
 }
+
+
 // Navigation
 
 .main-nav {
@@ -32,7 +38,7 @@ $primary: #C3E3D3;
 }
 
 .fb-logout-button:hover {
-  background: #00b89c;
+  background: $primary  ;
 }
 .navbar-burger {
   color:#000;
@@ -44,7 +50,6 @@ $primary: #C3E3D3;
   margin-right:10px;
 }
 .navbar-item:hover svg {
-  color:#fff;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -52,64 +57,15 @@ $primary: #C3E3D3;
   -webkit-animation-name: jackInTheBox;
   animation-name: jackInTheBox;
 }
-
-@-webkit-keyframes jackInTheBox {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.1) rotate(30deg);
-    transform: scale(0.1) rotate(30deg);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-  }
-
-  50% {
-    -webkit-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-  }
-
-  70% {
-    -webkit-transform: rotate(3deg);
-    transform: rotate(3deg);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes jackInTheBox {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.1) rotate(30deg);
-    transform: scale(0.1) rotate(30deg);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-  }
-
-  50% {
-    -webkit-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-  }
-
-  70% {
-    -webkit-transform: rotate(3deg);
-    transform: rotate(3deg);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-
 .profilePic {
   border-radius: 50%;
   margin-right:10px;
 }
+
+.fb-login-button.fb_iframe_widget {
+    margin-top: 5px;
+}
+
 // Home
 
 .bgvid {
@@ -133,11 +89,12 @@ $primary: #C3E3D3;
   max-width:100%;
   padding: 0px;
   margin: 0px;
+  position:relative;
   background: $primary;
 }
 
 .videoOverlay {
-  background: linear-gradient(270deg, #c3e3d3, #ffffff00);
+  background: linear-gradient(270deg, #c3e3d3de, #ffffff00);
   background-size: 400% 400%;
   -webkit-animation: AnimationName 12s ease infinite;
   -moz-animation: AnimationName 12s ease infinite;
@@ -149,22 +106,6 @@ $primary: #C3E3D3;
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
 }
 
 .title {
@@ -564,26 +505,6 @@ span.feature {
   animation-fill-mode: both;
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -671,4 +592,106 @@ p.card-footer-item span, p.card-footer-item button {
   background-color: #d8526d;
   border-color: transparent;
   color: #fff;
+}
+.button.is-primary {
+  background-color: $primary;
+  border-color: transparent;
+  color: #fff;
+}
+.button.is-primary:hover {
+  background-color: darken($primary, 10%);
+  border-color: transparent;
+  color: #fff;
+}
+.hero.is-primary a.navbar-item:hover,
+.hero.is-primary a.navbar-item.is-active,
+.hero.is-primary .navbar-link:hover,
+.hero.is-primary .navbar-link.is-active {
+  background-color:$primary;
+}
+
+
+// Animations
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

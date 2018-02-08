@@ -14,7 +14,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 1000001,
           name: 'Brendan Azzano',
-          email: 'brendan@gmail.com',
+          email: 'brendanarchangelo@gmail.com',
           phone_number: '6046046046'
         },
         {

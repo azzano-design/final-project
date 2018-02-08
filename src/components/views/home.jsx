@@ -4,10 +4,10 @@ class Home extends Component {
     return (
       <div className="homeLanding container has-text-centered">
         <h1 className="title">
-          Go from getting a tenant to a GREAT tenant.
+           Happiness is Homemade
         </h1>
         <p className="subtitle">
-          Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+          We set out to empower Vancouver’s decisions around finding a place to live. Make sure it’s the right choice – and not just your only choice.
         </p>
         <div className="videoOverlay"></div>
         <video playsInline autoPlay muted loop id="bgvid">

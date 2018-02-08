@@ -12,7 +12,8 @@ class UserListings extends Component {
       landlord_id: '',
       address: '',
       rooms: [],
-      showPopup: false
+      showPopup: false,
+      selectedRoom: null
     }
   }
 
@@ -88,7 +89,6 @@ class UserListings extends Component {
         if(data.err){
           console.log("err", data.err)
         } else {
-          console.log("data", data);
           this.setState({
             rooms: this.state.rooms.filter((room) =>{
               return room.id !== Number(room_id);
@@ -110,10 +110,18 @@ class UserListings extends Component {
     this.renderUserListings();
   }
 
-  togglePopup() {
-    this.setState({
-      showPopup: !this.state.showPopup
-    });
+  togglePopup(event) {
+    const room_id = event.target.dataset.id;
+    if(this.state.showPopup){
+      this.setState({
+        showPopup: !this.state.showPopup
+      });
+    } else {
+      this.setState({
+        showPopup: !this.state.showPopup,
+        selectedRoom: room_id
+      });
+    }
   }
 
   render() {
@@ -155,12 +163,11 @@ class UserListings extends Component {
         <div className="sideScroll columns">
           {
             this.state.rooms.map((item) => {
-              console.log("item id", item.id);
                return userListing(item.street, item.city, item.rent_amount, item.description, item.id, item.file)
             })
           }
           <div className="sideScroll-inner"></div>
-          {this.state.showPopup ? <Popup text='Close Me' closePopup={this.togglePopup.bind(this)}/> : null }
+          {this.state.showPopup ? <Popup room_id={this.state.selectedRoom} closePopup={this.togglePopup.bind(this)}/> : null }
         </div>
       </div>
     </div>

@@ -124,15 +124,16 @@ app.post('/api/rooms', (request, response) => {
   });
 });
 
-//search for rooms
-app.get('/api/rooms/search', (request, response) => {
-
-});
-
-
-//search for rooms
-app.post('/api/rooms/search', (request, response) => {
-
+//search for rooms by id
+app.get('/api/rooms/:id', (request, response) => {
+  const room_id = request.params.id;
+  const query = [room_id];
+  client.query("select * from rooms where id=$1", query, (err, result) => {
+    if(err) {
+      return console.error("error running query", err);
+    }
+    response.json(result.rows);
+  });
 });
 
 //load users profile

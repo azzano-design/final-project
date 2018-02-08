@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserMenu from '../user-menu.jsx';
 import fetch from 'node-fetch';
 import axios from 'axios';
+import Popup from '../popup.jsx';
 
 class UserListings extends Component {
 
@@ -10,7 +11,8 @@ class UserListings extends Component {
     this.state = {
       landlord_id: '',
       address: '',
-      rooms: []
+      rooms: [],
+      showPopup: false
     }
   }
 
@@ -77,11 +79,6 @@ class UserListings extends Component {
     });
   }
 
-  editListing(event){
-    const room_id = event.target.dataset.id;
-    axios.post(`http:localhost:5000/api/rooms/${room_id}/update`)
-  }
-
   deleteListing(event){
     const room_id = event.target.dataset.id;
     if (confirm('Are you sure you want to delete?')) {
@@ -113,9 +110,14 @@ class UserListings extends Component {
     this.renderUserListings();
   }
 
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
   render() {
     const currentUser = localStorage.getItem('user');
-
     const userListing =
       (address, city, rent_amount, description, id, file) => (
         <div className="column">
@@ -134,7 +136,7 @@ class UserListings extends Component {
             <footer className="card-footer">
               <p className="card-footer-item">
                 <span>
-                  <button data-id={id} className="button is-warning" onClick={this.editListing.bind(this)}>Edit Listing</button>
+                  <button data-id={id} className="button is-warning" onClick={this.togglePopup.bind(this)}>Edit Listing</button>
                 </span>
               </p>
               <p className="card-footer-item">
@@ -158,6 +160,7 @@ class UserListings extends Component {
             })
           }
           <div className="sideScroll-inner"></div>
+          {this.state.showPopup ? <Popup text='Close Me' closePopup={this.togglePopup.bind(this)}/> : null }
         </div>
       </div>
     </div>

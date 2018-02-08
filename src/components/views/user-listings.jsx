@@ -94,7 +94,7 @@ class UserListings extends Component {
           console.log("data", data);
           this.setState({
             rooms: this.state.rooms.filter((room) =>{
-              return room.id === Number(room_id);
+              return room.id !== Number(room_id);
             })
           })
         }

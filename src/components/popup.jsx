@@ -129,13 +129,12 @@ class Popup extends Component {
       <div className='popup'>
         <div className='popup_inner'>
           <div className="listing-form container animated fadeIn">
-            <button className="button" onClick={this.props.closePopup}>CLOSE</button>
+            <button className="close button" onClick={this.props.closePopup}><i className="fas fa-times"></i></button>
             <div className="columns is-10 is-offset-1">
               <section className="column">
                 <div className="container">
                   <div className="columns">
                     <div className="column">
-                      <h1>Select a main image:</h1>
                       <form>
                         <div className="columns">
                           <div className="column">

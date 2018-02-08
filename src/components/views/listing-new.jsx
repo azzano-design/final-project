@@ -26,7 +26,7 @@ class NewListing extends Component {
       furniture: false,
       parking: false,
       file: "",
-      fileBase64String: "",
+      imagePreviewUrl: "",
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -59,12 +59,12 @@ class NewListing extends Component {
   handleImageChange(event) {
     event.preventDefault();
     let reader = new FileReader();
-    let file = e.target.files[0];
+    let file = event.target.files[0];
 
     reader.onloadend = () => {
       this.setState({
         file: file,
-        // imagePreviewUrl: reader.result
+        imagePreviewUrl: reader.result
       });
       console.log(reader.result);
     }
@@ -86,6 +86,7 @@ class NewListing extends Component {
   }
 
   addListing(event) {
+    const user = JSON.parse(localStorage.getItem('user'));
     event.preventDefault();
     const listing = this.state;
     if (this.checkRequiredFields()) {
@@ -97,7 +98,6 @@ class NewListing extends Component {
         postal_code: listing.postal_code,
         pet_friendly: listing.pet_friendly,
         rent_amount: listing.rent_amount,
-        deposit_amount: listing.deposit_amount,
         available_date: listing.available_date,
         water: listing.water,
         eletricity: listing.eletricity,
@@ -108,10 +108,15 @@ class NewListing extends Component {
         laundry_on_site: listing.laundry_in_site,
         furniture: listing.furniture,
         parking: listing.parking,
-        file: listing.file
+        file: listing.imagePreviewUrl,
+        landlord_id: user.id,
+        landlord_email: user.email
       })
         .then(function (response) {
           console.log(response);
+          if(response.statusText === "Created"){
+            alert("Listing created with success.");
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -135,6 +140,7 @@ class NewListing extends Component {
                         <div className="column">
                           <input type="file" onChange={this.handleImageChange} />
                         </div>
+                        <img src={this.state.imagePreviewUrl} />
                       </div>
                       <div className="columns">
                         <div className="column">

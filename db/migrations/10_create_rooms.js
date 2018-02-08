@@ -24,7 +24,7 @@ exports.up = function(knex, Promise) {
     table.string('details');
     table.float('lat');
     table.float('lng');
-    table.string('file');
+    table.text('file');
 
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());

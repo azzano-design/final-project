@@ -121,7 +121,6 @@ class UserListings extends Component {
         <div className="sideScroll columns">
           {
             this.state.rooms.map((item) => {
-              console.log("current user", currentUser);
                return userListing(item.street, item.city, item.rent_amount, item.description)
             })
           }

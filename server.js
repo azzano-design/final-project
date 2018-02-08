@@ -115,15 +115,15 @@ app.post('/api/rooms', (request, response) => {
     console.log(lng);
 
     // console.log("post api/rooms got lat/lng:", request.body.lat, request.body.lng);
-    const { landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking } = request.body;
+    const { landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, file } = request.body;
 
-    query = [landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng];
+    query = [landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file];
     console.log(query);
-    client.query("INSERT INTO rooms(landlord_id, details, street, unit, city, postal_code, pet_friendly, rent_amount, deposit_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21 )", query, (err, result) => {
+    client.query("INSERT INTO rooms(landlord_id, landlord_email, details, street, unit, city, postal_code, pet_friendly, rent_amount, available_date, water, eletricity, internet, heat, natural_gas, storage, laundry_on_site, furniture, parking, lat, lng, file) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22 )", query, (err, result) => {
       if (err) {
         return console.error("error running query", err);
       }
-      return response.status(201).send('new user listing');
+      return response.status(201).send('new listing added to database');
     });
   });
 });

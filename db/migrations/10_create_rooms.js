@@ -21,7 +21,7 @@ exports.up = function(knex, Promise) {
     table.boolean('laundry_on_site');
     table.boolean('furniture');
     table.boolean('parking');
-    table.string('details');
+    table.text('details');
     table.float('lat');
     table.float('lng');
     table.text('file');

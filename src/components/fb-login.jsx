@@ -66,6 +66,7 @@ class FacebookLogin extends Component {
 
       window.FB.Event.subscribe('auth.statusChange', (response) => {
         this.statusChangeCallback(response);
+        window.location = '/#/search'
       });
     }
 

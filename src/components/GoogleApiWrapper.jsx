@@ -44,7 +44,7 @@ export class MapContainer extends Component {
     let date = ''+ room.available_date +'';
     date = date.substring(0, date.length - 14)
 
-    let landlordEmail = 'landlord@place.com'
+    let landlordEmail = ''+room.landlord_email+''
 
     let roomName = ''+ room.street+ ''
     roomName = roomName.replace(" ", "%20");
@@ -193,8 +193,6 @@ export class MapContainer extends Component {
       editable: true,
       zIndex: 1
     }
-
-
 
 
     if (this.state.menuopen === true) {

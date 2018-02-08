@@ -9,10 +9,12 @@ class Home extends Component {
         <p className="subtitle">
           Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
         </p>
+        <div className="videoOverlay"></div>
         <video playsInline autoPlay muted loop id="bgvid">
           <source src="moving.webm" type="video/webm"></source>
           <source src="moving.mp4" type="video/mp4"></source>
         </video>
+
       </div>
     )
   }

@@ -102,7 +102,7 @@ class UserListings extends Component {
             <footer className="card-footer">
               <p className="card-footer-item">
                 <span>
-                  <a href="#" className="button is-warning">Edit Listing</a>
+                  <a href='#' className="button is-warning">Edit Listing</a>
                 </span>
               </p>
               <p className="card-footer-item">

@@ -139,257 +139,264 @@ class NewListing extends Component {
                       <div className="columns">
                         <div className="column">
                           <input type="file" onChange={this.handleImageChange} />
-                        </div>
-                        <img src={this.state.imagePreviewUrl} />
-                      </div>
-                      <div className="columns">
-                        <div className="column">
-                          <label>
-                            Street:
-                            <input
-                              className="input is-rounded"
-                              name="street"
-                              type="text"
-                              value={this.state.street}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                        <div className="column">
-                          <label>
-                            Unit:
-                            <input
-                              className="input is-rounded"
-                              name="unit"
-                              type="text"
-                              value={this.state.unit}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="columns">
-                        <div className="column">
-                          <label>
-                            City:
-                            <input
-                              className="input is-rounded"
-                              name="city"
-                              type="text"
-                              value={this.state.city}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                        <div className="column">
-                          <label>
-                            Postal Code:
-                            <input
-                              className="input is-rounded"
-                              name="postal_code"
-                              type="text"
-                              value={this.state.postal_code}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                      </div>
-                      <div className="columns">
-                        <div className="column">
-                          <label>
-                            Rent amount:
-                            <input
-                              className="input is-rounded"
-                              name="rent_amount"
-                              type="number"
-                              value={this.state.rent_amount}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                        <div className="column">
-                          <div className="control has-icons-left">
-                            <input
-                              className="input is-rounded"
-                              name="available_date"
-                              type="date"
-                              value={this.state.available_date}
-                              onChange={this.handleInputChange}
-                            />
-                            <span className="icon is-small is-left">
-                              <i className="fas fa-calendar"></i>
-                            </span>
+                          <div className="preview-container">
+                            <img src={this.state.imagePreviewUrl} />
+                            <span>No Image Uploaded</span>
                           </div>
                         </div>
-                      </div>
-
-                      <div className="columns">
                         <div className="column">
-                          <label>
-                            Details:
-                            <input
-                              className="textarea is-rounded"
-                              name="details"
-                              type="textarea"
-                              value={this.state.details}
-                              onChange={this.handleInputChange}
-                            />
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="columns">
-
-                      </div>
-
-                      <div className="columns">
-                        <div className="column">
-                          <div>
-                            <span className="searchHeading">Utilities</span>
+                          <div className="columns">
+                            <div className="column">
+                              <label>
+                                Street:
+                                <input
+                                  className="input is-rounded"
+                                  name="street"
+                                  type="text"
+                                  value={this.state.street}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
+                            </div>
+                            <div className="column">
+                              <label>
+                                Unit:
+                                <input
+                                  className="input is-rounded"
+                                  name="unit"
+                                  type="text"
+                                  value={this.state.unit}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
+                            </div>
                           </div>
-                          <div>
-                            <div className="columns">
-                              <div className="column">
-                                <div className="field">
-                                  <label>Water</label>
-                                  <label className="switch">
-                                    <input
-                                      name="water"
-                                      type="checkbox"
-                                      value={this.state.water}
-                                      onChange={this.handleCheckbox}></input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Eletricity</label>
-                                  <label className="switch">
-                                    <input
-                                      name="eletricity"
-                                      type="checkbox"
-                                      value={this.state.eletricity}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                              </div>
-                              <div className="column">
-                                <div className="field">
-                                  <label>Heat</label>
-                                  <label className="switch">
-                                    <input
-                                      name="heat"
-                                      type="checkbox"
-                                      value={this.state.heat}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Natural Gas</label>
-                                  <label className="switch">
-                                    <input
-                                      name="natural_gas"
-                                      type="checkbox"
-                                      value={this.state.natural_gas}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
+                          <div className="columns">
+                            <div className="column">
+                              <label>
+                                City:
+                                <input
+                                  className="input is-rounded"
+                                  name="city"
+                                  type="text"
+                                  value={this.state.city}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
+                            </div>
+                            <div className="column">
+                              <label>
+                                Postal Code:
+                                <input
+                                  className="input is-rounded"
+                                  name="postal_code"
+                                  type="text"
+                                  value={this.state.postal_code}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div className="columns">
+                            <div className="column">
+                              <label>
+                                Rent amount:
+                                <input
+                                  className="input is-rounded"
+                                  name="rent_amount"
+                                  type="number"
+                                  value={this.state.rent_amount}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
+                            </div>
+                            <div className="column">
+                              <div className="control has-icons-left">
+                                <input
+                                  className="input is-rounded"
+                                  name="available_date"
+                                  type="date"
+                                  value={this.state.available_date}
+                                  onChange={this.handleInputChange}
+                                />
+                                <span className="icon is-small is-left">
+                                  <i className="fas fa-calendar"></i>
+                                </span>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="column">
-                          <div>
-                            <span className="searchHeading">Amenities</span>
-                          </div>
-                          <div>
-                            <div className="columns">
-                              <div className="column">
-                                <div className="field">
-                                  <label>Storage</label>
-                                  <label className="switch">
-                                    <input
-                                      name="storage"
-                                      type="checkbox"
-                                      value={this.state.storage}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Onsite Laundry</label>
-                                  <label className="switch">
-                                    <input
-                                      name="laundry_on_site"
-                                      type="checkbox"
-                                      value={this.state.laundry_on_site}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Parking</label>
-                                  <label className="switch">
-                                    <input name="parking"
-                                      type="checkbox"
-                                      value={this.state.parking}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                              </div>
-                              <div className="column">
-                                <div className="field">
-                                  <label>Pet Friendly</label>
-                                  <label className="switch">
-                                    <input
-                                      name="pet_friendly"
-                                      type="checkbox"
-                                      value={this.state.pet_friendly}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Internet</label>
-                                  <label className="switch">
-                                    <input
-                                      name="internet"
-                                      type="checkbox"
-                                      value={this.state.internet}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="field">
-                                  <label>Fully Furnished</label>
-                                  <label className="switch">
-                                    <input
-                                      name="furnished"
-                                      type="checkbox"
-                                      value={this.state.furnished}
-                                      onChange={this.handleCheckbox}>
-                                    </input>
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                              </div>
+
+                          <div className="columns">
+                            <div className="column">
+                              <label>
+                                Details:
+                                <input
+                                  className="textarea is-rounded"
+                                  name="details"
+                                  type="textarea"
+                                  value={this.state.details}
+                                  onChange={this.handleInputChange}
+                                />
+                              </label>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button className="button is-primary is-rounded is-large" type="submit" onClick={this.addListing}>Submit</button>
+
+                      <div className="columns">
+                        <div className="column">
+                          <div>
+                            <span className="searchHeading is-centered">Utilities & Amenities Included: </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="columns">
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Water</label>
+                            <label className="switch">
+                              <input
+                                name="water"
+                                type="checkbox"
+                                value={this.state.water}
+                                onChange={this.handleCheckbox}></input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Eletricity</label>
+                            <label className="switch">
+                              <input
+                                name="eletricity"
+                                type="checkbox"
+                                value={this.state.eletricity}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Heat</label>
+                            <label className="switch">
+                              <input
+                                name="heat"
+                                type="checkbox"
+                                value={this.state.heat}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Natural Gas</label>
+                            <label className="switch">
+                              <input
+                                name="natural_gas"
+                                type="checkbox"
+                                value={this.state.natural_gas}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Pet Friendly</label>
+                            <label className="switch">
+                              <input
+                                name="pet_friendly"
+                                type="checkbox"
+                                value={this.state.pet_friendly}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="columns">
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Storage</label>
+                            <label className="switch">
+                              <input
+                                name="storage"
+                                type="checkbox"
+                                value={this.state.storage}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Onsite Laundry</label>
+                            <label className="switch">
+                              <input
+                                name="laundry_on_site"
+                                type="checkbox"
+                                value={this.state.laundry_on_site}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Parking</label>
+                            <label className="switch">
+                              <input name="parking"
+                                type="checkbox"
+                                value={this.state.parking}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Internet</label>
+                            <label className="switch">
+                              <input
+                                name="internet"
+                                type="checkbox"
+                                value={this.state.internet}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="column">
+                          <div className="field is-centered">
+                            <label>Fully Furnished</label>
+                            <label className="switch">
+                              <input
+                                name="furnished"
+                                type="checkbox"
+                                value={this.state.furnished}
+                                onChange={this.handleCheckbox}>
+                              </input>
+                              <span className="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="columns">
+                        <div className="submit-column column is-2 is-offset-10">
+                          <button className="button is-primary is-rounded is-large" type="submit" onClick={this.addListing}>Submit</button>
+                        </div>
+                      </div>
                     </form>
                   </div>
                 </div>

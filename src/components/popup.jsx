@@ -29,8 +29,49 @@ class Popup extends Component {
     }
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.addListing = this.addListing.bind(this);
+    this.editListing = this.editListing.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.getRoomDetails();
+  }
+
+  getRoomDetails() {
+    const room_id = this.props.room_id;
+    axios.get(`api/rooms/${room_id}`)
+      .then((response) => {
+        const data = response.data;
+        const room = data[0];
+        console.log("data from get room by id", data);
+        if (data.err) {
+          console.log("data.err", data.err)
+        } else {
+          this.setState({
+            details: room.details,
+            street: room.street,
+            unit: room.unit,
+            city: room.city,
+            postal_code: room.postal_code,
+            pet_friendly: room.pet_friendly,
+            rent_amount: room.rent_amount,
+            available_date: room.available_date,
+            water: room.water,
+            eletricity: room.eletricity,
+            internet: room.internet,
+            heat: room.heat,
+            natural_gas: room.natural_gas,
+            storage: room.storage,
+            laundry_on_site: room.laundry_on_site,
+            furniture: room.furniture,
+            parking: room.parking,
+            file: room.file,
+            imagePreviewUrl: room.file,
+          }, () => {
+            console.log("this.state after loading room", this.state)
+          })
+        }
+      })
   }
 
   handleCheckbox(event) {
@@ -81,11 +122,12 @@ class Popup extends Component {
         return false;
       }
     }
-    alert("Listing added successfully.");
+    alert("Listing updated successfully.");
     return true;
   }
 
-  addListing(event) {
+
+  editListing(event) {
     const user = JSON.parse(localStorage.getItem('user'));
     event.preventDefault();
     const listing = this.state;
@@ -114,7 +156,7 @@ class Popup extends Component {
       })
         .then(function (response) {
           console.log(response);
-          if(response.statusText === "Created"){
+          if (response.statusText === "Created") {
             alert("Listing created with success.");
           }
         })

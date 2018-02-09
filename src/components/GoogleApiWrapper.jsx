@@ -7,8 +7,6 @@ import axios from 'axios';
 import fetch from 'node-fetch';
 import FacebookLogin from './fb-login.jsx';
 
-
-
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
@@ -88,7 +86,6 @@ export class MapContainer extends Component {
 
   componentDidMount() {
     this.renderRooms();
-
   }
 
   onMarkerClick(marker, e) {
@@ -97,19 +94,19 @@ export class MapContainer extends Component {
     });
   }
 
-  renderMarkerInfo() {
-    if (this.state.activeMarkers) {
-      return this.state.activeMarkers.map((marker, i) => (
-        <div key={`marker${i}`}>
-          <div>
-            {marker.label}
-            {marker.info}
-          </div>
-          <img src="/images/house.jpg"></img>
-        </div>
-      ));
-    }
-  }
+  // renderMarkerInfo() {
+  //   if (this.state.activeMarkers) {
+  //     return this.state.activeMarkers.map((marker, i) => (
+  //       <div key={`marker${i}`}>
+  //         <div>
+  //           {marker.label}
+  //           {marker.info}
+  //         </div>
+  //         <img src="/images/house.jpg"></img>
+  //       </div>
+  //     ));
+  //   }
+  // }
 
   handleReturnedMarkers(markers) {
     this.setState({
@@ -136,10 +133,7 @@ export class MapContainer extends Component {
     this.setState({
       [name]: value
     });
-    console.log("this.state.name", this.state[name]);
-
     const filteredRooms = []
-
     if (this.setState.name === true) {
       this.setState.otherMakers = []
     }
@@ -147,7 +141,6 @@ export class MapContainer extends Component {
 
   handleCheckbox(event) {
     const name = event.target.name;
-    console.log("name", name);
     const toggle = !this.state[name];
     const currentFilters = toggle ? this.state.currentFilters.concat(name) : this.state.currentFilters.filter(function (filter) {
       return filter != name;
@@ -168,15 +161,12 @@ export class MapContainer extends Component {
 
   render() {
 
-    // change map size
     const mapStyle = {
       width: window.innerWidth,
       height: window.innerHeight,
     }
-
     const style = [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"lightness":"0"},{"color":"#f7f1df"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"55"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#d4df68"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#58585b"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"color":"#58585b"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"color":"#939396"},{"lightness":"46"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#b4dfc9"},{"lightness":"17"}]}]
 
-    //change map default focus
     const mapConfig = {
       zoom: 14,
       lat: 49.275147,
@@ -193,7 +183,6 @@ export class MapContainer extends Component {
       editable: true,
       zIndex: 1
     }
-
 
     if (this.state.menuopen === true) {
       return (

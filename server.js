@@ -1,5 +1,3 @@
-// import { resolveNs } from 'dns';
-
 const express = require('express');
 const pg = require('pg');
 const app = express();
@@ -7,10 +5,6 @@ const settings = require("./settings");
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 const geocoder = require('geocoder');
-
-
-// const configuration = require('./knexfile.js')[development];
-// const database = require('knex')(configuration);
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -59,10 +53,8 @@ app.get('/api/login', (request, response) => {
         response.json({ result: undefined });
       }
     });
-
 });
 
-//login registration
 app.post('/api/login', (request, response) => {
   const { name, email, profile_pic_url } = request.body;
   const query = [name, email, profile_pic_url];
@@ -72,7 +64,8 @@ app.post('/api/login', (request, response) => {
         return console.error("error running query", err);
       }
       response.status(201).send('new user registered');
-    });
+    }
+  );
 });
 
 app.get('/api/rooms', (request, response) => {
@@ -85,10 +78,7 @@ app.get('/api/rooms', (request, response) => {
 });
 
 app.post('/api/rooms', (request, response) => {
-  console.log("we are in the post api rooms");
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
-
-  console.log('fulladdress: ', fullAddress);
   geocoder.geocode(fullAddress, function (err, data) {
     if (err) {
       console.log("error", err);
@@ -106,7 +96,6 @@ app.post('/api/rooms', (request, response) => {
   });
 });
 
-//search for rooms by id
 app.get('/api/rooms/:id', (request, response) => {
   const room_id = request.params.id;
   const query = [room_id];
@@ -118,7 +107,6 @@ app.get('/api/rooms/:id', (request, response) => {
   });
 });
 
-//load users profile
 app.get('/api/users/:id', (request, response) => {
   const user_id = request.params.id;
   const query = [user_id];
@@ -130,7 +118,6 @@ app.get('/api/users/:id', (request, response) => {
   });
 });
 
-//edit users profile
 app.post('/api/users/:id', (request, response) => {
   const user_id = request.params.id;
   const { phone_number } = request.body;
@@ -143,7 +130,6 @@ app.post('/api/users/:id', (request, response) => {
   });
 });
 
-//load rooms for a specific user
 app.get('/api/users/:id/rooms', (request, response) => {
   const user_id = request.params.id;
   const query = [user_id];
@@ -155,14 +141,9 @@ app.get('/api/users/:id/rooms', (request, response) => {
   });
 });
 
-//edit a room
 app.post('/api/rooms/:id/update', (request, response) => {
-  console.log("inside update room route");
   const room_id = request.params.id;
-  console.log(request.body)
-  console.log("before post ", request.body.street)
   const fullAddress = request.body.street + ' ' + request.body.city + ' BC';
-
   geocoder.geocode(fullAddress, function (err, data) {
     if (err) {
       console.log("error", err);
@@ -175,11 +156,9 @@ app.post('/api/rooms/:id/update', (request, response) => {
       if (err) {
         return console.error("error running query", err);
       }
-      console.log("Updated", result);
       response.json(result.rows);
     });
   });
-  console.log("after post", request.body.street)
 });
 
 app.post('/api/rooms/:id/delete', (request, response) => {

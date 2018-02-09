@@ -43,7 +43,8 @@ class FacebookLogin extends Component {
                 this.setNewUser(
                   this.state.currentUser.name,
                   this.state.currentUser.email,
-                  this.state.currentUser.profilePicURL);
+                  this.state.currentUser.profilePicURL
+                );
               }
             }
           }
@@ -96,7 +97,7 @@ class FacebookLogin extends Component {
       }
     })
     .catch((error) => {
-      console.log("mess in getUserByEmail", error);
+      console.log("Unable to retrieve user by ID: ", error);
     });
   }
 
@@ -150,10 +151,15 @@ class FacebookLogin extends Component {
   connectAPI(callback) {
     FB.api('/me?fields=name,email,picture.width(160).height(160)', (response) => {
       if (response && !response.error) {
-        this.setState({currentUser: {name: response.name, email: response.email, profilePicURL: response.picture.data.url } });
+        this.setState({
+          currentUser: {
+            name: response.name,
+            email: response.email,
+            profilePicURL: response.picture.data.url
+          }
+        });
       }
       callback();
-
     })
   }
 
@@ -167,9 +173,7 @@ class FacebookLogin extends Component {
     } else {
       return (
         <div>
-
           <LoginMenu user={this.state.currentUser} logout={this.logout.bind(this)}/>
-
         </div>
       )
     }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class DetailsForm extends Component {
   onFormSubmit(event) {
     event.preventDefault();

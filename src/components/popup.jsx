@@ -108,7 +108,6 @@ class Popup extends Component {
     reader.readAsDataURL(file)
   }
 
-
   checkRequiredFields() {
     const listing = this.state;
     const required_fields = ['street', 'city', 'rent_amount', 'available_date'];
@@ -121,7 +120,6 @@ class Popup extends Component {
     }
     return true;
   }
-
 
   editListing(event) {
     event.preventDefault();

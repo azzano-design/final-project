@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import DetailsForm from './detailsform.jsx'
 import { InfoWindow, Marker, GoogleApiWrapper, withScriptjs, GoogleMap } from 'google-maps-react';
 import GoogleMapDrawFilter from "react-google-map-draw-filter";
 import axios from 'axios';
@@ -41,18 +40,13 @@ export class MapContainer extends Component {
   createMarker(room) {
     let date = ''+ room.available_date +'';
     date = date.substring(0, date.length - 14)
-
     let landlordEmail = ''+room.landlord_email+''
-
     let roomName = ''+ room.street+ ''
     roomName = roomName.replace(" ", "%20");
-
     let user = JSON.parse(localStorage.getItem('user'));
-
     let tenantName = ''+ user.name + ''
     let tenantEmail = ''+ user.email + ''
     let tenantPhone = ''+ user.phoneNumber + ''
-
     let applyLink = 'mailto:'+landlordEmail+'?CC='+tenantEmail+'&Subject=Application%20-%20'+roomName+'&Body=Hello%2C%0A%0AMy%20name%20is%20'+tenantName+'%2C%20and%20I%20am%20applying%20to%20'+roomName+'%20from%2010/Tenant.%0A%0AI%20can%20be%20reached%20at%20'+tenantPhone+'%20number%20to%20discuss%20a%20viewing.%0A%0AThank%20you%2C%0A%0A'+tenantName+''
 
     const info =
@@ -93,20 +87,6 @@ export class MapContainer extends Component {
       activeMarkers: [marker]
     });
   }
-
-  // renderMarkerInfo() {
-  //   if (this.state.activeMarkers) {
-  //     return this.state.activeMarkers.map((marker, i) => (
-  //       <div key={`marker${i}`}>
-  //         <div>
-  //           {marker.label}
-  //           {marker.info}
-  //         </div>
-  //         <img src="/images/house.jpg"></img>
-  //       </div>
-  //     ));
-  //   }
-  // }
 
   handleReturnedMarkers(markers) {
     this.setState({
